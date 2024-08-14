@@ -8,17 +8,43 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var taskListViewModel: TaskListViewModel
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            List($taskListViewModel.tasks) { $task in
+                HStack {
+                    Text(task.taskName)
+                    
+                    Spacer()
+                    
+                    Text(task.isCompleted ? "Completed" : "Uncompleted")
+                    
+                    Image(systemName: task.isCompleted ? "checkmark.circle.fill" :"xmark.circle.fill" )
+                        .foregroundStyle(task.isCompleted ? .green : .red)
+                }
+                .onTapGesture {
+                    taskListViewModel.updateTaskStatus($task)
+                }
+            }
+            .onAppear {
+                taskListViewModel.getTasks()
+            }
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Add New Task") {
+                        taskListViewModel.addNewTask()
+                    }
+                }
+            }
         }
-        .padding()
     }
 }
 
 #Preview {
-    ContentView()
+    let repository = TaskListRepositoryImpl()
+    let useCase = TaskListUseCaseImpl(repository: repository)
+    let viewModel = TaskListViewModel(useCase: useCase)
+    
+    return ContentView(taskListViewModel: viewModel)
 }
