@@ -8,21 +8,92 @@
 
 /* Begin PBXBuildFile section */
 		3A6759DD2C6D033A00983C66 /* MonotaskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6759DC2C6D033A00983C66 /* MonotaskApp.swift */; };
-		3A6759DF2C6D033A00983C66 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6759DE2C6D033A00983C66 /* ContentView.swift */; };
 		3A6759E12C6D033B00983C66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A6759E02C6D033B00983C66 /* Assets.xcassets */; };
 		3A6759E42C6D033B00983C66 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A6759E32C6D033B00983C66 /* Preview Assets.xcassets */; };
+		3A6759FF2C6D048F00983C66 /* TaskLocalEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6759EA2C6D048F00983C66 /* TaskLocalEntity.swift */; };
+		3A675A002C6D048F00983C66 /* TaskListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6759EE2C6D048F00983C66 /* TaskListRepository.swift */; };
+		3A675A012C6D048F00983C66 /* RewardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6759F12C6D048F00983C66 /* RewardModel.swift */; };
+		3A675A022C6D048F00983C66 /* RewardPieceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6759F32C6D048F00983C66 /* RewardPieceModel.swift */; };
+		3A675A032C6D048F00983C66 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6759F52C6D048F00983C66 /* TaskModel.swift */; };
+		3A675A042C6D048F00983C66 /* TaskListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6759F82C6D048F00983C66 /* TaskListUseCase.swift */; };
+		3A675A052C6D048F00983C66 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6759FB2C6D048F00983C66 /* TaskListView.swift */; };
+		3A675A062C6D048F00983C66 /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6759FC2C6D048F00983C66 /* TaskListViewModel.swift */; };
+		3A675A0A2C6D049900983C66 /* SwiftDataContextManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A675A072C6D049900983C66 /* SwiftDataContextManager.swift */; };
+		3A675A132C6D080800983C66 /* Oswald-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A675A0D2C6D080800983C66 /* Oswald-Medium.ttf */; };
+		3A675A1E2C6D083C00983C66 /* Oswald-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A675A1D2C6D083C00983C66 /* Oswald-Light.ttf */; };
+		3A675A202C6D084B00983C66 /* Oswald-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A675A1F2C6D084B00983C66 /* Oswald-Bold.ttf */; };
+		3A675A222C6D085600983C66 /* Oswald-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A675A212C6D085600983C66 /* Oswald-ExtraLight.ttf */; };
+		3A675A242C6D08C500983C66 /* Oswald-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A675A232C6D08C500983C66 /* Oswald-Regular.ttf */; };
+		3A675A262C6D08CF00983C66 /* Oswald-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A675A252C6D08CF00983C66 /* Oswald-SemiBold.ttf */; };
+		3A675A2C2C6D0BD300983C66 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A675A2B2C6D0BD300983C66 /* Font+Extension.swift */; };
+		3AB294F72C719BEA0026F5AA /* Gravel.ahap in Resources */ = {isa = PBXBuildFile; fileRef = 3AB294F62C719BEA0026F5AA /* Gravel.ahap */; };
+		3AB294FF2C71AAAB0026F5AA /* Sparkle.ahap in Resources */ = {isa = PBXBuildFile; fileRef = 3AB294FE2C71AAAB0026F5AA /* Sparkle.ahap */; };
+		3AB295032C71AC900026F5AA /* Inflate.ahap in Resources */ = {isa = PBXBuildFile; fileRef = 3AB295022C71AC900026F5AA /* Inflate.ahap */; };
+		3AB295072C71B1EF0026F5AA /* Transition.ahap in Resources */ = {isa = PBXBuildFile; fileRef = 3AB295062C71B1EF0026F5AA /* Transition.ahap */; };
+		3AB2950A2C71B6DB0026F5AA /* CoreHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB295092C71B6DB0026F5AA /* CoreHapticsManager.swift */; };
+		3ABEE1782C6D14090098B08E /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEE1772C6D14090098B08E /* Color+Extension.swift */; };
+		3ABEE17B2C6D20BA0098B08E /* CheckTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEE17A2C6D20BA0098B08E /* CheckTaskView.swift */; };
+		3ABEE1942C6EDC1A0098B08E /* Oswald.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEE1932C6EDC1A0098B08E /* Oswald.swift */; };
+		3ABEE1962C6EDC8E0098B08E /* CallToActionButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEE1952C6EDC8E0098B08E /* CallToActionButtonStyle.swift */; };
+		3ABEE1982C6EDD7F0098B08E /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEE1972C6EDD7F0098B08E /* AppColors.swift */; };
+		3ABEE19B2C70DB960098B08E /* TaskListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEE19A2C70DB960098B08E /* TaskListCoordinator.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3ABEE1842C6DB7B00098B08E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A6759D12C6D033A00983C66 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A6759D82C6D033A00983C66;
+			remoteInfo = Monotask;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3A6759D92C6D033A00983C66 /* Monotask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Monotask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A6759DC2C6D033A00983C66 /* MonotaskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonotaskApp.swift; sourceTree = "<group>"; };
-		3A6759DE2C6D033A00983C66 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3A6759E02C6D033B00983C66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A6759E32C6D033B00983C66 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3A6759EA2C6D048F00983C66 /* TaskLocalEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskLocalEntity.swift; sourceTree = "<group>"; };
+		3A6759EE2C6D048F00983C66 /* TaskListRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListRepository.swift; sourceTree = "<group>"; };
+		3A6759F12C6D048F00983C66 /* RewardModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardModel.swift; sourceTree = "<group>"; };
+		3A6759F32C6D048F00983C66 /* RewardPieceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardPieceModel.swift; sourceTree = "<group>"; };
+		3A6759F52C6D048F00983C66 /* TaskModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		3A6759F82C6D048F00983C66 /* TaskListUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListUseCase.swift; sourceTree = "<group>"; };
+		3A6759FB2C6D048F00983C66 /* TaskListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
+		3A6759FC2C6D048F00983C66 /* TaskListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListViewModel.swift; sourceTree = "<group>"; };
+		3A675A072C6D049900983C66 /* SwiftDataContextManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftDataContextManager.swift; sourceTree = "<group>"; };
+		3A675A0D2C6D080800983C66 /* Oswald-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Medium.ttf"; sourceTree = "<group>"; };
+		3A675A1D2C6D083C00983C66 /* Oswald-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Light.ttf"; sourceTree = "<group>"; };
+		3A675A1F2C6D084B00983C66 /* Oswald-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Bold.ttf"; sourceTree = "<group>"; };
+		3A675A212C6D085600983C66 /* Oswald-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-ExtraLight.ttf"; sourceTree = "<group>"; };
+		3A675A232C6D08C500983C66 /* Oswald-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Regular.ttf"; sourceTree = "<group>"; };
+		3A675A252C6D08CF00983C66 /* Oswald-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-SemiBold.ttf"; sourceTree = "<group>"; };
+		3A675A272C6D090200983C66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3A675A2B2C6D0BD300983C66 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
+		3AB294F62C719BEA0026F5AA /* Gravel.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Gravel.ahap; sourceTree = "<group>"; };
+		3AB294FE2C71AAAB0026F5AA /* Sparkle.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Sparkle.ahap; path = ../../../../../../Downloads/PlayingACustomHapticPatternFromAFile/HapticSampler/AHAP/Sparkle.ahap; sourceTree = "<group>"; };
+		3AB295022C71AC900026F5AA /* Inflate.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Inflate.ahap; sourceTree = "<group>"; };
+		3AB295062C71B1EF0026F5AA /* Transition.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Transition.ahap; sourceTree = "<group>"; };
+		3AB295092C71B6DB0026F5AA /* CoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreHapticsManager.swift; sourceTree = "<group>"; };
+		3ABEE1772C6D14090098B08E /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		3ABEE17A2C6D20BA0098B08E /* CheckTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTaskView.swift; sourceTree = "<group>"; };
+		3ABEE1802C6DB7B00098B08E /* MonotaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonotaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3ABEE1932C6EDC1A0098B08E /* Oswald.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oswald.swift; sourceTree = "<group>"; };
+		3ABEE1952C6EDC8E0098B08E /* CallToActionButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallToActionButtonStyle.swift; sourceTree = "<group>"; };
+		3ABEE1972C6EDD7F0098B08E /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		3ABEE19A2C70DB960098B08E /* TaskListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TaskListCoordinator.swift; path = ../../../../../../TaskListCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		3A6759D62C6D033A00983C66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3ABEE17D2C6DB7B00098B08E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -44,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				3A6759D92C6D033A00983C66 /* Monotask.app */,
+				3ABEE1802C6DB7B00098B08E /* MonotaskTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -51,8 +123,12 @@
 		3A6759DB2C6D033A00983C66 /* Monotask */ = {
 			isa = PBXGroup;
 			children = (
+				3A675A272C6D090200983C66 /* Info.plist */,
+				3A675A092C6D049900983C66 /* Infrastructure */,
+				3A675A292C6D0BBD00983C66 /* Modules */,
+				3A675A282C6D0BA800983C66 /* Utilities */,
+				3A675A0B2C6D07F500983C66 /* Resource */,
 				3A6759DC2C6D033A00983C66 /* MonotaskApp.swift */,
-				3A6759DE2C6D033A00983C66 /* ContentView.swift */,
 				3A6759E02C6D033B00983C66 /* Assets.xcassets */,
 				3A6759E22C6D033B00983C66 /* Preview Content */,
 			);
@@ -65,6 +141,261 @@
 				3A6759E32C6D033B00983C66 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3A6759EB2C6D048F00983C66 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				3A6759EA2C6D048F00983C66 /* TaskLocalEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		3A6759EC2C6D048F00983C66 /* SwiftData */ = {
+			isa = PBXGroup;
+			children = (
+				3A6759EB2C6D048F00983C66 /* Entity */,
+			);
+			path = SwiftData;
+			sourceTree = "<group>";
+		};
+		3A6759ED2C6D048F00983C66 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				3A6759EC2C6D048F00983C66 /* SwiftData */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		3A6759EF2C6D048F00983C66 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				3A6759EE2C6D048F00983C66 /* TaskListRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		3A6759F02C6D048F00983C66 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				3A6759ED2C6D048F00983C66 /* Local */,
+				3A6759EF2C6D048F00983C66 /* Repository */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		3A6759F22C6D048F00983C66 /* Reward */ = {
+			isa = PBXGroup;
+			children = (
+				3A6759F12C6D048F00983C66 /* RewardModel.swift */,
+			);
+			path = Reward;
+			sourceTree = "<group>";
+		};
+		3A6759F42C6D048F00983C66 /* RewardPiece */ = {
+			isa = PBXGroup;
+			children = (
+				3A6759F32C6D048F00983C66 /* RewardPieceModel.swift */,
+			);
+			path = RewardPiece;
+			sourceTree = "<group>";
+		};
+		3A6759F62C6D048F00983C66 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				3A6759F52C6D048F00983C66 /* TaskModel.swift */,
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
+		3A6759F72C6D048F00983C66 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				3A6759F22C6D048F00983C66 /* Reward */,
+				3A6759F42C6D048F00983C66 /* RewardPiece */,
+				3A6759F62C6D048F00983C66 /* Task */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		3A6759F92C6D048F00983C66 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				3A6759F82C6D048F00983C66 /* TaskListUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		3A6759FA2C6D048F00983C66 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				3A6759F72C6D048F00983C66 /* Entities */,
+				3A6759F92C6D048F00983C66 /* UseCase */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		3A6759FD2C6D048F00983C66 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				3ABEE1792C6D20AF0098B08E /* View */,
+				3A6759FB2C6D048F00983C66 /* TaskListView.swift */,
+				3A6759FC2C6D048F00983C66 /* TaskListViewModel.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		3A6759FE2C6D048F00983C66 /* TaskList */ = {
+			isa = PBXGroup;
+			children = (
+				3ABEE1992C70DB850098B08E /* Coordinator */,
+				3A6759F02C6D048F00983C66 /* Data */,
+				3A6759FA2C6D048F00983C66 /* Domain */,
+				3A6759FD2C6D048F00983C66 /* Presentation */,
+			);
+			path = TaskList;
+			sourceTree = "<group>";
+		};
+		3A675A082C6D049900983C66 /* SwiftData */ = {
+			isa = PBXGroup;
+			children = (
+				3A675A072C6D049900983C66 /* SwiftDataContextManager.swift */,
+			);
+			path = SwiftData;
+			sourceTree = "<group>";
+		};
+		3A675A092C6D049900983C66 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				3AB295082C71B6C60026F5AA /* CoreHaptics */,
+				3A675A082C6D049900983C66 /* SwiftData */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		3A675A0B2C6D07F500983C66 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				3AB294F32C7186160026F5AA /* Haptics */,
+				3A675A0C2C6D07FA00983C66 /* Fonts */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		3A675A0C2C6D07FA00983C66 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3A675A2D2C6D0EC900983C66 /* Oswald */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		3A675A282C6D0BA800983C66 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				3ABEE18E2C6EDB6B0098B08E /* Design System */,
+				3A675A2A2C6D0BC600983C66 /* Extensions */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		3A675A292C6D0BBD00983C66 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				3A6759FE2C6D048F00983C66 /* TaskList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		3A675A2A2C6D0BC600983C66 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3A675A2B2C6D0BD300983C66 /* Font+Extension.swift */,
+				3ABEE1772C6D14090098B08E /* Color+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3A675A2D2C6D0EC900983C66 /* Oswald */ = {
+			isa = PBXGroup;
+			children = (
+				3A675A212C6D085600983C66 /* Oswald-ExtraLight.ttf */,
+				3A675A1D2C6D083C00983C66 /* Oswald-Light.ttf */,
+				3A675A232C6D08C500983C66 /* Oswald-Regular.ttf */,
+				3A675A0D2C6D080800983C66 /* Oswald-Medium.ttf */,
+				3A675A1F2C6D084B00983C66 /* Oswald-Bold.ttf */,
+				3A675A252C6D08CF00983C66 /* Oswald-SemiBold.ttf */,
+			);
+			path = Oswald;
+			sourceTree = "<group>";
+		};
+		3AB294F32C7186160026F5AA /* Haptics */ = {
+			isa = PBXGroup;
+			children = (
+				3AB295062C71B1EF0026F5AA /* Transition.ahap */,
+				3AB294FE2C71AAAB0026F5AA /* Sparkle.ahap */,
+				3AB294F62C719BEA0026F5AA /* Gravel.ahap */,
+				3AB295022C71AC900026F5AA /* Inflate.ahap */,
+			);
+			path = Haptics;
+			sourceTree = "<group>";
+		};
+		3AB295082C71B6C60026F5AA /* CoreHaptics */ = {
+			isa = PBXGroup;
+			children = (
+				3AB295092C71B6DB0026F5AA /* CoreHapticsManager.swift */,
+			);
+			path = CoreHaptics;
+			sourceTree = "<group>";
+		};
+		3ABEE1792C6D20AF0098B08E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3ABEE17A2C6D20BA0098B08E /* CheckTaskView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3ABEE18D2C6EDB3F0098B08E /* ButtonStyle */ = {
+			isa = PBXGroup;
+			children = (
+				3ABEE1952C6EDC8E0098B08E /* CallToActionButtonStyle.swift */,
+			);
+			path = ButtonStyle;
+			sourceTree = "<group>";
+		};
+		3ABEE18E2C6EDB6B0098B08E /* Design System */ = {
+			isa = PBXGroup;
+			children = (
+				3ABEE18D2C6EDB3F0098B08E /* ButtonStyle */,
+				3ABEE1902C6EDB780098B08E /* Colors */,
+				3ABEE18F2C6EDB720098B08E /* Fonts */,
+			);
+			path = "Design System";
+			sourceTree = "<group>";
+		};
+		3ABEE18F2C6EDB720098B08E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3ABEE1932C6EDC1A0098B08E /* Oswald.swift */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		3ABEE1902C6EDB780098B08E /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				3ABEE1972C6EDD7F0098B08E /* AppColors.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		3ABEE1992C70DB850098B08E /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				3ABEE19A2C70DB960098B08E /* TaskListCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,6 +418,24 @@
 			productReference = 3A6759D92C6D033A00983C66 /* Monotask.app */;
 			productType = "com.apple.product-type.application";
 		};
+		3ABEE17F2C6DB7B00098B08E /* MonotaskTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3ABEE1862C6DB7B00098B08E /* Build configuration list for PBXNativeTarget "MonotaskTests" */;
+			buildPhases = (
+				3ABEE17C2C6DB7B00098B08E /* Sources */,
+				3ABEE17D2C6DB7B00098B08E /* Frameworks */,
+				3ABEE17E2C6DB7B00098B08E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3ABEE1852C6DB7B00098B08E /* PBXTargetDependency */,
+			);
+			name = MonotaskTests;
+			productName = MonotaskTests;
+			productReference = 3ABEE1802C6DB7B00098B08E /* MonotaskTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -99,6 +448,10 @@
 				TargetAttributes = {
 					3A6759D82C6D033A00983C66 = {
 						CreatedOnToolsVersion = 15.4;
+					};
+					3ABEE17F2C6DB7B00098B08E = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 3A6759D82C6D033A00983C66;
 					};
 				};
 			};
@@ -116,6 +469,7 @@
 			projectRoot = "";
 			targets = (
 				3A6759D82C6D033A00983C66 /* Monotask */,
+				3ABEE17F2C6DB7B00098B08E /* MonotaskTests */,
 			);
 		};
 /* End PBXProject section */
@@ -125,8 +479,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AB295032C71AC900026F5AA /* Inflate.ahap in Resources */,
+				3A675A222C6D085600983C66 /* Oswald-ExtraLight.ttf in Resources */,
+				3A675A1E2C6D083C00983C66 /* Oswald-Light.ttf in Resources */,
+				3A675A242C6D08C500983C66 /* Oswald-Regular.ttf in Resources */,
+				3A675A132C6D080800983C66 /* Oswald-Medium.ttf in Resources */,
+				3AB294F72C719BEA0026F5AA /* Gravel.ahap in Resources */,
+				3A675A202C6D084B00983C66 /* Oswald-Bold.ttf in Resources */,
+				3A675A262C6D08CF00983C66 /* Oswald-SemiBold.ttf in Resources */,
+				3AB294FF2C71AAAB0026F5AA /* Sparkle.ahap in Resources */,
 				3A6759E42C6D033B00983C66 /* Preview Assets.xcassets in Resources */,
 				3A6759E12C6D033B00983C66 /* Assets.xcassets in Resources */,
+				3AB295072C71B1EF0026F5AA /* Transition.ahap in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3ABEE17E2C6DB7B00098B08E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,12 +508,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A6759DF2C6D033A00983C66 /* ContentView.swift in Sources */,
+				3A675A042C6D048F00983C66 /* TaskListUseCase.swift in Sources */,
+				3ABEE1942C6EDC1A0098B08E /* Oswald.swift in Sources */,
+				3ABEE1962C6EDC8E0098B08E /* CallToActionButtonStyle.swift in Sources */,
+				3A6759FF2C6D048F00983C66 /* TaskLocalEntity.swift in Sources */,
+				3A675A0A2C6D049900983C66 /* SwiftDataContextManager.swift in Sources */,
+				3AB2950A2C71B6DB0026F5AA /* CoreHapticsManager.swift in Sources */,
+				3ABEE19B2C70DB960098B08E /* TaskListCoordinator.swift in Sources */,
+				3A675A052C6D048F00983C66 /* TaskListView.swift in Sources */,
+				3ABEE1982C6EDD7F0098B08E /* AppColors.swift in Sources */,
+				3ABEE17B2C6D20BA0098B08E /* CheckTaskView.swift in Sources */,
+				3A675A002C6D048F00983C66 /* TaskListRepository.swift in Sources */,
+				3A675A2C2C6D0BD300983C66 /* Font+Extension.swift in Sources */,
+				3A675A022C6D048F00983C66 /* RewardPieceModel.swift in Sources */,
+				3A675A012C6D048F00983C66 /* RewardModel.swift in Sources */,
+				3A675A062C6D048F00983C66 /* TaskListViewModel.swift in Sources */,
 				3A6759DD2C6D033A00983C66 /* MonotaskApp.swift in Sources */,
+				3A675A032C6D048F00983C66 /* TaskModel.swift in Sources */,
+				3ABEE1782C6D14090098B08E /* Color+Extension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3ABEE17C2C6DB7B00098B08E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3ABEE1852C6DB7B00098B08E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A6759D82C6D033A00983C66 /* Monotask */;
+			targetProxy = 3ABEE1842C6DB7B00098B08E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		3A6759E52C6D033B00983C66 /* Debug */ = {
@@ -275,6 +677,7 @@
 				DEVELOPMENT_TEAM = QJ4D5LRK3T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Monotask/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -304,6 +707,7 @@
 				DEVELOPMENT_TEAM = QJ4D5LRK3T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Monotask/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -319,6 +723,42 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3ABEE1872C6DB7B00098B08E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QJ4D5LRK3T;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dikidwid.MonotaskTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Monotask.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Monotask";
+			};
+			name = Debug;
+		};
+		3ABEE1882C6DB7B00098B08E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QJ4D5LRK3T;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dikidwid.MonotaskTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Monotask.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Monotask";
 			};
 			name = Release;
 		};
@@ -339,6 +779,15 @@
 			buildConfigurations = (
 				3A6759E82C6D033C00983C66 /* Debug */,
 				3A6759E92C6D033C00983C66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3ABEE1862C6DB7B00098B08E /* Build configuration list for PBXNativeTarget "MonotaskTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3ABEE1872C6DB7B00098B08E /* Debug */,
+				3ABEE1882C6DB7B00098B08E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
