@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TaskModel: Identifiable {
+struct TaskModel: Identifiable, Hashable {
     let id: String
     let taskName: String
     var isCompleted: Bool

@@ -21,6 +21,42 @@ struct TaskListRepositoryImpl: TaskListRepository {
     @MainActor 
     func fetchTasks() -> [TaskModel] {
         do {
+            #warning("TODO: Dummy data purpose, telete this if you want to:D")
+            let totalLocalTasks = try self.container.mainContext.fetch(FetchDescriptor<TaskLocalEntity>())
+            if totalLocalTasks.count == 0 {
+                let firstTask = TaskLocalEntity(id: UUID().uuidString,
+                                           taskName: "Research on ADHD",
+                                           isCompleted: false,
+                                           subtasks: [],
+                                           reminderTime: Date(),
+                                           difficultyMetric: 0,
+                                           interestMetric: 0,
+                                           urgencyMetric: 0)
+                
+                
+                let secondTask = TaskLocalEntity(id: UUID().uuidString,
+                                           taskName: "Learning UIKit",
+                                           isCompleted: false,
+                                           subtasks: [],
+                                           reminderTime: Date(),
+                                           difficultyMetric: 0,
+                                           interestMetric: 0,
+                                           urgencyMetric: 0)
+                
+                let thirdTask = TaskLocalEntity(id: UUID().uuidString,
+                                           taskName: "Implement Clean Architecture",
+                                           isCompleted: false,
+                                           subtasks: [],
+                                           reminderTime: Date(),
+                                           difficultyMetric: 0,
+                                           interestMetric: 0,
+                                           urgencyMetric: 0)
+                
+                container.mainContext.insert(firstTask)
+                container.mainContext.insert(secondTask)
+                container.mainContext.insert(thirdTask)
+            }
+            
             let fetchDescriptor = FetchDescriptor<TaskLocalEntity>(sortBy: [SortDescriptor(\TaskLocalEntity.taskName)])
             let localTasks = try self.container.mainContext.fetch(fetchDescriptor)
             let domainModels = localTasks.compactMap { $0.toDomain() }
@@ -53,7 +89,6 @@ struct TaskListRepositoryImpl: TaskListRepository {
             
             if let existingTask = localTasks.first(where: { $0.id == updatedTask.id }) {
                 existingTask.isCompleted = updatedTask.isCompleted
-                print(updatedTask.isCompleted)
                 try self.container.mainContext.save()
             }
         } catch {

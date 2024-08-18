@@ -8,112 +8,34 @@
 import SwiftUI
 
 struct TaskListView: View {
-    
     @StateObject var taskListViewModel: TaskListViewModel
-    
-    @State var opacityFirstInnerTasks:Double = 0
-    @State var opacitySecondInnerTasks:Double = 0
-    @State var opacityThirdInnerTasks:Double = 0
-    
+
     var body: some View {
-        VStack {
-            ZStack(alignment: .center) {
-                Text("Today")
-                    .foregroundStyle(Color(hex: "707070"))
-                    .font(.oswald(.regular, size: 24))
-                    .padding(.top, 24)
-                .padding(.bottom, 10)
-                .frame(maxWidth: .infinity, alignment: .center)
-                                
-                Button {
-                    
-                } label: {
-                    Circle()
-                        .fill(.black)
-                        .frame(width: 36, height: 36)
-                        .overlay {
-                            Image(.rewardIcon)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .padding(.horizontal, 9)
-                        }
-                        .padding(.trailing, 26)
-                        .padding(.top)
-
-                }
-                .frame(maxWidth: .infinity, alignment: .trailing)
-            }
-            .frame(maxWidth: .infinity)
-            
-            Text("Research on ADHD")
-                .font(.oswaldLargeTitle)
-                .underline()
-                .padding(.bottom, 124)
-            
-            ZStack {
-                CheckTaskView()
-                    .frame(width: 240, height: 240)
-                    .onLongPressGesture(minimumDuration: 1) {
-                        withAnimation(.easeIn(duration: 1).speed(1)) {
-                            opacityFirstInnerTasks = 1
-                        }
-                        withAnimation(.easeIn(duration: 2).delay(1)) {
-                            opacitySecondInnerTasks = 1
-                        }
-                        withAnimation(.easeIn(duration: 2).delay(2)) {
-                            opacityThirdInnerTasks = 1
-                        }
-                    }
-                
-                CheckTaskView()
-                    .foregroundStyle(Color(hex: "333333"))
-                    .frame(width: 180, height: 180)
-                    .opacity(opacityFirstInnerTasks)
-                
-                CheckTaskView()
-                    .foregroundStyle(Color(hex: "5B5B5B"))
-                    .frame(width: 120, height: 120)
-                    .opacity(opacitySecondInnerTasks)
-
-                
-                CheckTaskView()
-                    .foregroundStyle(Color(hex: "8D8D8D"))
-                    .frame(width: 60, height: 60)
-                    .opacity(opacityThirdInnerTasks)
-
-            }
-            .shadow(color: opacityThirdInnerTasks == 1 ? .black.opacity(0.5) : .clear, radius: 36)
-            
-            Button {
-                
-            } label: {
-                Text("Detail")
-                    .font(.oswald(.regular, size: 20))
-                    .underline()
+        ZStack {
+            if taskListViewModel.tasks.isEmpty {
+               emptyStateView
+            } else {
+                listTasksView
             }
             
-            Spacer()
-            
-            Button {
+            VStack {
+                todayTextView
                 
-            } label: {
-                HStack {
-                    Text("+")
-                        .font(.oswald(.regular, size: 36))
-                    
-                    Text("Add Task")
-                        .font(.oswaldTitle2)
-                }
-                .foregroundStyle(.background)
-                .padding(.horizontal, 16)
-                .background(.black)
-                .cornerRadius(30)
+                Spacer()
+                
+                checkTaskView
+                
+                Spacer()
+                
+                addTaskButton
             }
-            .padding(.bottom)
+            .overlay(alignment: .topTrailing) {
+                showcaseJourneyButton
+            }
+            .padding(.top, 26)
         }
-        .tint(.black)
         .onAppear {
-            taskListViewModel.getTasks()
+            taskListViewModel.onAppearAction()
         }
     }
 }
@@ -124,4 +46,120 @@ struct TaskListView: View {
     let viewModel = TaskListViewModel(useCase: useCase)
     
     return TaskListView(taskListViewModel: viewModel)
+}
+
+// MARK: - Private
+// Extension for create each component in the view
+extension TaskListView {
+    private var emptyStateView: some View {
+        VStack(spacing: 17) {
+            Text("Create a New Task")
+                .font(.oswaldLargeEmphasized)
+                .padding(.top, 26 + 50)
+            
+            Spacer().frame(height: 160)
+            
+            Image(.emptyState)
+            
+            Text("Tip : Think Small \n, Try 1 Step, 1 Task, 1 Thought…")
+                .font(.oswaldBody)
+                .foregroundStyle(.gray)
+                .multilineTextAlignment(.center)
+            
+            Spacer()
+        }
+    }
+    
+    private var listTasksView: some View {
+        ScrollView(.horizontal) {
+            LazyHStack(spacing: 0) {
+                ForEach(taskListViewModel.tasks, id: \.self) { task in
+                    Rectangle()
+                        .fill(.clear)
+                        .overlay(alignment: .top) {
+                            Text(task.taskName)
+                                .font(.oswaldLargeTitle)
+                                .underline(taskListViewModel.currentTask == task)
+                                .multilineTextAlignment(.center)
+                                .scrollTransition(.animated, axis: .horizontal) { content, phase in
+                                    content
+                                        .scaleEffect(phase.isIdentity ? 1.0 : 0.8)
+                                        .brightness(phase.isIdentity ? 0 : 0.6)
+                                }
+                        }
+                        .frame(width: 250)
+                        .padding(.top, 80)
+                }
+            }
+            .scrollTargetLayout()
+        }
+        .scrollIndicators(.hidden)
+        .scrollTargetBehavior(.viewAligned)
+        .safeAreaPadding(.horizontal, 70)
+        .scrollPosition(id: $taskListViewModel.currentTask, anchor: .center)
+        .overlay {
+            LinearGradient(colors: taskListViewModel.whiteOverlay,
+                           startPoint: .leading,
+                           endPoint: .trailing)
+            .allowsHitTesting(false)
+        }
+    }
+    
+    private var todayTextView: some View {
+        Text("Today's Task (\(taskListViewModel.totalCompletedTasks)/\(taskListViewModel.totalTasks))")
+            .foregroundStyle(Color(hex: "707070"))
+            .font(.oswald(.regular, size: 24))
+            .frame(maxWidth: .infinity, alignment: .center)
+            .padding(.top, 2.5)
+    }
+    
+    private var addTaskButton: some View {
+        Button {
+            taskListViewModel.addNewTask()
+        } label: {
+            HStack {
+                Image(systemName: "plus")
+                    .bold()
+                
+                Text("Add Task")
+            }
+        }
+        .buttonStyle(CallToActionButtonStyle())
+        .padding(.bottom)
+    }
+    
+    private var checkTaskView: some View {
+        CheckTaskView(task: taskListViewModel.currentTask) { taskListViewModel.updateTaskStatus($0) }
+    }
+    
+    private var showcaseJourneyButton: some View {
+        Button {
+            
+        } label: {
+            Circle()
+                .foregroundStyle(.black)
+                .frame(width: 36, height: 36)
+                .overlay {
+                    Image(.showcaseJourneyIcon)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .padding(.vertical, 5)
+                        .padding(.horizontal, 10)
+                }
+                .overlay(alignment: .topTrailing) {
+                    if taskListViewModel.hasNewJourneyPiece {
+                        Circle()
+                            .fill(Color.appAccentColor)
+                            .overlay {
+                                Image(systemName: "exclamationmark")
+                                    .imageScale(.small)
+                                    .foregroundStyle(.black)
+                            }
+                            .frame(width: 18, height: 18)
+                            .offset(x: 7, y: -5)
+                    }
+                }
+                .padding(.trailing, 26)
+        }
+    }
 }

@@ -7,20 +7,7 @@
 
 import SwiftUI
 
-public enum Oswald: String {
-    case extraLight = "Oswald-ExtraLight"
-    case light = "Oswald-Light"
-    case regular = "Oswald-Regular"
-    case medium = "Oswald-Medium"
-    case semiBold = "Oswald-SemiBold"
-    case bold = "Oswald-Bold"
-}
-
 extension Font {
-    static func oswald(_ font: Oswald, size: CGFloat) -> Font {
-        return .custom(font.rawValue, size: size)
-    }
-    
     static var oswaldLargeTitle: Font = {
         return oswald(.medium, size: 34)
     }()

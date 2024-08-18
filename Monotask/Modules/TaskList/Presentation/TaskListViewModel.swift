@@ -10,12 +10,33 @@ import SwiftUI
 
 final class TaskListViewModel: ObservableObject {
     @Published var tasks: [TaskModel] = []
-    @Published var selectedTask: TaskModel?
+    @Published var currentTask: TaskModel?
+    @Published var hasNewJourneyPiece: Bool = false
     
     let useCase: TaskListUseCase
     
+    let whiteOverlay: [Color] = [.white.opacity(0.7),
+                                   .clear,
+                                   .clear,
+                                   .clear,
+                                   .white.opacity(0.7)]
+    
+    var totalTasks: Int {
+        tasks.count
+    }
+    
+    var totalCompletedTasks: Int {
+        tasks.filter { $0.isCompleted }.count
+    }
+    
+    
     init(useCase: TaskListUseCase) {
         self.useCase = useCase
+    }
+    
+    func onAppearAction() {
+        getTasks()
+        currentTask = tasks.first
     }
     
     func getTasks() {
@@ -36,9 +57,10 @@ final class TaskListViewModel: ObservableObject {
         getTasks()
     }
     
-    func updateTaskStatus(_ updatedTask: Binding<TaskModel>) {
-        updatedTask.wrappedValue.isCompleted.toggle()
-        useCase.updateTaskStatus(updatedTask.wrappedValue)
+    func updateTaskStatus(_ isCompleted: Bool) {
+        currentTask?.isCompleted = isCompleted
+        guard let updatedTask = currentTask else { return }
+        useCase.updateTaskStatus(updatedTask)
         getTasks()
     }
 }

@@ -6,8 +6,139 @@
 //
 
 import SwiftUI
+import CoreHaptics
+import AVFAudio
 
-struct CheckTaskView: Shape {
+struct CheckTaskView: View {
+    @State private var coreHapticEngine: CHHapticEngine?
+    
+    @State private var isPressing: Bool = false
+    @State private var outerLayerScale: Double = 0
+    @State private var firstInnerLayerOpacity: Double = 0
+    @State private var secondInnerLayerOpacity: Double = 0
+    @State private var thirdInnerLayerOpacity: Double = 0
+    @State private var fourthInnerLayerOpacity: Double = 0
+    
+    let task: TaskModel?
+    let onCheckedTask: ((Bool) -> Void?)
+    let coreHapticsManager: CoreHapticsManager = CoreHapticsManager.shared
+    
+    private let maxScale: Double = 1.2
+        
+    var body: some View {
+        ZStack {
+            CheckTaskShape()
+                .frame(width: 235, height: 235)
+                .scaleEffect(outerLayerScale)
+                .shadow(radius: 10)
+            
+            CheckTaskShape()
+                .foregroundStyle(Color(hex: "454545"))
+                .frame(width: 195, height: 195)
+                .opacity(firstInnerLayerOpacity)
+                .scaleEffect(firstInnerLayerOpacity)
+                .shadow(color: .black.opacity(0.25), radius: 24, y: 4)
+
+            CheckTaskShape()
+                .foregroundStyle(Color(hex: "666666"))
+                .frame(width: 155, height: 155)
+                .opacity(secondInnerLayerOpacity)
+                .scaleEffect(secondInnerLayerOpacity)
+                .shadow(color: .black.opacity(0.25), radius: 24, y: 4)
+
+            CheckTaskShape()
+                .foregroundStyle(Color(hex: "7B7B7B"))
+                .frame(width: 115, height: 115)
+                .opacity(thirdInnerLayerOpacity)
+                .scaleEffect(thirdInnerLayerOpacity)
+                .shadow(color: .black.opacity(0.25), radius: 24, y: 4)
+
+            CheckTaskShape()
+                .foregroundStyle(Color(hex: "A0A0A0"))
+                .frame(width: 75, height: 75)
+                .opacity(fourthInnerLayerOpacity)
+                .scaleEffect(fourthInnerLayerOpacity)
+                .shadow(color: .black.opacity(0.25), radius: 24, y: 4)
+
+        }
+        .scaleEffect(isPressing ? maxScale : 1)
+        .onLongPressGesture(minimumDuration: 2) {
+            withAnimation(.bouncy(duration: 1)) {
+                firstInnerLayerOpacity = maxScale
+                secondInnerLayerOpacity = maxScale
+                thirdInnerLayerOpacity = maxScale
+                fourthInnerLayerOpacity = maxScale
+                outerLayerScale = maxScale
+                onCheckedTask(true)
+                coreHapticsManager.playHapticsFile(named: "Sparkle")
+                coreHapticsManager.playHapticsFile(named: "Gravel")
+            }
+        } onPressingChanged: { isPressing in
+            if isPressing {
+                withAnimation(.bouncy) {
+                    self.isPressing = true
+                }
+                withAnimation(.easeIn(duration: 0.1).speed(0.5)) {
+                    firstInnerLayerOpacity = 1
+                }
+                withAnimation(.easeIn(duration: 0.3).speed(0.5)) {
+                    secondInnerLayerOpacity = 1
+                }
+                withAnimation(.easeIn(duration: 0.5).speed(0.5)) {
+                    thirdInnerLayerOpacity = 1
+                }
+                withAnimation(.easeIn(duration: 0.7).speed(0.5)) {
+                    fourthInnerLayerOpacity = 1
+                }
+                coreHapticsManager.playHapticsFile(named: "Transition")
+            } else {
+                withAnimation(.bouncy) {
+                    self.isPressing = false
+                }
+                withAnimation(.interactiveSpring(duration: 1)) {
+                    outerLayerScale = 1
+                }
+                withAnimation(.easeOut(duration: 1)) {
+                    firstInnerLayerOpacity = 0
+                }
+                withAnimation(.easeOut(duration: 1)) {
+                    secondInnerLayerOpacity = 0
+                }
+                withAnimation(.easeOut(duration: 1)) {
+                    thirdInnerLayerOpacity = 0
+                }
+                withAnimation(.easeOut(duration: 1)) {
+                    fourthInnerLayerOpacity = 0
+                }
+                onCheckedTask(false)
+                coreHapticsManager.cancelHaptics()
+            }
+        }
+        .sensoryFeedback(.impact(flexibility: .solid, intensity: 1), trigger: isPressing)
+        .onChange(of: task) {
+            guard let task = task else { return }
+            if task.isCompleted {
+                withAnimation(.interpolatingSpring) {
+                    firstInnerLayerOpacity = maxScale
+                    secondInnerLayerOpacity = maxScale
+                    thirdInnerLayerOpacity = maxScale
+                    fourthInnerLayerOpacity = maxScale
+                    outerLayerScale = maxScale
+                }
+            } else {
+                withAnimation(.interpolatingSpring) {
+                    firstInnerLayerOpacity = 0
+                    secondInnerLayerOpacity = 0
+                    thirdInnerLayerOpacity = 0
+                    fourthInnerLayerOpacity = 0
+                    outerLayerScale = 1
+                }
+            }
+        }
+    }
+}
+
+struct CheckTaskShape: Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()
         let width = rect.size.width
@@ -201,10 +332,4 @@ struct RoundedStar: Shape {
         path.closeSubpath()
         return path
     }
-}
-
-
-
-#Preview {
-    CheckTaskView()
 }

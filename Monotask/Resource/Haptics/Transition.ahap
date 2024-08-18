@@ -1,0 +1,2390 @@
+{
+  "Version": 1,
+  "Pattern": [
+    {
+      "ParameterCurve": {
+        "ParameterID": "HapticIntensityControl",
+        "Time": 0,
+        "ParameterCurveControlPoints": [
+          {
+            "Time": 0,
+            "ParameterValue": 0.0007814312
+          },
+          {
+            "Time": 0.0010204081,
+            "ParameterValue": 0.0007814312
+          },
+          {
+            "Time": 0.0417137,
+            "ParameterValue": 0.8150598
+          },
+          {
+            "Time": 0.056299105,
+            "ParameterValue": 0.34853327
+          },
+          {
+            "Time": 0.08444866,
+            "ParameterValue": 0.6280726
+          },
+          {
+            "Time": 0.13641706,
+            "ParameterValue": 0.19338955
+          },
+          {
+            "Time": 0.16673197,
+            "ParameterValue": 0.29537264
+          },
+          {
+            "Time": 0.20586404,
+            "ParameterValue": 0.22367351
+          },
+          {
+            "Time": 0.24002267,
+            "ParameterValue": 0.2974978
+          },
+          {
+            "Time": 0.2710204,
+            "ParameterValue": 0.25236526
+          },
+          {
+            "Time": 0.27900225,
+            "ParameterValue": 0.35569993
+          },
+          {
+            "Time": 0.32301587,
+            "ParameterValue": 0.26408827
+          },
+          {
+            "Time": 0.3270068,
+            "ParameterValue": 0.31922054
+          },
+          {
+            "Time": 0.35999998,
+            "ParameterValue": 0.26250622
+          },
+          {
+            "Time": 0.4,
+            "ParameterValue": 0.3028831
+          },
+          {
+            "Time": 0.44600907,
+            "ParameterValue": 0.24955973
+          },
+          {
+            "Time": 0.4510204,
+            "ParameterValue": 0.32800764
+          },
+          {
+            "Time": 0.49600905,
+            "ParameterValue": 0.23307821
+          },
+          {
+            "Time": 0.5309977,
+            "ParameterValue": 0.23648234
+          },
+          {
+            "Time": 0.53401357,
+            "ParameterValue": 0.31573713
+          },
+          {
+            "Time": 0.58201814,
+            "ParameterValue": 0.2255948
+          },
+          {
+            "Time": 0.6209977,
+            "ParameterValue": 0.32429567
+          },
+          {
+            "Time": 0.6409977,
+            "ParameterValue": 0.24293491
+          },
+          {
+            "Time": 0.64301586,
+            "ParameterValue": 0.35450175
+          },
+          {
+            "Time": 0.66401356,
+            "ParameterValue": 0.30548233
+          },
+          {
+            "Time": 0.7260091,
+            "ParameterValue": 0.26856956
+          },
+          {
+            "Time": 0.72900224,
+            "ParameterValue": 0.3662136
+          },
+          {
+            "Time": 0.75,
+            "ParameterValue": 0.2718004
+          },
+          {
+            "Time": 0.7509977,
+            "ParameterValue": 0.3540453
+          },
+          {
+            "Time": 0.7780045,
+            "ParameterValue": 0.3334147
+          },
+          {
+            "Time": 0.79600906,
+            "ParameterValue": 0.4487664
+          },
+          {
+            "Time": 0.81299317,
+            "ParameterValue": 0.35809717
+          },
+          {
+            "Time": 0.8150113,
+            "ParameterValue": 0.46604308
+          },
+          {
+            "Time": 0.8370068,
+            "ParameterValue": 0.3624075
+          },
+          {
+            "Time": 0.85401356,
+            "ParameterValue": 0.35266578
+          },
+          {
+            "Time": 0.87,
+            "ParameterValue": 0.45335963
+          },
+          {
+            "Time": 0.896009,
+            "ParameterValue": 0.3465101
+          },
+          {
+            "Time": 0.9019954,
+            "ParameterValue": 0.45661828
+          },
+          {
+            "Time": 0.9229932,
+            "ParameterValue": 0.3405947
+          },
+          {
+            "Time": 0.9240136,
+            "ParameterValue": 0.42324954
+          },
+          {
+            "Time": 0.9509977,
+            "ParameterValue": 0.32719147
+          },
+          {
+            "Time": 0.9570068,
+            "ParameterValue": 0.4309625
+          },
+          {
+            "Time": 0.98199546,
+            "ParameterValue": 0.30265087
+          },
+          {
+            "Time": 0.99199545,
+            "ParameterValue": 0.42141038
+          },
+          {
+            "Time": 1.0266657,
+            "ParameterValue": 0.37195736
+          },
+          {
+            "Time": 1.0533314,
+            "ParameterValue": 0.37414292
+          },
+          {
+            "Time": 1.0699999,
+            "ParameterValue": 0.42504975
+          },
+          {
+            "Time": 1.096009,
+            "ParameterValue": 0.3174011
+          },
+          {
+            "Time": 1.1520181,
+            "ParameterValue": 0.50088024
+          },
+          {
+            "Time": 1.1780045,
+            "ParameterValue": 0.37294054
+          },
+          {
+            "Time": 1.1850113,
+            "ParameterValue": 0.50143224
+          },
+          {
+            "Time": 1.236009,
+            "ParameterValue": 0.3823845
+          },
+          {
+            "Time": 1.2380046,
+            "ParameterValue": 0.5043572
+          },
+          {
+            "Time": 1.2640135,
+            "ParameterValue": 0.38574076
+          },
+          {
+            "Time": 1.2700226,
+            "ParameterValue": 0.51006675
+          },
+          {
+            "Time": 1.3780272,
+            "ParameterValue": 0.38588157
+          },
+          {
+            "Time": 1.3790249,
+            "ParameterValue": 0.30462617
+          },
+          {
+            "Time": 1.4310204,
+            "ParameterValue": 0.43230936
+          },
+          {
+            "Time": 1.4380271,
+            "ParameterValue": 0.578259
+          },
+          {
+            "Time": 1.4600227,
+            "ParameterValue": 0.4161348
+          },
+          {
+            "Time": 1.465034,
+            "ParameterValue": 0.32011434
+          },
+          {
+            "Time": 1.4820181,
+            "ParameterValue": 0.44789135
+          },
+          {
+            "Time": 1.5240363,
+            "ParameterValue": 0.5568614
+          },
+          {
+            "Time": 1.5470295,
+            "ParameterValue": 0.3968933
+          },
+          {
+            "Time": 1.5520182,
+            "ParameterValue": 0.53549004
+          },
+          {
+            "Time": 1.5630172,
+            "ParameterValue": 0.4030894
+          },
+          {
+            "Time": 1.5823479,
+            "ParameterValue": 0.53891915
+          },
+          {
+            "Time": 1.6025324,
+            "ParameterValue": 0.41168097
+          },
+          {
+            "Time": 1.6110203,
+            "ParameterValue": 0.5430802
+          },
+          {
+            "Time": 1.6320407,
+            "ParameterValue": 0.41107696
+          },
+          {
+            "Time": 1.6380272,
+            "ParameterValue": 0.5384428
+          },
+          {
+            "Time": 1.6600226,
+            "ParameterValue": 0.39581397
+          },
+          {
+            "Time": 1.6650339,
+            "ParameterValue": 0.5372121
+          },
+          {
+            "Time": 1.691043,
+            "ParameterValue": 0.40807074
+          },
+          {
+            "Time": 1.6970295,
+            "ParameterValue": 0.5443214
+          },
+          {
+            "Time": 1.7190249,
+            "ParameterValue": 0.41511354
+          },
+          {
+            "Time": 1.7520407,
+            "ParameterValue": 0.54895645
+          },
+          {
+            "Time": 1.7780272,
+            "ParameterValue": 0.4166931
+          },
+          {
+            "Time": 1.7990462,
+            "ParameterValue": 0.5619152
+          },
+          {
+            "Time": 1.8320408,
+            "ParameterValue": 0.4393044
+          },
+          {
+            "Time": 1.8515558,
+            "ParameterValue": 0.58008486
+          },
+          {
+            "Time": 1.8740427,
+            "ParameterValue": 0.46878898
+          },
+          {
+            "Time": 1.8980418,
+            "ParameterValue": 0.5958162
+          },
+          {
+            "Time": 1.9240509,
+            "ParameterValue": 0.47486308
+          },
+          {
+            "Time": 1.9340625,
+            "ParameterValue": 0.6080542
+          },
+          {
+            "Time": 1.9507854,
+            "ParameterValue": 0.5391804
+          },
+          {
+            "Time": 1.9625206,
+            "ParameterValue": 0.6329811
+          },
+          {
+            "Time": 1.9808052,
+            "ParameterValue": 0.53439415
+          },
+          {
+            "Time": 1.9923499,
+            "ParameterValue": 0.6791221
+          },
+          {
+            "Time": 2.0660543,
+            "ParameterValue": 0.548363
+          },
+          {
+            "Time": 2.08805,
+            "ParameterValue": 0.41069397
+          },
+          {
+            "Time": 2.0980499,
+            "ParameterValue": 0.53724134
+          },
+          {
+            "Time": 2.1190476,
+            "ParameterValue": 0.41438678
+          },
+          {
+            "Time": 2.1520407,
+            "ParameterValue": 0.540828
+          },
+          {
+            "Time": 2.1690476,
+            "ParameterValue": 0.42911622
+          },
+          {
+            "Time": 2.2060318,
+            "ParameterValue": 0.5201615
+          },
+          {
+            "Time": 2.2370296,
+            "ParameterValue": 0.40425318
+          },
+          {
+            "Time": 2.2660317,
+            "ParameterValue": 0.53161395
+          },
+          {
+            "Time": 2.2930386,
+            "ParameterValue": 0.53550965
+          },
+          {
+            "Time": 2.3190248,
+            "ParameterValue": 0.39723498
+          },
+          {
+            "Time": 2.325034,
+            "ParameterValue": 0.544025
+          },
+          {
+            "Time": 2.352018,
+            "ParameterValue": 0.52974975
+          },
+          {
+            "Time": 2.3740137,
+            "ParameterValue": 0.42886344
+          },
+          {
+            "Time": 2.379025,
+            "ParameterValue": 0.54162174
+          },
+          {
+            "Time": 2.4050112,
+            "ParameterValue": 0.41388422
+          },
+          {
+            "Time": 2.4110203,
+            "ParameterValue": 0.5204961
+          },
+          {
+            "Time": 2.4830158,
+            "ParameterValue": 0.43104687
+          },
+          {
+            "Time": 2.52,
+            "ParameterValue": 0.30579334
+          },
+          {
+            "Time": 2.5509977,
+            "ParameterValue": 0.42640078
+          },
+          {
+            "Time": 2.586009,
+            "ParameterValue": 0.52170163
+          },
+          {
+            "Time": 2.606009,
+            "ParameterValue": 0.41329202
+          },
+          {
+            "Time": 2.6070068,
+            "ParameterValue": 0.3260536
+          },
+          {
+            "Time": 2.6329932,
+            "ParameterValue": 0.44417432
+          },
+          {
+            "Time": 2.6390023,
+            "ParameterValue": 0.5504356
+          },
+          {
+            "Time": 2.6919954,
+            "ParameterValue": 0.3944954
+          },
+          {
+            "Time": 2.6929932,
+            "ParameterValue": 0.55991274
+          },
+          {
+            "Time": 2.7449887,
+            "ParameterValue": 0.40617815
+          },
+          {
+            "Time": 2.7490022,
+            "ParameterValue": 0.4958049
+          },
+          {
+            "Time": 2.7779818,
+            "ParameterValue": 0.39975974
+          },
+          {
+            "Time": 2.78,
+            "ParameterValue": 0.5253275
+          },
+          {
+            "Time": 2.8109977,
+            "ParameterValue": 0.42019176
+          },
+          {
+            "Time": 2.8389795,
+            "ParameterValue": 0.5233496
+          },
+          {
+            "Time": 2.886984,
+            "ParameterValue": 0.45327556
+          },
+          {
+            "Time": 2.906984,
+            "ParameterValue": 0.5252483
+          },
+          {
+            "Time": 2.9259863,
+            "ParameterValue": 0.384578
+          },
+          {
+            "Time": 2.9519727,
+            "ParameterValue": 0.61632055
+          },
+          {
+            "Time": 2.9829705,
+            "ParameterValue": 0.44655213
+          },
+          {
+            "Time": 3.000975,
+            "ParameterValue": 0.45353523
+          },
+          {
+            "Time": 3.0019727,
+            "ParameterValue": 0.44671878
+          },
+          {
+            "Time": 3.0199773,
+            "ParameterValue": 0.54251075
+          },
+          {
+            "Time": 3.0399773,
+            "ParameterValue": 0.5636693
+          },
+          {
+            "Time": 3.060975,
+            "ParameterValue": 0.43309116
+          },
+          {
+            "Time": 3.0729704,
+            "ParameterValue": 0.543072
+          },
+          {
+            "Time": 3.0969615,
+            "ParameterValue": 0.37959278
+          },
+          {
+            "Time": 3.1429706,
+            "ParameterValue": 0.54267794
+          },
+          {
+            "Time": 3.163968,
+            "ParameterValue": 0.45427912
+          },
+          {
+            "Time": 3.170975,
+            "ParameterValue": 0.56200725
+          },
+          {
+            "Time": 3.2009523,
+            "ParameterValue": 0.40683025
+          },
+          {
+            "Time": 3.2019727,
+            "ParameterValue": 0.32385093
+          },
+          {
+            "Time": 3.2369614,
+            "ParameterValue": 0.43235606
+          },
+          {
+            "Time": 3.2569613,
+            "ParameterValue": 0.3049079
+          },
+          {
+            "Time": 3.2759635,
+            "ParameterValue": 0.42819113
+          },
+          {
+            "Time": 3.2929478,
+            "ParameterValue": 0.52183664
+          },
+          {
+            "Time": 3.3229477,
+            "ParameterValue": 0.4427561
+          },
+          {
+            "Time": 3.3709524,
+            "ParameterValue": 0.30434126
+          },
+          {
+            "Time": 3.3989568,
+            "ParameterValue": 0.4518445
+          },
+          {
+            "Time": 3.4609523,
+            "ParameterValue": 0.45411524
+          },
+          {
+            "Time": 3.50195,
+            "ParameterValue": 0.54607856
+          },
+          {
+            "Time": 3.5449433,
+            "ParameterValue": 0.39849424
+          },
+          {
+            "Time": 3.5519273,
+            "ParameterValue": 0.50065863
+          },
+          {
+            "Time": 3.5879364,
+            "ParameterValue": 0.51757056
+          },
+          {
+            "Time": 3.6279364,
+            "ParameterValue": 0.42360166
+          },
+          {
+            "Time": 3.6469388,
+            "ParameterValue": 0.60170585
+          },
+          {
+            "Time": 3.6719275,
+            "ParameterValue": 0.4729674
+          },
+          {
+            "Time": 3.7239227,
+            "ParameterValue": 0.46844995
+          },
+          {
+            "Time": 3.7249205,
+            "ParameterValue": 0.5821003
+          },
+          {
+            "Time": 3.7599318,
+            "ParameterValue": 0.47477594
+          },
+          {
+            "Time": 3.7609296,
+            "ParameterValue": 0.60143834
+          },
+          {
+            "Time": 3.786916,
+            "ParameterValue": 0.42610943
+          },
+          {
+            "Time": 3.8279138,
+            "ParameterValue": 0.40176475
+          },
+          {
+            "Time": 3.846916,
+            "ParameterValue": 0.52314353
+          },
+          {
+            "Time": 3.8639228,
+            "ParameterValue": 0.432419
+          },
+          {
+            "Time": 3.8749206,
+            "ParameterValue": 0.6218064
+          },
+          {
+            "Time": 3.8949206,
+            "ParameterValue": 0.46617013
+          },
+          {
+            "Time": 3.9019046,
+            "ParameterValue": 0.5722909
+          },
+          {
+            "Time": 3.9329023,
+            "ParameterValue": 0.46339574
+          },
+          {
+            "Time": 3.9619048,
+            "ParameterValue": 0.5608481
+          },
+          {
+            "Time": 4.000907,
+            "ParameterValue": 0.42088407
+          },
+          {
+            "Time": 4.0019045,
+            "ParameterValue": 0.48502964
+          },
+          {
+            "Time": 4.0599093,
+            "ParameterValue": 0.419187
+          },
+          {
+            "Time": 4.074898,
+            "ParameterValue": 0.5282715
+          },
+          {
+            "Time": 4.1148977,
+            "ParameterValue": 0.44198
+          },
+          {
+            "Time": 4.124898,
+            "ParameterValue": 0.5423953
+          },
+          {
+            "Time": 4.1458955,
+            "ParameterValue": 0.42112294
+          },
+          {
+            "Time": 4.1608844,
+            "ParameterValue": 0.5303402
+          },
+          {
+            "Time": 4.196893,
+            "ParameterValue": 0.4218871
+          },
+          {
+            "Time": 4.201882,
+            "ParameterValue": 0.5480203
+          },
+          {
+            "Time": 4.2328796,
+            "ParameterValue": 0.4110354
+          },
+          {
+            "Time": 4.2338777,
+            "ParameterValue": 0.3028901
+          },
+          {
+            "Time": 4.2648754,
+            "ParameterValue": 0.3982113
+          },
+          {
+            "Time": 4.2868934,
+            "ParameterValue": 0.39975005
+          },
+          {
+            "Time": 4.288889,
+            "ParameterValue": 0.5321409
+          },
+          {
+            "Time": 4.3188887,
+            "ParameterValue": 0.41455093
+          },
+          {
+            "Time": 4.3438773,
+            "ParameterValue": 0.4684733
+          },
+          {
+            "Time": 4.3738775,
+            "ParameterValue": 0.42535976
+          },
+          {
+            "Time": 4.391882,
+            "ParameterValue": 0.4380947
+          },
+          {
+            "Time": 4.41288,
+            "ParameterValue": 0.52953917
+          },
+          {
+            "Time": 4.428866,
+            "ParameterValue": 0.4234796
+          },
+          {
+            "Time": 4.4308615,
+            "ParameterValue": 0.5586104
+          },
+          {
+            "Time": 4.446871,
+            "ParameterValue": 0.4439945
+          },
+          {
+            "Time": 4.4858727,
+            "ParameterValue": 0.5384801
+          },
+          {
+            "Time": 4.532857,
+            "ParameterValue": 0.44467095
+          },
+          {
+            "Time": 4.589864,
+            "ParameterValue": 0.55942124
+          },
+          {
+            "Time": 4.619864,
+            "ParameterValue": 0.433593
+          },
+          {
+            "Time": 4.638866,
+            "ParameterValue": 0.5441565
+          },
+          {
+            "Time": 4.656848,
+            "ParameterValue": 0.4373135
+          },
+          {
+            "Time": 4.6578455,
+            "ParameterValue": 0.5660042
+          },
+          {
+            "Time": 4.6748524,
+            "ParameterValue": 0.43723026
+          },
+          {
+            "Time": 4.740839,
+            "ParameterValue": 0.40724295
+          },
+          {
+            "Time": 4.743855,
+            "ParameterValue": 0.5271065
+          },
+          {
+            "Time": 4.7818365,
+            "ParameterValue": 0.42187187
+          },
+          {
+            "Time": 4.8108387,
+            "ParameterValue": 0.5076782
+          },
+          {
+            "Time": 4.86483,
+            "ParameterValue": 0.43045613
+          },
+          {
+            "Time": 4.876848,
+            "ParameterValue": 0.520821
+          },
+          {
+            "Time": 4.901837,
+            "ParameterValue": 0.4192748
+          },
+          {
+            "Time": 4.933832,
+            "ParameterValue": 0.4136345
+          },
+          {
+            "Time": 4.94483,
+            "ParameterValue": 0.5322257
+          },
+          {
+            "Time": 5.0008388,
+            "ParameterValue": 0.46597755
+          },
+          {
+            "Time": 5.001837,
+            "ParameterValue": 0.45906618
+          },
+          {
+            "Time": 5.0208387,
+            "ParameterValue": 0.53426003
+          },
+          {
+            "Time": 5.0428343,
+            "ParameterValue": 0.44662032
+          },
+          {
+            "Time": 5.047823,
+            "ParameterValue": 0.56895816
+          },
+          {
+            "Time": 5.0728345,
+            "ParameterValue": 0.42510384
+          },
+          {
+            "Time": 5.08483,
+            "ParameterValue": 0.5422113
+          },
+          {
+            "Time": 5.101814,
+            "ParameterValue": 0.42878637
+          },
+          {
+            "Time": 5.1298184,
+            "ParameterValue": 0.4524047
+          },
+          {
+            "Time": 5.1708164,
+            "ParameterValue": 0.41161564
+          },
+          {
+            "Time": 5.257823,
+            "ParameterValue": 0.41386303
+          },
+          {
+            "Time": 5.2588205,
+            "ParameterValue": 0.5134435
+          },
+          {
+            "Time": 5.284807,
+            "ParameterValue": 0.40329263
+          },
+          {
+            "Time": 5.300816,
+            "ParameterValue": 0.4740626
+          },
+          {
+            "Time": 5.3428116,
+            "ParameterValue": 0.41391796
+          },
+          {
+            "Time": 5.3458047,
+            "ParameterValue": 0.50573057
+          },
+          {
+            "Time": 5.384807,
+            "ParameterValue": 0.4084144
+          },
+          {
+            "Time": 5.399796,
+            "ParameterValue": 0.5077741
+          },
+          {
+            "Time": 5.415805,
+            "ParameterValue": 0.40665063
+          },
+          {
+            "Time": 5.430794,
+            "ParameterValue": 0.53225386
+          },
+          {
+            "Time": 5.4748073,
+            "ParameterValue": 0.42920667
+          },
+          {
+            "Time": 5.475805,
+            "ParameterValue": 0.5365007
+          },
+          {
+            "Time": 5.502789,
+            "ParameterValue": 0.4214808
+          },
+          {
+            "Time": 5.516803,
+            "ParameterValue": 0.5377353
+          },
+          {
+            "Time": 5.533787,
+            "ParameterValue": 0.4239823
+          },
+          {
+            "Time": 5.5447845,
+            "ParameterValue": 0.4984973
+          },
+          {
+            "Time": 5.5607934,
+            "ParameterValue": 0.41389826
+          },
+          {
+            "Time": 5.605782,
+            "ParameterValue": 0.44762272
+          },
+          {
+            "Time": 5.6407933,
+            "ParameterValue": 0.34008422
+          },
+          {
+            "Time": 5.712789,
+            "ParameterValue": 0.45659062
+          },
+          {
+            "Time": 5.7337866,
+            "ParameterValue": 0.3864612
+          },
+          {
+            "Time": 5.7387753,
+            "ParameterValue": 0.50400394
+          },
+          {
+            "Time": 5.7657824,
+            "ParameterValue": 0.41072765
+          },
+          {
+            "Time": 5.775782,
+            "ParameterValue": 0.50713676
+          },
+          {
+            "Time": 5.7927666,
+            "ParameterValue": 0.4216491
+          },
+          {
+            "Time": 5.803764,
+            "ParameterValue": 0.53362525
+          },
+          {
+            "Time": 5.833764,
+            "ParameterValue": 0.41883644
+          },
+          {
+            "Time": 5.8897734,
+            "ParameterValue": 0.5147389
+          },
+          {
+            "Time": 5.9067574,
+            "ParameterValue": 0.43324652
+          },
+          {
+            "Time": 5.962766,
+            "ParameterValue": 0.48337817
+          },
+          {
+            "Time": 6.000748,
+            "ParameterValue": 0.43767413
+          },
+          {
+            "Time": 6.0017686,
+            "ParameterValue": 0.42967233
+          },
+          {
+            "Time": 6.0197506,
+            "ParameterValue": 0.40706107
+          },
+          {
+            "Time": 6.0397506,
+            "ParameterValue": 0.46914557
+          },
+          {
+            "Time": 6.060748,
+            "ParameterValue": 0.37672526
+          },
+          {
+            "Time": 6.0757594,
+            "ParameterValue": 0.4658199
+          },
+          {
+            "Time": 6.106757,
+            "ParameterValue": 0.3778597
+          },
+          {
+            "Time": 6.134739,
+            "ParameterValue": 0.39556223
+          },
+          {
+            "Time": 6.170748,
+            "ParameterValue": 0.36771715
+          },
+          {
+            "Time": 6.1737413,
+            "ParameterValue": 0.45390296
+          },
+          {
+            "Time": 6.2117457,
+            "ParameterValue": 0.3826704
+          },
+          {
+            "Time": 6.2127438,
+            "ParameterValue": 0.4559175
+          },
+          {
+            "Time": 6.230748,
+            "ParameterValue": 0.37672088
+          },
+          {
+            "Time": 6.24873,
+            "ParameterValue": 0.3686859
+          },
+          {
+            "Time": 6.25873,
+            "ParameterValue": 0.46825516
+          },
+          {
+            "Time": 6.275737,
+            "ParameterValue": 0.38030726
+          },
+          {
+            "Time": 6.325737,
+            "ParameterValue": 0.37648967
+          },
+          {
+            "Time": 6.3267345,
+            "ParameterValue": 0.46183506
+          },
+          {
+            "Time": 6.3437414,
+            "ParameterValue": 0.38918716
+          },
+          {
+            "Time": 6.3817234,
+            "ParameterValue": 0.45804974
+          },
+          {
+            "Time": 6.412721,
+            "ParameterValue": 0.36948922
+          },
+          {
+            "Time": 6.423719,
+            "ParameterValue": 0.4822571
+          },
+          {
+            "Time": 6.44873,
+            "ParameterValue": 0.3940567
+          },
+          {
+            "Time": 6.45873,
+            "ParameterValue": 0.43294996
+          },
+          {
+            "Time": 6.49873,
+            "ParameterValue": 0.3766446
+          },
+          {
+            "Time": 6.5007253,
+            "ParameterValue": 0.45219615
+          },
+          {
+            "Time": 6.5167117,
+            "ParameterValue": 0.40482396
+          },
+          {
+            "Time": 6.517732,
+            "ParameterValue": 0.4718264
+          },
+          {
+            "Time": 6.5347166,
+            "ParameterValue": 0.39864087
+          },
+          {
+            "Time": 6.555714,
+            "ParameterValue": 0.43606687
+          },
+          {
+            "Time": 6.575714,
+            "ParameterValue": 0.34963432
+          },
+          {
+            "Time": 6.5877094,
+            "ParameterValue": 0.39360866
+          },
+          {
+            "Time": 6.630703,
+            "ParameterValue": 0.25593162
+          },
+          {
+            "Time": 6.6317234,
+            "ParameterValue": 0.30239996
+          },
+          {
+            "Time": 6.6717005,
+            "ParameterValue": 0.21474226
+          },
+          {
+            "Time": 6.776712,
+            "ParameterValue": 0.17473666
+          },
+          {
+            "Time": 6.822698,
+            "ParameterValue": 0.22383603
+          },
+          {
+            "Time": 6.880703,
+            "ParameterValue": 0.20617598
+          },
+          {
+            "Time": 6.9226985,
+            "ParameterValue": 0.2026933
+          },
+          {
+            "Time": 6.949682,
+            "ParameterValue": 0.25341234
+          },
+          {
+            "Time": 7.00068,
+            "ParameterValue": 0.22441217
+          },
+          {
+            "Time": 7.001678,
+            "ParameterValue": 0.22124192
+          },
+          {
+            "Time": 7.004694,
+            "ParameterValue": 0.24515596
+          },
+          {
+            "Time": 7.0166893,
+            "ParameterValue": 0.21994217
+          },
+          {
+            "Time": 7.017687,
+            "ParameterValue": 0.24653544
+          },
+          {
+            "Time": 7.0346937,
+            "ParameterValue": 0.2111393
+          },
+          {
+            "Time": 7.0436735,
+            "ParameterValue": 0.2152938
+          },
+          {
+            "Time": 7.0456915,
+            "ParameterValue": 0.25639087
+          },
+          {
+            "Time": 7.0546713,
+            "ParameterValue": 0.26296335
+          },
+          {
+            "Time": 7.0626755,
+            "ParameterValue": 0.23732255
+          },
+          {
+            "Time": 7.064671,
+            "ParameterValue": 0.27236286
+          },
+          {
+            "Time": 7.0726757,
+            "ParameterValue": 0.2427987
+          },
+          {
+            "Time": 7.09068,
+            "ParameterValue": 0.22553442
+          },
+          {
+            "Time": 7.0916777,
+            "ParameterValue": 0.26346436
+          },
+          {
+            "Time": 7.1036735,
+            "ParameterValue": 0.221346
+          },
+          {
+            "Time": 7.1396823,
+            "ParameterValue": 0.18932962
+          },
+          {
+            "Time": 7.1406803,
+            "ParameterValue": 0.20944756
+          },
+          {
+            "Time": 7.1756687,
+            "ParameterValue": 0.16555668
+          },
+          {
+            "Time": 7.204671,
+            "ParameterValue": 0.17737272
+          },
+          {
+            "Time": 7.221678,
+            "ParameterValue": 0.1377735
+          },
+          {
+            "Time": 7.2276645,
+            "ParameterValue": 0.15694758
+          },
+          {
+            "Time": 7.258662,
+            "ParameterValue": 0.11342618
+          },
+          {
+            "Time": 7.294671,
+            "ParameterValue": 0.10996894
+          },
+          {
+            "Time": 7.3046713,
+            "ParameterValue": 0.14610107
+          },
+          {
+            "Time": 7.325669,
+            "ParameterValue": 0.124110445
+          },
+          {
+            "Time": 7.345669,
+            "ParameterValue": 0.16077918
+          },
+          {
+            "Time": 7.362653,
+            "ParameterValue": 0.14298335
+          },
+          {
+            "Time": 7.372653,
+            "ParameterValue": 0.17611392
+          },
+          {
+            "Time": 7.38966,
+            "ParameterValue": 0.15237156
+          },
+          {
+            "Time": 7.4146485,
+            "ParameterValue": 0.1584403
+          },
+          {
+            "Time": 7.4396596,
+            "ParameterValue": 0.14150903
+          },
+          {
+            "Time": 7.4506574,
+            "ParameterValue": 0.15724137
+          },
+          {
+            "Time": 7.4976416,
+            "ParameterValue": 0.10667878
+          },
+          {
+            "Time": 7.564648,
+            "ParameterValue": 0.12491138
+          },
+          {
+            "Time": 7.6216326,
+            "ParameterValue": 0.0860464
+          },
+          {
+            "Time": 7.694626,
+            "ParameterValue": 0.06728624
+          },
+          {
+            "Time": 7.7046256,
+            "ParameterValue": 0.08044948
+          },
+          {
+            "Time": 7.7946258,
+            "ParameterValue": 0.05557025
+          },
+          {
+            "Time": 7.87263,
+            "ParameterValue": 0.08320896
+          },
+          {
+            "Time": 7.903628,
+            "ParameterValue": 0.06839742
+          },
+          {
+            "Time": 8.000612,
+            "ParameterValue": 0.06474577
+          },
+          {
+            "Time": 8.00161,
+            "ParameterValue": 0.06411662
+          },
+          {
+            "Time": 8.007619,
+            "ParameterValue": 0.058722798
+          },
+          {
+            "Time": 8.017619,
+            "ParameterValue": 0.064836875
+          },
+          {
+            "Time": 8.025623,
+            "ParameterValue": 0.05785433
+          },
+          {
+            "Time": 8.026621,
+            "ParameterValue": 0.06446879
+          },
+          {
+            "Time": 8.035624,
+            "ParameterValue": 0.05768637
+          },
+          {
+            "Time": 8.053628,
+            "ParameterValue": 0.055089958
+          },
+          {
+            "Time": 8.0546255,
+            "ParameterValue": 0.06394605
+          },
+          {
+            "Time": 8.062631,
+            "ParameterValue": 0.057154924
+          },
+          {
+            "Time": 8.064649,
+            "ParameterValue": 0.06301649
+          },
+          {
+            "Time": 8.084648,
+            "ParameterValue": 0.052268427
+          },
+          {
+            "Time": 8.092653,
+            "ParameterValue": 0.057394918
+          },
+          {
+            "Time": 8.103651,
+            "ParameterValue": 0.048855577
+          },
+          {
+            "Time": 8.104649,
+            "ParameterValue": 0.05630477
+          },
+          {
+            "Time": 8.121655,
+            "ParameterValue": 0.04391839
+          },
+          {
+            "Time": 8.132675,
+            "ParameterValue": 0.047798138
+          },
+          {
+            "Time": 8.1486845,
+            "ParameterValue": 0.0394286
+          },
+          {
+            "Time": 8.167686,
+            "ParameterValue": 0.03489812
+          },
+          {
+            "Time": 8.194694,
+            "ParameterValue": 0.03368131
+          },
+          {
+            "Time": 8.205691,
+            "ParameterValue": 0.040176496
+          },
+          {
+            "Time": 8.221701,
+            "ParameterValue": 0.031144641
+          },
+          {
+            "Time": 8.232698,
+            "ParameterValue": 0.033777706
+          },
+          {
+            "Time": 8.266712,
+            "ParameterValue": 0.026438413
+          },
+          {
+            "Time": 8.267733,
+            "ParameterValue": 0.032743726
+          },
+          {
+            "Time": 8.293741,
+            "ParameterValue": 0.027497781
+          },
+          {
+            "Time": 8.299727,
+            "ParameterValue": 0.033716545
+          },
+          {
+            "Time": 8.37077,
+            "ParameterValue": 0.033287328
+          },
+          {
+            "Time": 8.3727665,
+            "ParameterValue": 0.04043231
+          },
+          {
+            "Time": 8.389773,
+            "ParameterValue": 0.034388408
+          },
+          {
+            "Time": 8.413787,
+            "ParameterValue": 0.03557415
+          },
+          {
+            "Time": 8.429796,
+            "ParameterValue": 0.031826828
+          },
+          {
+            "Time": 8.459796,
+            "ParameterValue": 0.034872808
+          },
+          {
+            "Time": 8.49882,
+            "ParameterValue": 0.025773175
+          },
+          {
+            "Time": 8.499819,
+            "ParameterValue": 0.031596307
+          },
+          {
+            "Time": 8.53483,
+            "ParameterValue": 0.027090354
+          },
+          {
+            "Time": 8.568844,
+            "ParameterValue": 0.027760891
+          },
+          {
+            "Time": 8.624875,
+            "ParameterValue": 0.018162144
+          },
+          {
+            "Time": 8.748912,
+            "ParameterValue": 0.009259354
+          },
+          {
+            "Time": 8.872971,
+            "ParameterValue": 0.012334006
+          },
+          {
+            "Time": 9.000023,
+            "ParameterValue": 0.001834706
+          },
+          {
+            "Time": 9.00102,
+            "ParameterValue": 0.0017930355
+          },
+          {
+            "Time": 9.038367,
+            "ParameterValue": 0.000747371
+          }
+        ]
+      }
+    },
+    {
+      "ParameterCurve": {
+        "ParameterID": "HapticSharpnessControl",
+        "Time": 0,
+        "ParameterCurveControlPoints": [
+          {
+            "Time": 0,
+            "ParameterValue": 0
+          },
+          {
+            "Time": 0.16253969,
+            "ParameterValue": 0
+          },
+          {
+            "Time": 0.16544218,
+            "ParameterValue": 0.5103467
+          },
+          {
+            "Time": 0.23510204,
+            "ParameterValue": 0.5386374
+          },
+          {
+            "Time": 0.29315192,
+            "ParameterValue": 0.58430725
+          },
+          {
+            "Time": 0.33668935,
+            "ParameterValue": 0.56031865
+          },
+          {
+            "Time": 0.37732425,
+            "ParameterValue": 0.5858714
+          },
+          {
+            "Time": 0.42376417,
+            "ParameterValue": 0.5466626
+          },
+          {
+            "Time": 0.4643991,
+            "ParameterValue": 0.5786983
+          },
+          {
+            "Time": 0.49342406,
+            "ParameterValue": 0.5400807
+          },
+          {
+            "Time": 0.5804989,
+            "ParameterValue": 0.5609081
+          },
+          {
+            "Time": 0.6327438,
+            "ParameterValue": 0.65985453
+          },
+          {
+            "Time": 0.64725626,
+            "ParameterValue": 0.6047166
+          },
+          {
+            "Time": 0.7198186,
+            "ParameterValue": 0.660913
+          },
+          {
+            "Time": 0.73142856,
+            "ParameterValue": 0.61070657
+          },
+          {
+            "Time": 0.740136,
+            "ParameterValue": 0.6918714
+          },
+          {
+            "Time": 0.7604535,
+            "ParameterValue": 0.6675281
+          },
+          {
+            "Time": 0.8068934,
+            "ParameterValue": 0.7504454
+          },
+          {
+            "Time": 0.8185034,
+            "ParameterValue": 0.68860435
+          },
+          {
+            "Time": 0.83011335,
+            "ParameterValue": 0.75127035
+          },
+          {
+            "Time": 0.84752834,
+            "ParameterValue": 0.69726247
+          },
+          {
+            "Time": 0.8939682,
+            "ParameterValue": 0.7307708
+          },
+          {
+            "Time": 0.9055782,
+            "ParameterValue": 0.67922914
+          },
+          {
+            "Time": 0.9142857,
+            "ParameterValue": 0.75957185
+          },
+          {
+            "Time": 0.9229932,
+            "ParameterValue": 0.67751074
+          },
+          {
+            "Time": 0.9578231,
+            "ParameterValue": 0.71846694
+          },
+          {
+            "Time": 0.9636281,
+            "ParameterValue": 0.6848795
+          },
+          {
+            "Time": 0.9810431,
+            "ParameterValue": 0.7580437
+          },
+          {
+            "Time": 0.9926531,
+            "ParameterValue": 0.7355319
+          },
+          {
+            "Time": 0.9984581,
+            "ParameterValue": 0.80427474
+          },
+          {
+            "Time": 1.0013604,
+            "ParameterValue": 0.8189073
+          },
+          {
+            "Time": 1.0129704,
+            "ParameterValue": 0.73477376
+          },
+          {
+            "Time": 1.0768254,
+            "ParameterValue": 0.7352015
+          },
+          {
+            "Time": 1.0855328,
+            "ParameterValue": 0.8191502
+          },
+          {
+            "Time": 1.1580951,
+            "ParameterValue": 0.81461495
+          },
+          {
+            "Time": 1.1726077,
+            "ParameterValue": 0.8902514
+          },
+          {
+            "Time": 1.2422675,
+            "ParameterValue": 0.8151976
+          },
+          {
+            "Time": 1.2567799,
+            "ParameterValue": 0.8791403
+          },
+          {
+            "Time": 1.2916099,
+            "ParameterValue": 0.8080275
+          },
+          {
+            "Time": 1.3293424,
+            "ParameterValue": 0.8161575
+          },
+          {
+            "Time": 1.3438548,
+            "ParameterValue": 0.89559126
+          },
+          {
+            "Time": 1.3815873,
+            "ParameterValue": 0.89362186
+          },
+          {
+            "Time": 1.4280272,
+            "ParameterValue": 0.96797395
+          },
+          {
+            "Time": 1.4396371,
+            "ParameterValue": 0.86889654
+          },
+          {
+            "Time": 1.5121995,
+            "ParameterValue": 0.93930024
+          },
+          {
+            "Time": 1.526712,
+            "ParameterValue": 0.83047676
+          },
+          {
+            "Time": 1.5992743,
+            "ParameterValue": 0.91545814
+          },
+          {
+            "Time": 1.6776416,
+            "ParameterValue": 0.83960587
+          },
+          {
+            "Time": 1.7124716,
+            "ParameterValue": 0.9105195
+          },
+          {
+            "Time": 1.726984,
+            "ParameterValue": 0.82022035
+          },
+          {
+            "Time": 1.738594,
+            "ParameterValue": 0.9108484
+          },
+          {
+            "Time": 1.7647165,
+            "ParameterValue": 0.8541822
+          },
+          {
+            "Time": 1.7734239,
+            "ParameterValue": 0.9236271
+          },
+          {
+            "Time": 1.8140589,
+            "ParameterValue": 0.82174754
+          },
+          {
+            "Time": 1.8372788,
+            "ParameterValue": 0.8227955
+          },
+          {
+            "Time": 1.8837187,
+            "ParameterValue": 0.88453996
+          },
+          {
+            "Time": 1.9011337,
+            "ParameterValue": 0.80980766
+          },
+          {
+            "Time": 1.9127437,
+            "ParameterValue": 0.8990589
+          },
+          {
+            "Time": 1.9562811,
+            "ParameterValue": 0.7981225
+          },
+          {
+            "Time": 1.9998186,
+            "ParameterValue": 0.88995796
+          },
+          {
+            "Time": 2.002721,
+            "ParameterValue": 0.8497346
+          },
+          {
+            "Time": 2.054966,
+            "ParameterValue": 0.89154017
+          },
+          {
+            "Time": 2.0636735,
+            "ParameterValue": 0.8171575
+          },
+          {
+            "Time": 2.1391382,
+            "ParameterValue": 0.9026511
+          },
+          {
+            "Time": 2.1536508,
+            "ParameterValue": 0.8162488
+          },
+          {
+            "Time": 2.1971881,
+            "ParameterValue": 0.8710643
+          },
+          {
+            "Time": 2.2175055,
+            "ParameterValue": 0.8147593
+          },
+          {
+            "Time": 2.2407255,
+            "ParameterValue": 0.7977682
+          },
+          {
+            "Time": 2.284263,
+            "ParameterValue": 0.8904971
+          },
+          {
+            "Time": 2.3045805,
+            "ParameterValue": 0.8164725
+          },
+          {
+            "Time": 2.313288,
+            "ParameterValue": 0.9003557
+          },
+          {
+            "Time": 2.3568254,
+            "ParameterValue": 0.80680114
+          },
+          {
+            "Time": 2.3684354,
+            "ParameterValue": 0.8804614
+          },
+          {
+            "Time": 2.3916552,
+            "ParameterValue": 0.815091
+          },
+          {
+            "Time": 2.47873,
+            "ParameterValue": 0.822557
+          },
+          {
+            "Time": 2.49034,
+            "ParameterValue": 0.8827474
+          },
+          {
+            "Time": 2.554195,
+            "ParameterValue": 0.8433821
+          },
+          {
+            "Time": 2.6064398,
+            "ParameterValue": 0.8661611
+          },
+          {
+            "Time": 2.6296597,
+            "ParameterValue": 0.92450815
+          },
+          {
+            "Time": 2.6702948,
+            "ParameterValue": 0.84754926
+          },
+          {
+            "Time": 2.7341495,
+            "ParameterValue": 0.8783157
+          },
+          {
+            "Time": 2.7573695,
+            "ParameterValue": 0.82156104
+          },
+          {
+            "Time": 2.771882,
+            "ParameterValue": 0.9162539
+          },
+          {
+            "Time": 2.812517,
+            "ParameterValue": 0.8377018
+          },
+          {
+            "Time": 2.8589568,
+            "ParameterValue": 0.9408301
+          },
+          {
+            "Time": 2.8647618,
+            "ParameterValue": 0.8799184
+          },
+          {
+            "Time": 2.9112017,
+            "ParameterValue": 0.9477584
+          },
+          {
+            "Time": 2.9199092,
+            "ParameterValue": 0.84136426
+          },
+          {
+            "Time": 2.9344218,
+            "ParameterValue": 0.912334
+          },
+          {
+            "Time": 2.9982765,
+            "ParameterValue": 0.8965811
+          },
+          {
+            "Time": 3.001179,
+            "ParameterValue": 0.8929782
+          },
+          {
+            "Time": 3.006984,
+            "ParameterValue": 0.84568703
+          },
+          {
+            "Time": 3.0563264,
+            "ParameterValue": 0.8718872
+          },
+          {
+            "Time": 3.070839,
+            "ParameterValue": 0.82004064
+          },
+          {
+            "Time": 3.1085713,
+            "ParameterValue": 0.99355215
+          },
+          {
+            "Time": 3.1172788,
+            "ParameterValue": 0.907513
+          },
+          {
+            "Time": 3.1434011,
+            "ParameterValue": 0.9555454
+          },
+          {
+            "Time": 3.1695237,
+            "ParameterValue": 0.8977256
+          },
+          {
+            "Time": 3.195646,
+            "ParameterValue": 0.95581037
+          },
+          {
+            "Time": 3.2624035,
+            "ParameterValue": 0.89784247
+          },
+          {
+            "Time": 3.2798185,
+            "ParameterValue": 0.961139
+          },
+          {
+            "Time": 3.3494782,
+            "ParameterValue": 0.90379417
+          },
+          {
+            "Time": 3.3639908,
+            "ParameterValue": 0.96169513
+          },
+          {
+            "Time": 3.3814058,
+            "ParameterValue": 0.88155365
+          },
+          {
+            "Time": 3.506213,
+            "ParameterValue": 0.9130494
+          },
+          {
+            "Time": 3.5207255,
+            "ParameterValue": 0.838534
+          },
+          {
+            "Time": 3.5381405,
+            "ParameterValue": 0.91986656
+          },
+          {
+            "Time": 3.5526528,
+            "ParameterValue": 0.82926106
+          },
+          {
+            "Time": 3.6048977,
+            "ParameterValue": 0.87797993
+          },
+          {
+            "Time": 3.6252153,
+            "ParameterValue": 0.9544457
+          },
+          {
+            "Time": 3.6687527,
+            "ParameterValue": 0.89786637
+          },
+          {
+            "Time": 3.6832652,
+            "ParameterValue": 0.97647476
+          },
+          {
+            "Time": 3.6977777,
+            "ParameterValue": 0.92345566
+          },
+          {
+            "Time": 3.7674375,
+            "ParameterValue": 0.96897614
+          },
+          {
+            "Time": 3.8312924,
+            "ParameterValue": 0.88852125
+          },
+          {
+            "Time": 3.8545125,
+            "ParameterValue": 0.94760394
+          },
+          {
+            "Time": 3.8661222,
+            "ParameterValue": 0.8877587
+          },
+          {
+            "Time": 3.9096596,
+            "ParameterValue": 0.92042965
+          },
+          {
+            "Time": 3.9473922,
+            "ParameterValue": 0.8686927
+          },
+          {
+            "Time": 3.9996371,
+            "ParameterValue": 0.8749063
+          },
+          {
+            "Time": 4.0025396,
+            "ParameterValue": 0.86648434
+          },
+          {
+            "Time": 4.022857,
+            "ParameterValue": 0.9208607
+          },
+          {
+            "Time": 4.0402718,
+            "ParameterValue": 0.8753616
+          },
+          {
+            "Time": 4.092517,
+            "ParameterValue": 0.8993632
+          },
+          {
+            "Time": 4.1070294,
+            "ParameterValue": 0.9715341
+          },
+          {
+            "Time": 4.1302495,
+            "ParameterValue": 0.9256445
+          },
+          {
+            "Time": 4.182494,
+            "ParameterValue": 0.90304947
+          },
+          {
+            "Time": 4.1912017,
+            "ParameterValue": 0.95677525
+          },
+          {
+            "Time": 4.2347393,
+            "ParameterValue": 0.881431
+          },
+          {
+            "Time": 4.2434464,
+            "ParameterValue": 0.9220778
+          },
+          {
+            "Time": 4.321814,
+            "ParameterValue": 0.804978
+          },
+          {
+            "Time": 4.3421316,
+            "ParameterValue": 0.7953173
+          },
+          {
+            "Time": 4.365351,
+            "ParameterValue": 0.8749739
+          },
+          {
+            "Time": 4.376961,
+            "ParameterValue": 0.8373415
+          },
+          {
+            "Time": 4.403084,
+            "ParameterValue": 0.915276
+          },
+          {
+            "Time": 4.446621,
+            "ParameterValue": 0.8964958
+          },
+          {
+            "Time": 4.5133786,
+            "ParameterValue": 0.9237765
+          },
+          {
+            "Time": 4.5888433,
+            "ParameterValue": 0.9020681
+          },
+          {
+            "Time": 4.6294785,
+            "ParameterValue": 0.9209781
+          },
+          {
+            "Time": 4.6730156,
+            "ParameterValue": 0.8235052
+          },
+          {
+            "Time": 4.716553,
+            "ParameterValue": 0.92424023
+          },
+          {
+            "Time": 4.7310658,
+            "ParameterValue": 0.8880862
+          },
+          {
+            "Time": 4.803628,
+            "ParameterValue": 0.9989961
+          },
+          {
+            "Time": 4.815238,
+            "ParameterValue": 0.95772356
+          },
+          {
+            "Time": 4.8413606,
+            "ParameterValue": 0.9999959
+          },
+          {
+            "Time": 4.8848977,
+            "ParameterValue": 0.996537
+          },
+          {
+            "Time": 4.919728,
+            "ParameterValue": 0.9120937
+          },
+          {
+            "Time": 4.9284353,
+            "ParameterValue": 0.9675988
+          },
+          {
+            "Time": 4.9574604,
+            "ParameterValue": 0.9283303
+          },
+          {
+            "Time": 4.998095,
+            "ParameterValue": 0.97054857
+          },
+          {
+            "Time": 5.0009975,
+            "ParameterValue": 0.96141934
+          },
+          {
+            "Time": 5.0358276,
+            "ParameterValue": 0.96945906
+          },
+          {
+            "Time": 5.044535,
+            "ParameterValue": 0.9464343
+          },
+          {
+            "Time": 5.056145,
+            "ParameterValue": 0.9849523
+          },
+          {
+            "Time": 5.0764623,
+            "ParameterValue": 0.95006627
+          },
+          {
+            "Time": 5.0880723,
+            "ParameterValue": 0.97322273
+          },
+          {
+            "Time": 5.102585,
+            "ParameterValue": 0.94560057
+          },
+          {
+            "Time": 5.1112924,
+            "ParameterValue": 0.97316986
+          },
+          {
+            "Time": 5.1229024,
+            "ParameterValue": 0.9498241
+          },
+          {
+            "Time": 5.15483,
+            "ParameterValue": 0.94016093
+          },
+          {
+            "Time": 5.1635375,
+            "ParameterValue": 0.9055129
+          },
+          {
+            "Time": 5.1780496,
+            "ParameterValue": 0.9343112
+          },
+          {
+            "Time": 5.204172,
+            "ParameterValue": 0.89717877
+          },
+          {
+            "Time": 5.2360997,
+            "ParameterValue": 0.9009818
+          },
+          {
+            "Time": 5.265125,
+            "ParameterValue": 0.93770415
+          },
+          {
+            "Time": 5.291247,
+            "ParameterValue": 0.9051632
+          },
+          {
+            "Time": 5.349297,
+            "ParameterValue": 0.9399457
+          },
+          {
+            "Time": 5.366712,
+            "ParameterValue": 0.95209044
+          },
+          {
+            "Time": 5.398639,
+            "ParameterValue": 0.96256226
+          },
+          {
+            "Time": 5.4131517,
+            "ParameterValue": 0.99938923
+          },
+          {
+            "Time": 5.6105213,
+            "ParameterValue": 1
+          },
+          {
+            "Time": 5.636644,
+            "ParameterValue": 0.96036327
+          },
+          {
+            "Time": 5.6569614,
+            "ParameterValue": 0.9685662
+          },
+          {
+            "Time": 5.671474,
+            "ParameterValue": 0.94225717
+          },
+          {
+            "Time": 5.6772785,
+            "ParameterValue": 0.9858756
+          },
+          {
+            "Time": 5.691791,
+            "ParameterValue": 0.9339541
+          },
+          {
+            "Time": 5.715011,
+            "ParameterValue": 0.98054117
+          },
+          {
+            "Time": 5.749841,
+            "ParameterValue": 0.97108287
+          },
+          {
+            "Time": 5.7643538,
+            "ParameterValue": 1
+          },
+          {
+            "Time": 5.9994555,
+            "ParameterValue": 1
+          },
+          {
+            "Time": 6.002358,
+            "ParameterValue": 1
+          },
+          {
+            "Time": 6.054603,
+            "ParameterValue": 1
+          },
+          {
+            "Time": 6.0633106,
+            "ParameterValue": 0.973493
+          },
+          {
+            "Time": 6.083628,
+            "ParameterValue": 0.9706201
+          },
+          {
+            "Time": 6.0981402,
+            "ParameterValue": 0.9941977
+          },
+          {
+            "Time": 6.106848,
+            "ParameterValue": 0.95257366
+          },
+          {
+            "Time": 6.112653,
+            "ParameterValue": 0.9826969
+          },
+          {
+            "Time": 6.130068,
+            "ParameterValue": 0.95483184
+          },
+          {
+            "Time": 6.1619954,
+            "ParameterValue": 0.9702422
+          },
+          {
+            "Time": 6.1678004,
+            "ParameterValue": 0.99104
+          },
+          {
+            "Time": 6.1794105,
+            "ParameterValue": 0.96054107
+          },
+          {
+            "Time": 6.20263,
+            "ParameterValue": 0.9721589
+          },
+          {
+            "Time": 6.2113376,
+            "ParameterValue": 1
+          },
+          {
+            "Time": 6.220045,
+            "ParameterValue": 0.95704305
+          },
+          {
+            "Time": 6.23746,
+            "ParameterValue": 0.98803324
+          },
+          {
+            "Time": 6.243265,
+            "ParameterValue": 0.9651628
+          },
+          {
+            "Time": 6.2577777,
+            "ParameterValue": 0.9714778
+          },
+          {
+            "Time": 6.266485,
+            "ParameterValue": 0.9501014
+          },
+          {
+            "Time": 6.2809978,
+            "ParameterValue": 0.97496605
+          },
+          {
+            "Time": 6.2926073,
+            "ParameterValue": 0.94604874
+          },
+          {
+            "Time": 6.2984123,
+            "ParameterValue": 0.9657135
+          },
+          {
+            "Time": 6.324535,
+            "ParameterValue": 0.97734463
+          },
+          {
+            "Time": 6.336145,
+            "ParameterValue": 0.9630636
+          },
+          {
+            "Time": 6.3564625,
+            "ParameterValue": 0.9660652
+          },
+          {
+            "Time": 6.3738775,
+            "ParameterValue": 0.98052454
+          },
+          {
+            "Time": 6.3796825,
+            "ParameterValue": 0.9633772
+          },
+          {
+            "Time": 6.402902,
+            "ParameterValue": 0.9903812
+          },
+          {
+            "Time": 6.420317,
+            "ParameterValue": 0.9753143
+          },
+          {
+            "Time": 6.437732,
+            "ParameterValue": 1
+          },
+          {
+            "Time": 6.997914,
+            "ParameterValue": 1
+          },
+          {
+            "Time": 7.0008163,
+            "ParameterValue": 1
+          },
+          {
+            "Time": 7.5900226,
+            "ParameterValue": 1
+          },
+          {
+            "Time": 7.592925,
+            "ParameterValue": 0
+          },
+          {
+            "Time": 7.9992743,
+            "ParameterValue": 0
+          },
+          {
+            "Time": 8.002176,
+            "ParameterValue": 0
+          },
+          {
+            "Time": 8.997732,
+            "ParameterValue": 0
+          },
+          {
+            "Time": 9.000635,
+            "ParameterValue": 0
+          },
+          {
+            "Time": 9.038367,
+            "ParameterValue": 0
+          }
+        ]
+      }
+    },
+    {
+      "Event": {
+        "EventType": "HapticContinuous",
+        "Time": 0,
+        "EventDuration": 9.038367,
+        "EventParameters": [
+          {
+            "ParameterID": "HapticIntensity",
+            "ParameterValue": 1
+          },
+          {
+            "ParameterID": "HapticSharpness",
+            "ParameterValue": 0
+          }
+        ]
+      }
+    }
+  ]
+}
