@@ -10,8 +10,6 @@ import CoreHaptics
 import AVFAudio
 
 struct CheckTaskView: View {
-    @State private var coreHapticEngine: CHHapticEngine?
-    
     @State private var isPressing: Bool = false
     @State private var outerLayerScale: Double = 0
     @State private var firstInnerLayerOpacity: Double = 0
@@ -61,7 +59,6 @@ struct CheckTaskView: View {
                 .shadow(color: .black.opacity(0.25), radius: 24, y: 4)
 
         }
-        .scaleEffect(isPressing ? maxScale : 1)
         .onLongPressGesture(minimumDuration: 2) {
             withAnimation(.bouncy(duration: 1)) {
                 firstInnerLayerOpacity = maxScale
@@ -114,7 +111,6 @@ struct CheckTaskView: View {
                 coreHapticsManager.cancelHaptics()
             }
         }
-        .sensoryFeedback(.impact(flexibility: .solid, intensity: 1), trigger: isPressing)
         .onChange(of: task) {
             guard let task = task else { return }
             if task.isCompleted {
@@ -135,6 +131,9 @@ struct CheckTaskView: View {
                 }
             }
         }
+        .scaleEffect(isPressing ? maxScale : 1)
+        .sensoryFeedback(.impact(flexibility: .solid, intensity: 1), trigger: isPressing)
+        .sensoryFeedback(.impact(flexibility: .soft, intensity: 0.75), trigger: task)
     }
 }
 

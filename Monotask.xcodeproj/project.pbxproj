@@ -27,16 +27,16 @@
 		3A675A262C6D08CF00983C66 /* Oswald-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A675A252C6D08CF00983C66 /* Oswald-SemiBold.ttf */; };
 		3A675A2C2C6D0BD300983C66 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A675A2B2C6D0BD300983C66 /* Font+Extension.swift */; };
 		3AB294F72C719BEA0026F5AA /* Gravel.ahap in Resources */ = {isa = PBXBuildFile; fileRef = 3AB294F62C719BEA0026F5AA /* Gravel.ahap */; };
-		3AB294FF2C71AAAB0026F5AA /* Sparkle.ahap in Resources */ = {isa = PBXBuildFile; fileRef = 3AB294FE2C71AAAB0026F5AA /* Sparkle.ahap */; };
 		3AB295032C71AC900026F5AA /* Inflate.ahap in Resources */ = {isa = PBXBuildFile; fileRef = 3AB295022C71AC900026F5AA /* Inflate.ahap */; };
 		3AB295072C71B1EF0026F5AA /* Transition.ahap in Resources */ = {isa = PBXBuildFile; fileRef = 3AB295062C71B1EF0026F5AA /* Transition.ahap */; };
 		3AB2950A2C71B6DB0026F5AA /* CoreHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB295092C71B6DB0026F5AA /* CoreHapticsManager.swift */; };
+		3AB2950E2C7209110026F5AA /* Sparkle.ahap in Resources */ = {isa = PBXBuildFile; fileRef = 3AB2950D2C7209110026F5AA /* Sparkle.ahap */; };
+		3AB295102C7209250026F5AA /* TaskListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2950F2C7209250026F5AA /* TaskListCoordinator.swift */; };
 		3ABEE1782C6D14090098B08E /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEE1772C6D14090098B08E /* Color+Extension.swift */; };
 		3ABEE17B2C6D20BA0098B08E /* CheckTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEE17A2C6D20BA0098B08E /* CheckTaskView.swift */; };
 		3ABEE1942C6EDC1A0098B08E /* Oswald.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEE1932C6EDC1A0098B08E /* Oswald.swift */; };
 		3ABEE1962C6EDC8E0098B08E /* CallToActionButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEE1952C6EDC8E0098B08E /* CallToActionButtonStyle.swift */; };
 		3ABEE1982C6EDD7F0098B08E /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEE1972C6EDD7F0098B08E /* AppColors.swift */; };
-		3ABEE19B2C70DB960098B08E /* TaskListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEE19A2C70DB960098B08E /* TaskListCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,17 +72,17 @@
 		3A675A272C6D090200983C66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3A675A2B2C6D0BD300983C66 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
 		3AB294F62C719BEA0026F5AA /* Gravel.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Gravel.ahap; sourceTree = "<group>"; };
-		3AB294FE2C71AAAB0026F5AA /* Sparkle.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Sparkle.ahap; path = ../../../../../../Downloads/PlayingACustomHapticPatternFromAFile/HapticSampler/AHAP/Sparkle.ahap; sourceTree = "<group>"; };
 		3AB295022C71AC900026F5AA /* Inflate.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Inflate.ahap; sourceTree = "<group>"; };
 		3AB295062C71B1EF0026F5AA /* Transition.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Transition.ahap; sourceTree = "<group>"; };
 		3AB295092C71B6DB0026F5AA /* CoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreHapticsManager.swift; sourceTree = "<group>"; };
+		3AB2950D2C7209110026F5AA /* Sparkle.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Sparkle.ahap; sourceTree = "<group>"; };
+		3AB2950F2C7209250026F5AA /* TaskListCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListCoordinator.swift; sourceTree = "<group>"; };
 		3ABEE1772C6D14090098B08E /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		3ABEE17A2C6D20BA0098B08E /* CheckTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTaskView.swift; sourceTree = "<group>"; };
 		3ABEE1802C6DB7B00098B08E /* MonotaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonotaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ABEE1932C6EDC1A0098B08E /* Oswald.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oswald.swift; sourceTree = "<group>"; };
 		3ABEE1952C6EDC8E0098B08E /* CallToActionButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallToActionButtonStyle.swift; sourceTree = "<group>"; };
 		3ABEE1972C6EDD7F0098B08E /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
-		3ABEE19A2C70DB960098B08E /* TaskListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TaskListCoordinator.swift; path = ../../../../../../TaskListCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -333,7 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				3AB295062C71B1EF0026F5AA /* Transition.ahap */,
-				3AB294FE2C71AAAB0026F5AA /* Sparkle.ahap */,
+				3AB2950D2C7209110026F5AA /* Sparkle.ahap */,
 				3AB294F62C719BEA0026F5AA /* Gravel.ahap */,
 				3AB295022C71AC900026F5AA /* Inflate.ahap */,
 			);
@@ -393,7 +393,7 @@
 		3ABEE1992C70DB850098B08E /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				3ABEE19A2C70DB960098B08E /* TaskListCoordinator.swift */,
+				3AB2950F2C7209250026F5AA /* TaskListCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -487,7 +487,7 @@
 				3AB294F72C719BEA0026F5AA /* Gravel.ahap in Resources */,
 				3A675A202C6D084B00983C66 /* Oswald-Bold.ttf in Resources */,
 				3A675A262C6D08CF00983C66 /* Oswald-SemiBold.ttf in Resources */,
-				3AB294FF2C71AAAB0026F5AA /* Sparkle.ahap in Resources */,
+				3AB2950E2C7209110026F5AA /* Sparkle.ahap in Resources */,
 				3A6759E42C6D033B00983C66 /* Preview Assets.xcassets in Resources */,
 				3A6759E12C6D033B00983C66 /* Assets.xcassets in Resources */,
 				3AB295072C71B1EF0026F5AA /* Transition.ahap in Resources */,
@@ -514,7 +514,6 @@
 				3A6759FF2C6D048F00983C66 /* TaskLocalEntity.swift in Sources */,
 				3A675A0A2C6D049900983C66 /* SwiftDataContextManager.swift in Sources */,
 				3AB2950A2C71B6DB0026F5AA /* CoreHapticsManager.swift in Sources */,
-				3ABEE19B2C70DB960098B08E /* TaskListCoordinator.swift in Sources */,
 				3A675A052C6D048F00983C66 /* TaskListView.swift in Sources */,
 				3ABEE1982C6EDD7F0098B08E /* AppColors.swift in Sources */,
 				3ABEE17B2C6D20BA0098B08E /* CheckTaskView.swift in Sources */,
@@ -522,6 +521,7 @@
 				3A675A2C2C6D0BD300983C66 /* Font+Extension.swift in Sources */,
 				3A675A022C6D048F00983C66 /* RewardPieceModel.swift in Sources */,
 				3A675A012C6D048F00983C66 /* RewardModel.swift in Sources */,
+				3AB295102C7209250026F5AA /* TaskListCoordinator.swift in Sources */,
 				3A675A062C6D048F00983C66 /* TaskListViewModel.swift in Sources */,
 				3A6759DD2C6D033A00983C66 /* MonotaskApp.swift in Sources */,
 				3A675A032C6D048F00983C66 /* TaskModel.swift in Sources */,
