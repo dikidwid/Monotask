@@ -9,6 +9,23 @@ import Foundation
 import CoreHaptics
 import AVFAudio
 
+public enum HapticPattern {
+    case transition
+    case gravel
+    case sparkle
+    
+    var value: String {
+        switch self {
+        case .transition:
+            "Transition"
+        case .gravel:
+            "Gravel"
+        case .sparkle:
+            "Sparkle"
+        }
+    }
+}
+
 public class CoreHapticsManager {
     public static var shared: CoreHapticsManager = CoreHapticsManager()
     var engine: CHHapticEngine?
@@ -64,13 +81,13 @@ public class CoreHapticsManager {
         }
     }
     
-    func playHapticsFile(named filename: String) {
+    func playHapticsPattern(type: HapticPattern) {
         
         // If the device doesn't support Core Haptics, abort.
         guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
         
         // Express the path to the AHAP file before attempting to load it.
-        guard let path = Bundle.main.path(forResource: filename, ofType: "ahap") else {
+        guard let path = Bundle.main.path(forResource: type.value, ofType: "ahap") else {
             return
         }
         
@@ -82,7 +99,7 @@ public class CoreHapticsManager {
             try engine?.playPattern(from: URL(fileURLWithPath: path))
             
         } catch { // Engine startup errors
-            print("An error occured playing \(filename): \(error).")
+            print("An error occured playing \(type.value): \(error).")
         }
     }
     

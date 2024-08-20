@@ -32,11 +32,10 @@ struct TaskListView: View {
             .overlay(alignment: .topTrailing) {
                 showcaseJourneyButton
             }
-            .padding(.top, 26)
+            .padding(.top, 20)
         }
-        .onAppear {
-            taskListViewModel.onAppearAction()
-        }
+        .onAppear(perform: taskListViewModel.onAppearAction)
+        .uncheckTaskAlert(isShowAlert: $taskListViewModel.isShowRemoveCheckmarkAlert) { taskListViewModel.updateTaskStatus($0) } 
     }
 }
 
@@ -88,7 +87,7 @@ extension TaskListView {
                                 }
                         }
                         .frame(width: 250)
-                        .padding(.top, 80)
+                        .padding(.top, 100)
                 }
             }
             .scrollTargetLayout()
@@ -106,11 +105,18 @@ extension TaskListView {
     }
     
     private var todayTextView: some View {
-        Text("Today's Task (\(taskListViewModel.totalCompletedTasks)/\(taskListViewModel.totalTasks))")
-            .foregroundStyle(Color(hex: "707070"))
-            .font(.oswald(.regular, size: 24))
-            .frame(maxWidth: .infinity, alignment: .center)
-            .padding(.top, 2.5)
+        VStack {
+            Text("Today")
+                .foregroundStyle(Color(hex: "707070"))
+                .font(.oswald(.regular, size: 24))
+                .frame(maxWidth: .infinity, alignment: .center)
+                .padding(.top, 2.5)
+            
+            Text("Tasks Done (\(taskListViewModel.totalCompletedTasks)/\(taskListViewModel.totalTasks))")
+                .foregroundStyle(Color(hex: "707070"))
+                .font(.oswald(.regular, size: 24))
+                .frame(maxWidth: .infinity, alignment: .center)
+        }
     }
     
     private var addTaskButton: some View {
@@ -130,6 +136,17 @@ extension TaskListView {
     
     private var checkTaskView: some View {
         CheckTaskView(task: taskListViewModel.currentTask) { taskListViewModel.updateTaskStatus($0) }
+            .overlay {
+                if let task = taskListViewModel.currentTask,
+                   task.isCompleted {
+                Rectangle()
+                    .fill(.clear)
+                    .contentShape(Circle())
+                    .onTapGesture {
+                        taskListViewModel.isShowRemoveCheckmarkAlert = true
+                        
+                    }}
+            }
     }
     
     private var showcaseJourneyButton: some View {
@@ -161,5 +178,27 @@ extension TaskListView {
                 }
                 .padding(.trailing, 26)
         }
+    }
+}
+
+extension View {
+   fileprivate func uncheckTaskAlert(isShowAlert: Binding<Bool>, onDismiss: @escaping ((Bool) -> Void?)) -> some View {
+        modifier(TaskListAlertModifier(isShowAlert: isShowAlert, onDismiss: onDismiss))
+    }
+}
+
+struct TaskListAlertModifier: ViewModifier {
+    var isShowAlert: Binding<Bool>
+    let onDismiss: ((Bool) -> Void?)
+    
+    func body(content: Content) -> some View {
+        content
+            .alert("Uncheck Task",
+                   isPresented: isShowAlert) {
+                Button("Cancel", role: .cancel) { }
+                Button("Uncheck", role: .destructive) { onDismiss(false)}
+            } message: {
+                Text("Do you want to uncheck this task?")
+            }
     }
 }
