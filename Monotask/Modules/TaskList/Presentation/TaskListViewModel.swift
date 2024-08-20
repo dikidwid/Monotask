@@ -12,6 +12,7 @@ final class TaskListViewModel: ObservableObject {
     @Published var tasks: [TaskModel] = []
     @Published var currentTask: TaskModel?
     @Published var hasNewJourneyPiece: Bool = false
+    @Published var isShowRemoveCheckmarkAlert: Bool =  false
     
     let useCase: TaskListUseCase
     

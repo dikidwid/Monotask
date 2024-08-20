@@ -10,6 +10,8 @@ import CoreHaptics
 import AVFAudio
 
 struct CheckTaskView: View {
+    @State private var workItem: DispatchWorkItem?
+
     @State private var isPressing: Bool = false
     @State private var outerLayerScale: Double = 0
     @State private var firstInnerLayerOpacity: Double = 0
@@ -20,6 +22,7 @@ struct CheckTaskView: View {
     let task: TaskModel?
     let onCheckedTask: ((Bool) -> Void?)
     let coreHapticsManager: CoreHapticsManager = CoreHapticsManager.shared
+    let audioManager: AudioManager = AudioManager.shared
     
     private let maxScale: Double = 1.2
         
@@ -66,14 +69,14 @@ struct CheckTaskView: View {
                 thirdInnerLayerOpacity = maxScale
                 fourthInnerLayerOpacity = maxScale
                 outerLayerScale = maxScale
+                coreHapticsManager.playHapticsPattern(type: .sparkle)
+                coreHapticsManager.playHapticsPattern(type: .gravel)
                 onCheckedTask(true)
-                coreHapticsManager.playHapticsFile(named: "Sparkle")
-                coreHapticsManager.playHapticsFile(named: "Gravel")
             }
         } onPressingChanged: { isPressing in
             if isPressing {
                 withAnimation(.bouncy) {
-                    self.isPressing = true
+                    self.isPressing = isPressing
                 }
                 withAnimation(.easeIn(duration: 0.1).speed(0.5)) {
                     firstInnerLayerOpacity = 1
@@ -87,10 +90,12 @@ struct CheckTaskView: View {
                 withAnimation(.easeIn(duration: 0.7).speed(0.5)) {
                     fourthInnerLayerOpacity = 1
                 }
-                coreHapticsManager.playHapticsFile(named: "Transition")
+                startPreparingCompleteSFX()
+                coreHapticsManager.playHapticsPattern(type: .transition)
+                audioManager.playAudioPlayerOne(.buildUp)
             } else {
                 withAnimation(.bouncy) {
-                    self.isPressing = false
+                    self.isPressing = isPressing
                 }
                 withAnimation(.interactiveSpring(duration: 1)) {
                     outerLayerScale = 1
@@ -107,8 +112,9 @@ struct CheckTaskView: View {
                 withAnimation(.easeOut(duration: 1)) {
                     fourthInnerLayerOpacity = 0
                 }
-                onCheckedTask(false)
+                cancelPreparingCompleteSFX()
                 coreHapticsManager.cancelHaptics()
+                audioManager.stopSound()
             }
         }
         .onChange(of: task) {
@@ -135,6 +141,33 @@ struct CheckTaskView: View {
         .sensoryFeedback(.impact(flexibility: .solid, intensity: 1), trigger: isPressing)
         .sensoryFeedback(.impact(flexibility: .soft, intensity: 0.75), trigger: task)
     }
+    
+    // Start the countdown logic
+        func startPreparingCompleteSFX() {
+            cancelPreparingCompleteSFX()
+
+            let newWorkItem = DispatchWorkItem {
+                actionAfterTwoSeconds()
+            }
+            
+            // Assign it to the state
+            workItem = newWorkItem
+            
+            // Schedule the work item to execute after 2 seconds
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.9, execute: newWorkItem)
+        }
+        
+        // Cancel the countdown logic
+        func cancelPreparingCompleteSFX() {
+            // Cancel the current work item if it exists
+            workItem?.cancel()
+            workItem = nil
+        }
+
+        // Action to be executed if 2 seconds are met
+        func actionAfterTwoSeconds() {
+            audioManager.playSoundEffectTwo(.buildComplete)
+        }
 }
 
 struct CheckTaskShape: Shape {
