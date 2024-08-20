@@ -1,23 +1,12 @@
-//
-//  CreateTaskView2.swift
-//  addTask
-//
-//  Created by Theresia Angela Ayrin on 16/08/24.
-//
-
 import SwiftUI
 
 struct CreateTaskView2: View {
-    @StateObject private var viewModel = CreateTaskViewModel()
+    @ObservedObject var viewModel: CreateTaskViewModel
     
     var body: some View {
         ScrollView {
             VStack {
                 TitleView(text: "Prioritize Your Task")
-                
-                Spacer()
-                Spacer()
-                Spacer()
                 
                 VStack {
                     ParameterTitleSelectionView(text: "Urgency")
@@ -28,7 +17,7 @@ struct CreateTaskView2: View {
                             isSelected: viewModel.task.urgency == .illWait,
                             action: {
                                 viewModel.task.urgency = .illWait
-                                print(viewModel.task.urgency.rawValue)
+//                                print(viewModel.task.urgency.rawValue)
                             }
                         )
                         
@@ -38,7 +27,7 @@ struct CreateTaskView2: View {
                             isSelected: viewModel.task.urgency == .actSoon,
                             action: {
                                 viewModel.task.urgency = .actSoon
-                                print(viewModel.task.urgency.rawValue)
+//                                print(viewModel.task.urgency.rawValue)
                             }
                         )
                         
@@ -48,7 +37,7 @@ struct CreateTaskView2: View {
                             isSelected: viewModel.task.urgency == .asap,
                             action: {
                                 viewModel.task.urgency = .asap
-                                print(viewModel.task.urgency.rawValue)
+//                                print(viewModel.task.urgency.rawValue)
                             }
                         )
                     }
@@ -64,7 +53,7 @@ struct CreateTaskView2: View {
                             isSelected: viewModel.task.difficulty == .simple,
                             action: {
                                 viewModel.task.difficulty = .simple
-                                print(viewModel.task.difficulty.rawValue)
+//                                print(viewModel.task.difficulty.rawValue)
                             }
                         )
                         
@@ -74,7 +63,7 @@ struct CreateTaskView2: View {
                             isSelected: viewModel.task.difficulty == .challenging,
                             action: {
                                 viewModel.task.difficulty = .challenging
-                                print(viewModel.task.difficulty.rawValue)
+//                                print(viewModel.task.difficulty.rawValue)
                             }
                         )
                         
@@ -84,7 +73,7 @@ struct CreateTaskView2: View {
                             isSelected: viewModel.task.difficulty == .intense,
                             action: {
                                 viewModel.task.difficulty = .intense
-                                print(viewModel.task.difficulty.rawValue)
+//                                print(viewModel.task.difficulty.rawValue)
                             }
                         )
                     }
@@ -100,7 +89,7 @@ struct CreateTaskView2: View {
                             isSelected: viewModel.task.interest == .mild,
                             action: {
                                 viewModel.task.interest = .mild
-                                print(viewModel.task.interest.rawValue)
+//                                print(viewModel.task.interest.rawValue)
                             }
                         )
                         
@@ -110,7 +99,7 @@ struct CreateTaskView2: View {
                             isSelected: viewModel.task.interest == .engaging,
                             action: {
                                 viewModel.task.interest = .engaging
-                                print(viewModel.task.interest.rawValue)
+//                                print(viewModel.task.interest.rawValue)
                             }
                         )
                         
@@ -120,29 +109,48 @@ struct CreateTaskView2: View {
                             isSelected: viewModel.task.interest == .captivating,
                             action: {
                                 viewModel.task.interest = .captivating
-                                print(viewModel.task.interest.rawValue)
+//                                print(viewModel.task.interest.rawValue)
                             }
                         )
                     }
                 }
                 .padding(.leading, -20)
                 
-                Spacer()
-                Spacer()
-                Spacer()
-                
-                NavigationLink(destination: CreateTaskView2()) {
-                    HStack {
-                        Image(systemName: "checkmark")
-                        Text("Add New Task")
+                Button(action: {
+                    let editTaskViewModel = viewModel.saveToEditTaskViewModel()
+                    
+                    print("Task Title: \(viewModel.task.title)")
+                    print("Subtasks:")
+                    for subtask in viewModel.task.subtasks {
+                        print("- \(subtask.title)")
+                    }
+                    print("Reminder On: \(viewModel.task.isReminderOn)")
+                    if let reminderDate = viewModel.task.reminderDate {
+                        let formatter = DateFormatter()
+                        formatter.dateStyle = .short
+                        formatter.timeStyle = .short
+                        print("Reminder Date: \(formatter.string(from: reminderDate))")
+                    }
+                    print("Urgency: \(viewModel.task.urgency.rawValue)")
+                    print("Difficulty: \(viewModel.task.difficulty.rawValue)")
+                    print("Interest: \(viewModel.task.interest.rawValue)")
+                }) {
+                    NavigationLink(
+                        destination: EditTaskView(viewModel: viewModel.saveToEditTaskViewModel())
+                    ){
+                        HStack {
+                            Image(systemName: "checkmark")
+                            Text("Add New Task")
+                        }
                     }
                 }
                 .buttonStyle(CallToActionButtonStyle())
-                }
             }
         }
+        .navigationBarBackButtonHidden(true)
     }
+}
 
 #Preview {
-    CreateTaskView2()
+    CreateTaskView2(viewModel: CreateTaskViewModel())
 }

@@ -18,6 +18,7 @@ struct TaskTitleTextField: View {
                 onCommit() // Panggil closure saat Enter ditekan
             })
         }
+        .font(.oswaldBody)
         .padding(.horizontal, 11)
         .padding(.vertical, 24)
         .frame(width: 316, height: 44, alignment: .leading)

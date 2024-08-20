@@ -30,6 +30,7 @@ struct AddSubtaskTextField: View {
                 onCommit() 
             }
         }
+        .font(.oswaldBody)
         .padding(.horizontal, 11)
         .padding(.vertical, 24)
         .frame(width: 316, height: 44, alignment: .leading)

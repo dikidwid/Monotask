@@ -2,96 +2,99 @@
 //  EditTaskView.swift
 //  Monotask
 //
-//  Created by Theresia Angela Ayrin on 19/08/24.
+//  Created by Theresia Angela Ayrin on 20/08/24.
 //
 
 import SwiftUI
 
 struct EditTaskView: View {
-    @StateObject private var viewModel = CreateTaskViewModel()
+    @ObservedObject var viewModel: EditTaskViewModel
     
     var body: some View {
-        ScrollView {
-            VStack {
+        NavigationView {
+            ScrollView {
                 VStack {
-                    TitleView(text: "Task Title")
-                    TaskTitleTextField(tasktitle: $viewModel.task.title, placeholder: "Brain dump your task...") {
-                        print(viewModel.task.title)
-                    }
-                    .padding(.leading, 0)
-                }
-                
-                Spacer()
-                Spacer()
-                Spacer()
-                
-                
-                VStack(alignment: .leading, spacing: 8) {
-                    TitleView(text: "Add Subtask")
-                    if !viewModel.task.subtasks.isEmpty {
-                        ForEach(viewModel.task.subtasks) { subtask in
-                            Text(subtask.title)
-                                .padding(.vertical, 2)
-                                .padding(.leading, 50)
+                    VStack {
+                        TitleView(text: "Task Title")
+                        TaskTitleTextField(tasktitle: $viewModel.task.title, placeholder: "Brain dump your task...") {
                         }
-                    }
-                    AddSubtaskTextField(subtask: $viewModel.newSubtask, placeholder: "Break down your task here...") {
-                        print(viewModel.newSubtask)
-                        viewModel.addSubtask()
-                    }
-                    .padding(.leading, 40)
-                }
-                
-                Spacer()
-                Spacer()
-                
-                VStack {
-                    HStack {
-                        TitleView(text: "Add Reminder")
-                        Spacer()
-                        Toggle("", isOn: $viewModel.task.isReminderOn)
-                            .toggleStyle(SwitchToggleStyle(tint: .yellow))
-                            .labelsHidden()
-                            .padding()
-                    }
-                    .padding(.leading, 0)
+                        .padding(.leading, 0)
+                    }.padding(.bottom, 30)
                     
-                    if viewModel.task.isReminderOn {
-                        VStack {
-                            DatePicker(
-                                "",
-                                selection: Binding(
-                                    get: { viewModel.task.reminderDate ?? Date() },
-                                    set: { viewModel.updateReminderDate($0) }
-                                ),
-                                displayedComponents: [.hourAndMinute]
-                            )
-                            .labelsHidden()
-                            .datePickerStyle(WheelDatePickerStyle())
-                            .padding()
-                            .onChange(of: viewModel.task.reminderDate) { newDate in
-                                let formatter = DateFormatter()
-                                formatter.timeStyle = .short
-                                if let date = newDate {
-                                    print("Selected reminder time: \(formatter.string(from: date))")
+                    VStack(alignment: .leading, spacing: 15) {
+                        TitleView(text: "Add Subtask")
+                        if !viewModel.task.subtasks.isEmpty {
+                            ForEach(viewModel.task.subtasks.indices, id: \.self) { index in
+                                HStack {
+                                    Image(systemName: "line.3.horizontal")
+                                    
+                                    TextField("Subtask", text: $viewModel.task.subtasks[index].title)
+                                        .padding(.vertical, 2)
+                                        .padding(.leading, 5)
+                                        .font(.oswaldBody)
+                                    
+                                    Spacer()
+                                    
+                                    Button {
+                                        viewModel.deleteSubtask(at: index)
+                                    } label: {
+                                        Image(systemName: "xmark")
+                                            .fontWeight(.semibold)
+                                            .tint(.black)
+                                    }
                                 }
+                                .padding(.horizontal, 45)
+                            }
+                        }
+                        
+                        AddSubtaskTextField(subtask: $viewModel.newSubtask, placeholder: "Break down your task here...") {
+                            viewModel.addSubtask()
+                        }
+                        .padding(.leading, 40)
+                    }.padding(.bottom, 30)
+                    
+                    VStack {
+                        HStack {
+                            TitleView(text: "Add Reminder")
+                            Spacer()
+                            Toggle("", isOn: $viewModel.task.isReminderOn)
+                                .toggleStyle(SwitchToggleStyle(tint: .yellow))
+                                .labelsHidden()
+                                .padding(.trailing, 40)
+                        }
+                        
+                        if viewModel.task.isReminderOn {
+                            VStack {
+                                DatePicker(
+                                    "",
+                                    selection: Binding(
+                                        get: { viewModel.task.reminderDate ?? Date() },
+                                        set: { viewModel.updateReminderDate($0) }
+                                    ),
+                                    displayedComponents: [.hourAndMinute]
+                                )
+                                .labelsHidden()
+                                .datePickerStyle(WheelDatePickerStyle())
+                                .padding()
                             }
                         }
                     }
-                }
-                NavigationLink(destination: CreateTaskView2()) {
-                    HStack {
-                        Image(systemName: "checkmark")
-                        Text("Continue")
+                    
+                    Spacer()
+                    
+                    NavigationLink(destination: EditTaskView2(viewModel: viewModel)) {
+                        HStack {
+                            Image(systemName: "checkmark")
+                            Text("Continue")
+                        }
                     }
+                    .buttonStyle(CallToActionButtonStyle())
                 }
-                .buttonStyle(CallToActionButtonStyle())
             }
         }
     }
 }
 
-#Preview{
-    EditTaskView()
+#Preview {
+    EditTaskView(viewModel: EditTaskViewModel(task: Task(title: "Existing Task", subtasks: [Subtask(title: "Subtask 1")], isReminderOn: true, reminderDate: Date())))
 }
-

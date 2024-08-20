@@ -37,6 +37,9 @@
 		3ABEE1942C6EDC1A0098B08E /* Oswald.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEE1932C6EDC1A0098B08E /* Oswald.swift */; };
 		3ABEE1962C6EDC8E0098B08E /* CallToActionButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEE1952C6EDC8E0098B08E /* CallToActionButtonStyle.swift */; };
 		3ABEE1982C6EDD7F0098B08E /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEE1972C6EDD7F0098B08E /* AppColors.swift */; };
+		E202CD0B2C74468100AEF012 /* EditTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202CD0A2C74468100AEF012 /* EditTaskViewModel.swift */; };
+		E225BD3A2C74457F00A66FD3 /* EditTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E225BD392C74457F00A66FD3 /* EditTaskView.swift */; };
+		E225BD3C2C7445B000A66FD3 /* EditTaskView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E225BD3B2C7445B000A66FD3 /* EditTaskView2.swift */; };
 		E23AB5CA2C736DF3006CE04D /* CreateTaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23AB5C92C736DF3006CE04D /* CreateTaskModel.swift */; };
 		E23AB5CC2C736E03006CE04D /* CreateTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23AB5CB2C736E03006CE04D /* CreateTaskViewModel.swift */; };
 		E23AB5CE2C736E11006CE04D /* CreateTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23AB5CD2C736E11006CE04D /* CreateTaskView.swift */; };
@@ -46,8 +49,6 @@
 		E23AB5D62C736E53006CE04D /* ParameterSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23AB5D52C736E53006CE04D /* ParameterSelectionView.swift */; };
 		E23AB5D82C736E64006CE04D /* TaskTitleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23AB5D72C736E64006CE04D /* TaskTitleTextField.swift */; };
 		E23AB5DA2C736E78006CE04D /* AddSubtaskTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23AB5D92C736E78006CE04D /* AddSubtaskTextField.swift */; };
-		E23AB5DC2C7377C8006CE04D /* EditTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23AB5DB2C7377C8006CE04D /* EditTaskView.swift */; };
-		E23AB5DE2C7377D1006CE04D /* EditTaskView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23AB5DD2C7377D1006CE04D /* EditTaskView2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,9 @@
 		3ABEE1932C6EDC1A0098B08E /* Oswald.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oswald.swift; sourceTree = "<group>"; };
 		3ABEE1952C6EDC8E0098B08E /* CallToActionButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallToActionButtonStyle.swift; sourceTree = "<group>"; };
 		3ABEE1972C6EDD7F0098B08E /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		E202CD0A2C74468100AEF012 /* EditTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskViewModel.swift; sourceTree = "<group>"; };
+		E225BD392C74457F00A66FD3 /* EditTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskView.swift; sourceTree = "<group>"; };
+		E225BD3B2C7445B000A66FD3 /* EditTaskView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskView2.swift; sourceTree = "<group>"; };
 		E23AB5C92C736DF3006CE04D /* CreateTaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskModel.swift; sourceTree = "<group>"; };
 		E23AB5CB2C736E03006CE04D /* CreateTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskViewModel.swift; sourceTree = "<group>"; };
 		E23AB5CD2C736E11006CE04D /* CreateTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskView.swift; sourceTree = "<group>"; };
@@ -103,8 +107,6 @@
 		E23AB5D52C736E53006CE04D /* ParameterSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterSelectionView.swift; sourceTree = "<group>"; };
 		E23AB5D72C736E64006CE04D /* TaskTitleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTitleTextField.swift; sourceTree = "<group>"; };
 		E23AB5D92C736E78006CE04D /* AddSubtaskTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubtaskTextField.swift; sourceTree = "<group>"; };
-		E23AB5DB2C7377C8006CE04D /* EditTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskView.swift; sourceTree = "<group>"; };
-		E23AB5DD2C7377D1006CE04D /* EditTaskView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskView2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -435,10 +437,11 @@
 			children = (
 				E23AB5C92C736DF3006CE04D /* CreateTaskModel.swift */,
 				E23AB5CB2C736E03006CE04D /* CreateTaskViewModel.swift */,
+				E202CD0A2C74468100AEF012 /* EditTaskViewModel.swift */,
 				E23AB5CD2C736E11006CE04D /* CreateTaskView.swift */,
 				E23AB5CF2C736E23006CE04D /* CreateTaskView2.swift */,
-				E23AB5DB2C7377C8006CE04D /* EditTaskView.swift */,
-				E23AB5DD2C7377D1006CE04D /* EditTaskView2.swift */,
+				E225BD392C74457F00A66FD3 /* EditTaskView.swift */,
+				E225BD3B2C7445B000A66FD3 /* EditTaskView2.swift */,
 			);
 			path = zzz;
 			sourceTree = "<group>";
@@ -566,6 +569,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A675A042C6D048F00983C66 /* TaskListUseCase.swift in Sources */,
+				E202CD0B2C74468100AEF012 /* EditTaskViewModel.swift in Sources */,
 				3ABEE1942C6EDC1A0098B08E /* Oswald.swift in Sources */,
 				3ABEE1962C6EDC8E0098B08E /* CallToActionButtonStyle.swift in Sources */,
 				3A6759FF2C6D048F00983C66 /* TaskLocalEntity.swift in Sources */,
@@ -582,10 +586,10 @@
 				E23AB5D62C736E53006CE04D /* ParameterSelectionView.swift in Sources */,
 				3A675A022C6D048F00983C66 /* RewardPieceModel.swift in Sources */,
 				3A675A012C6D048F00983C66 /* RewardModel.swift in Sources */,
-				E23AB5DC2C7377C8006CE04D /* EditTaskView.swift in Sources */,
+				E225BD3A2C74457F00A66FD3 /* EditTaskView.swift in Sources */,
 				E23AB5D42C736E45006CE04D /* ParameterTitleSelectionView.swift in Sources */,
 				3AB295102C7209250026F5AA /* TaskListCoordinator.swift in Sources */,
-				E23AB5DE2C7377D1006CE04D /* EditTaskView2.swift in Sources */,
+				E225BD3C2C7445B000A66FD3 /* EditTaskView2.swift in Sources */,
 				E23AB5D02C736E23006CE04D /* CreateTaskView2.swift in Sources */,
 				3A675A062C6D048F00983C66 /* TaskListViewModel.swift in Sources */,
 				3A6759DD2C6D033A00983C66 /* MonotaskApp.swift in Sources */,

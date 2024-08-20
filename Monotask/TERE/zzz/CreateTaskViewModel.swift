@@ -21,5 +21,8 @@ class CreateTaskViewModel: ObservableObject {
     func updateReminderDate(_ newDate: Date) {
         task.reminderDate = newDate
     }
+    
+    func saveToEditTaskViewModel() -> EditTaskViewModel {
+        return EditTaskViewModel(task: task)
+    }
 }
-
