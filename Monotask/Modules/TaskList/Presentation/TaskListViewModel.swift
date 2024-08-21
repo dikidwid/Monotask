@@ -54,7 +54,7 @@ final class TaskListViewModel: ObservableObject {
                                 interestMetric: 1,
                                 urgencyMetric: 1)
         
-        useCase.createNewTask(newTask)
+//        useCase.createNewTask(newTask)
         getTasks()
     }
     

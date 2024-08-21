@@ -119,6 +119,7 @@ struct CheckTaskView: View {
         }
         .onChange(of: task) {
             guard let task = task else { return }
+            audioManager.playAudioPlayerOne(.switched, volume: 0.1)
             if task.isCompleted {
                 withAnimation(.interpolatingSpring) {
                     firstInnerLayerOpacity = maxScale

@@ -27,7 +27,7 @@ enum Interest: Int {
 
 struct Task {
     var title: String
-    var subtasks: [Subtask]
+    var subtasks: [SubtaskModel]
     var urgency: Urgency = .illWait
     var difficulty: Difficulty = .simple
     var interest: Interest = .mild
@@ -35,7 +35,3 @@ struct Task {
     var reminderDate: Date?
 }
 
-struct Subtask: Identifiable {
-    var id = UUID()
-    var title: String
-}

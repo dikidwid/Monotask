@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TaskListView: View {
     @StateObject var taskListViewModel: TaskListViewModel
+    @EnvironmentObject private var appCoordinator: AppCoordinator
 
     var body: some View {
         ZStack {
@@ -121,7 +122,7 @@ extension TaskListView {
     
     private var addTaskButton: some View {
         Button {
-            taskListViewModel.addNewTask()
+            appCoordinator.fullScreenCover(.addTaskDetail(onDismiss: { taskListViewModel.getTasks() }))
         } label: {
             HStack {
                 Image(systemName: "plus")
@@ -157,7 +158,7 @@ extension TaskListView {
                 .foregroundStyle(.black)
                 .frame(width: 36, height: 36)
                 .overlay {
-                    Image(.showcaseJourneyIcon)
+                    Image(.showcaseIcon)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .padding(.vertical, 5)

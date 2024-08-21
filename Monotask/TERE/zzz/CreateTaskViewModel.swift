@@ -14,7 +14,7 @@ class CreateTaskViewModel: ObservableObject {
 
     func addSubtask() {
         guard !newSubtask.isEmpty else { return }
-        task.subtasks.append(Subtask(title: newSubtask))
+        task.subtasks.append(SubtaskModel(title: newSubtask))
         newSubtask = ""
     }
     

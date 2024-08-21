@@ -18,6 +18,7 @@ public enum SoundEffect {
     case locked
     case buildUp
     case buildComplete
+    case created
     
     var value: String {
         switch self {
@@ -26,7 +27,7 @@ public enum SoundEffect {
         case .pressed:
             "complete"
         case .switched:
-            ""
+            "switched"
         case .checked:
             "tuing"
         case .unchecked:
@@ -39,6 +40,8 @@ public enum SoundEffect {
             "build-up"
         case .buildComplete:
             "build-complete"
+        case .created:
+            "created"
         }
     }
 }
@@ -49,7 +52,7 @@ class AudioManager {
     var audioPlayerOne: AVAudioPlayer?
     var audioPlayerTwo: AVAudioPlayer?
         
-    func playAudioPlayerOne(_ type: SoundEffect, atTime: TimeInterval = 0) {
+    func playAudioPlayerOne(_ type: SoundEffect, volume: Float = 1, atTime: TimeInterval = 0) {
         guard let url = Bundle.main.url(forResource: type.value, withExtension: "mp3") else {
             print("Sound file not found")
             return
@@ -58,6 +61,7 @@ class AudioManager {
         do {
             audioPlayerOne = try AVAudioPlayer(contentsOf: url)
             audioPlayerOne?.currentTime = atTime
+            audioPlayerOne?.setVolume(volume, fadeDuration: 0.1)
             audioPlayerOne?.prepareToPlay()
             audioPlayerOne?.play()
         } catch {

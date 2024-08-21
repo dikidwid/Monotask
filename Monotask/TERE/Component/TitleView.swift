@@ -19,7 +19,6 @@ struct TitleView: View {
             .foregroundColor(color)
             .fontWeight(weight)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.leading, 40)
     }
 }
 

@@ -5,7 +5,7 @@
 //  Created by Diki Dwi Diro on 17/08/24.
 //
 
-import Foundation
+import SwiftUI
 
 public final class TaskListCoordinator {
 

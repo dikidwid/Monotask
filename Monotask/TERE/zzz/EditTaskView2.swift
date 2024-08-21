@@ -144,5 +144,5 @@ struct EditTaskView2: View {
 }
 
 #Preview{
-    EditTaskView2(viewModel: EditTaskViewModel(task: Task(title: "Existing Task", subtasks: [Subtask(title: "Subtask 1")], isReminderOn: true, reminderDate: Date())))
+    EditTaskView2(viewModel: EditTaskViewModel(task: Task(title: "Existing Task", subtasks: [SubtaskModel(title: "Subtask 1")], isReminderOn: true, reminderDate: Date())))
 }

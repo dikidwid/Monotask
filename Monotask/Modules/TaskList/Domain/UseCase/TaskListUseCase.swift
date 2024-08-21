@@ -9,19 +9,15 @@ import Foundation
 
 protocol TaskListUseCase {
     func getTasks() -> [TaskModel]
-    func createNewTask(_ newTask: TaskModel)
     func updateTaskStatus(_ updatedTask: TaskModel)
 }
 
 struct TaskListUseCaseImpl: TaskListUseCase {
     let repository: TaskListRepository
     
+    #warning("TODO: Create logic to sort the task based on those 3 parameters")
     func getTasks() -> [TaskModel] {
         repository.fetchTasks()
-    }
-    
-    func createNewTask(_ newTask: TaskModel) {
-        repository.createTask(newTask)
     }
     
     func updateTaskStatus(_ updatedTask: TaskModel) {

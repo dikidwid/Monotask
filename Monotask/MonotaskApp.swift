@@ -9,11 +9,11 @@ import SwiftUI
 
 @main
 struct MonotaskApp: App {
-    let taskListCoordinator = TaskListCoordinator()
+    let appCoordinator = AppCoordinator()
 
     var body: some Scene {
         WindowGroup {
-            taskListCoordinator.makeTaskListView()
+            AppCoordinatorView()
         }
     }
 }
