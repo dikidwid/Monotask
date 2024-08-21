@@ -9,8 +9,6 @@ import SwiftUI
 
 @main
 struct MonotaskApp: App {
-    let appCoordinator = AppCoordinator()
-
     var body: some Scene {
         WindowGroup {
             AppCoordinatorView()

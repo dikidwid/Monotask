@@ -15,7 +15,9 @@ public class SwiftDataContextManager {
     init() {
         do {
             let configurations = ModelConfiguration(isStoredInMemoryOnly: true)
-            container = try ModelContainer(for: TaskLocalEntity.self, configurations: configurations)
+            container = try ModelContainer(for: TaskLocalEntity.self,
+                                           RewardLocalEntity.self
+                                           , configurations: configurations)
             context = ModelContext(container)
         } catch {
             fatalError("Error initializing database container: \(error)")

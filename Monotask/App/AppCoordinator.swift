@@ -9,6 +9,7 @@ import SwiftUI
 
 final class AppCoordinator: ObservableObject {
     let taskListCoordinator: TaskListCoordinator = TaskListCoordinator()
+    let rewardListCoordinator: RewardShowcaseCoordinator = RewardShowcaseCoordinator()
     @Published var addTaskCoordinator: AddTaskCoordinator = AddTaskCoordinator()
     
     @Published var path: NavigationPath = NavigationPath()
@@ -51,7 +52,7 @@ final class AppCoordinator: ObservableObject {
         case .taskList:
             taskListCoordinator.makeTaskListView()
         case .showcaseJourney:
-            Text("Showcase Journey")
+            rewardListCoordinator.makeView()
         }
     }
     

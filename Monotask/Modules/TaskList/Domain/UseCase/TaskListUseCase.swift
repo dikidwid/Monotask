@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol TaskListUseCase {
+protocol TaskListUseCase: GetTasksUseCase {
     func getTasks() -> [TaskModel]
     func updateTaskStatus(_ updatedTask: TaskModel)
 }

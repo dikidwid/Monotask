@@ -20,7 +20,7 @@ struct TaskListRepositoryImpl: TaskListRepository {
             if totalLocalTasks.count == 0 {
                 let firstTask = TaskLocalEntity(id: UUID().uuidString,
                                            taskName: "Research on ADHD",
-                                           isCompleted: false,
+                                           isCompleted: true,
                                            subtasks: [],
                                            reminderTime: Date(),
                                            difficultyMetric: 0,
@@ -30,7 +30,7 @@ struct TaskListRepositoryImpl: TaskListRepository {
                 
                 let secondTask = TaskLocalEntity(id: UUID().uuidString,
                                            taskName: "Learning UIKit",
-                                           isCompleted: false,
+                                           isCompleted: true,
                                            subtasks: [],
                                            reminderTime: Date(),
                                            difficultyMetric: 0,
@@ -39,7 +39,7 @@ struct TaskListRepositoryImpl: TaskListRepository {
                 
                 let thirdTask = TaskLocalEntity(id: UUID().uuidString,
                                            taskName: "Implement Clean Architecture",
-                                           isCompleted: false,
+                                           isCompleted: true,
                                            subtasks: [],
                                            reminderTime: Date(),
                                            difficultyMetric: 0,

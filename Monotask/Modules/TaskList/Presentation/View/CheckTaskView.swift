@@ -8,6 +8,7 @@
 import SwiftUI
 import CoreHaptics
 import AVFAudio
+import Lottie
 
 struct CheckTaskView: View {
     @State private var workItem: DispatchWorkItem?
@@ -19,6 +20,11 @@ struct CheckTaskView: View {
     @State private var thirdInnerLayerOpacity: Double = 0
     @State private var fourthInnerLayerOpacity: Double = 0
     
+    @State private var tapStartTime: Date? = nil
+    @State private var tapEndTime: Date? = nil
+    @State private var isTapped: Bool = false
+    @State private var succeed: Bool = false
+    
     let task: TaskModel?
     let onCheckedTask: ((Bool) -> Void?)
     let coreHapticsManager: CoreHapticsManager = CoreHapticsManager.shared
@@ -28,6 +34,13 @@ struct CheckTaskView: View {
         
     var body: some View {
         ZStack {
+            
+            //Lottie
+            if isTapped || succeed {
+                TestLottie(succeed: $succeed)
+                   
+            }
+            
             CheckTaskShape()
                 .frame(width: 235, height: 235)
                 .scaleEffect(outerLayerScale)
@@ -141,6 +154,19 @@ struct CheckTaskView: View {
         .scaleEffect(isPressing ? maxScale : 1)
         .sensoryFeedback(.impact(flexibility: .solid, intensity: 1), trigger: isPressing)
         .sensoryFeedback(.impact(flexibility: .soft, intensity: 0.75), trigger: task)
+        .simultaneousGesture(
+            DragGesture(minimumDistance: 0)
+                .onChanged { _ in
+                    print("Drag started")
+                    isTapped = true
+                    tapStartTime = Date()
+                }
+                .onEnded { _ in
+                    isTapped = false
+                    tapEndTime = Date()
+                    calculateTapDuration()
+                }
+        )
     }
     
     // Start the countdown logic
@@ -169,7 +195,37 @@ struct CheckTaskView: View {
         func actionAfterTwoSeconds() {
             audioManager.playSoundEffectTwo(.buildComplete)
         }
+    
+    private func calculateTapDuration() {
+            guard let start = tapStartTime, let end = tapEndTime else { return }
+            let duration = end.timeIntervalSince(start)
+            print("Tap duration: \(duration) seconds")
+            if duration > 2 { // adjust this duration as needed
+                succeed = true
+            } else {
+                succeed = false
+            }
+        }
 }
+
+struct TestLottie: View {
+    @Binding var succeed: Bool
+    var body: some View {
+        if(succeed){
+            LottieView(animation: .named("clickAnimationTransparent.json"))
+                .playbackMode(.playing(.fromProgress(1, toProgress: 1, loopMode: .playOnce)))
+               
+        }
+        else{
+            LottieView(animation: .named("clickAnimationTransparent.json"))
+                .playbackMode(.playing(.toProgress(1, loopMode: .playOnce)))
+                .animationSpeed(1)
+        }
+        
+        
+    }
+}
+
 
 struct CheckTaskShape: Shape {
     func path(in rect: CGRect) -> Path {

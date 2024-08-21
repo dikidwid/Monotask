@@ -21,3 +21,9 @@ extension Font {
         return .custom(font.rawValue, size: size)
     }
 }
+
+extension UIFont {
+    static func oswald(_ font: Oswald, size: CGFloat) -> UIFont {
+        return .init(name: font.rawValue, size: size)!
+    }
+}

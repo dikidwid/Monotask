@@ -32,6 +32,29 @@
 		3A5D01EB2C75883000F4E9FF /* AddTaskCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D01EA2C75883000F4E9FF /* AddTaskCoordinatorView.swift */; };
 		3A5D01EF2C75BCAC00F4E9FF /* AddTaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D01EE2C75BCAC00F4E9FF /* AddTaskDetailView.swift */; };
 		3A5D01F12C75BF1D00F4E9FF /* created.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A5D01F02C75BF1D00F4E9FF /* created.mp3 */; };
+		3A5D01F42C75CD9E00F4E9FF /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 3A5D01F32C75CD9E00F4E9FF /* Lottie */; };
+		3A5D01F72C75CDAC00F4E9FF /* SVGView in Frameworks */ = {isa = PBXBuildFile; productRef = 3A5D01F62C75CDAC00F4E9FF /* SVGView */; };
+		3A5D01FA2C75D18D00F4E9FF /* art.svg in Resources */ = {isa = PBXBuildFile; fileRef = 3A5D01F92C75D18D00F4E9FF /* art.svg */; };
+		3A5D01FE2C75D23100F4E9FF /* clickAnimationTransparent.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A5D01FC2C75D23100F4E9FF /* clickAnimationTransparent.json */; };
+		3A5D01FF2C75D23100F4E9FF /* clickAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A5D01FD2C75D23100F4E9FF /* clickAnimation.json */; };
+		3A5D02012C75D27E00F4E9FF /* RewardLocalEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D02002C75D27E00F4E9FF /* RewardLocalEntity.swift */; };
+		3A5D02062C75D2ED00F4E9FF /* RewardListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D02052C75D2ED00F4E9FF /* RewardListRepository.swift */; };
+		3A5D020A2C75D31E00F4E9FF /* RewardListRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D02092C75D31E00F4E9FF /* RewardListRepositoryImpl.swift */; };
+		3A5D020E2C75D4AE00F4E9FF /* RewardListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D020D2C75D4AE00F4E9FF /* RewardListUseCase.swift */; };
+		3A5D02132C75D66700F4E9FF /* ArtView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D02122C75D66700F4E9FF /* ArtView.swift */; };
+		3A5D02152C75D67600F4E9FF /* PresentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D02142C75D67600F4E9FF /* PresentView.swift */; };
+		3A5D02172C75D68000F4E9FF /* RewardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D02162C75D68000F4E9FF /* RewardView.swift */; };
+		3A5D02192C75D68400F4E9FF /* RewardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D02182C75D68400F4E9FF /* RewardViewModel.swift */; };
+		3A5D021B2C75D69000F4E9FF /* UnlockedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D021A2C75D69000F4E9FF /* UnlockedView.swift */; };
+		3A5D021D2C75D77D00F4E9FF /* BackButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D021C2C75D77C00F4E9FF /* BackButtonStyle.swift */; };
+		3A5D021F2C75D86C00F4E9FF /* unlockVector.svg in Resources */ = {isa = PBXBuildFile; fileRef = 3A5D021E2C75D86C00F4E9FF /* unlockVector.svg */; };
+		3A5D02212C75D87100F4E9FF /* shineLockVector.svg in Resources */ = {isa = PBXBuildFile; fileRef = 3A5D02202C75D87100F4E9FF /* shineLockVector.svg */; };
+		3A5D02232C75E3BF00F4E9FF /* RewardShowcaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D02222C75E3BF00F4E9FF /* RewardShowcaseCoordinator.swift */; };
+		3A5D02282C75E68000F4E9FF /* GetTasksUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D02272C75E68000F4E9FF /* GetTasksUseCase.swift */; };
+		3A5D022E2C76186B00F4E9FF /* DetailTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D022D2C76186B00F4E9FF /* DetailTaskViewModel.swift */; };
+		3A5D02302C7618EF00F4E9FF /* DetailTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D022F2C7618EF00F4E9FF /* DetailTaskViewController.swift */; };
+		3A5D02322C761A4800F4E9FF /* DetailTaskViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D02312C761A4800F4E9FF /* DetailTaskViewControllerRepresentable.swift */; };
+		3A5D02342C769C0100F4E9FF /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D02332C769C0100F4E9FF /* UIFont+Extension.swift */; };
 		3A6759DD2C6D033A00983C66 /* MonotaskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6759DC2C6D033A00983C66 /* MonotaskApp.swift */; };
 		3A6759E12C6D033B00983C66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A6759E02C6D033B00983C66 /* Assets.xcassets */; };
 		3A6759E42C6D033B00983C66 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A6759E32C6D033B00983C66 /* Preview Assets.xcassets */; };
@@ -112,6 +135,27 @@
 		3A5D01EA2C75883000F4E9FF /* AddTaskCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskCoordinatorView.swift; sourceTree = "<group>"; };
 		3A5D01EE2C75BCAC00F4E9FF /* AddTaskDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskDetailView.swift; sourceTree = "<group>"; };
 		3A5D01F02C75BF1D00F4E9FF /* created.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = created.mp3; sourceTree = "<group>"; };
+		3A5D01F92C75D18D00F4E9FF /* art.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = art.svg; sourceTree = "<group>"; };
+		3A5D01FC2C75D23100F4E9FF /* clickAnimationTransparent.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = clickAnimationTransparent.json; sourceTree = "<group>"; };
+		3A5D01FD2C75D23100F4E9FF /* clickAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = clickAnimation.json; sourceTree = "<group>"; };
+		3A5D02002C75D27E00F4E9FF /* RewardLocalEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardLocalEntity.swift; sourceTree = "<group>"; };
+		3A5D02052C75D2ED00F4E9FF /* RewardListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardListRepository.swift; sourceTree = "<group>"; };
+		3A5D02092C75D31E00F4E9FF /* RewardListRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardListRepositoryImpl.swift; sourceTree = "<group>"; };
+		3A5D020D2C75D4AE00F4E9FF /* RewardListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardListUseCase.swift; sourceTree = "<group>"; };
+		3A5D02122C75D66700F4E9FF /* ArtView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtView.swift; sourceTree = "<group>"; };
+		3A5D02142C75D67600F4E9FF /* PresentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentView.swift; sourceTree = "<group>"; };
+		3A5D02162C75D68000F4E9FF /* RewardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardView.swift; sourceTree = "<group>"; };
+		3A5D02182C75D68400F4E9FF /* RewardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardViewModel.swift; sourceTree = "<group>"; };
+		3A5D021A2C75D69000F4E9FF /* UnlockedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlockedView.swift; sourceTree = "<group>"; };
+		3A5D021C2C75D77C00F4E9FF /* BackButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonStyle.swift; sourceTree = "<group>"; };
+		3A5D021E2C75D86C00F4E9FF /* unlockVector.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = unlockVector.svg; sourceTree = "<group>"; };
+		3A5D02202C75D87100F4E9FF /* shineLockVector.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = shineLockVector.svg; sourceTree = "<group>"; };
+		3A5D02222C75E3BF00F4E9FF /* RewardShowcaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardShowcaseCoordinator.swift; sourceTree = "<group>"; };
+		3A5D02272C75E68000F4E9FF /* GetTasksUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTasksUseCase.swift; sourceTree = "<group>"; };
+		3A5D022D2C76186B00F4E9FF /* DetailTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTaskViewModel.swift; sourceTree = "<group>"; };
+		3A5D022F2C7618EF00F4E9FF /* DetailTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTaskViewController.swift; sourceTree = "<group>"; };
+		3A5D02312C761A4800F4E9FF /* DetailTaskViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTaskViewControllerRepresentable.swift; sourceTree = "<group>"; };
+		3A5D02332C769C0100F4E9FF /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		3A6759D92C6D033A00983C66 /* Monotask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Monotask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A6759DC2C6D033A00983C66 /* MonotaskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonotaskApp.swift; sourceTree = "<group>"; };
 		3A6759E02C6D033B00983C66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -164,6 +208,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A5D01F72C75CDAC00F4E9FF /* SVGView in Frameworks */,
+				3A5D01F42C75CD9E00F4E9FF /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,8 +343,8 @@
 		3A5D01D32C755F4C00F4E9FF /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				3A5D01D82C7561FF00F4E9FF /* Domain */,
 				3A5D01D42C755F6C00F4E9FF /* Data */,
+				3A5D01D82C7561FF00F4E9FF /* Domain */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -307,6 +353,7 @@
 			isa = PBXGroup;
 			children = (
 				3A6759ED2C6D048F00983C66 /* Local */,
+				3A6759EF2C6D048F00983C66 /* Repository */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -322,9 +369,8 @@
 		3A5D01D82C7561FF00F4E9FF /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				3A6759F62C6D048F00983C66 /* Task */,
-				3A4C26BE2C74F1D600E738F0 /* Subtask */,
-				3A4C26C12C74F5DD00E738F0 /* TaskParameters */,
+				3A5D02262C75E66100F4E9FF /* Entities */,
+				3A5D02252C75E62100F4E9FF /* UseCase */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -368,6 +414,174 @@
 			isa = PBXGroup;
 			children = (
 				3A4C26B52C74D65100E738F0 /* AddTaskViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3A5D01F82C75D17300F4E9FF /* SVG */ = {
+			isa = PBXGroup;
+			children = (
+				3A5D01F92C75D18D00F4E9FF /* art.svg */,
+				3A5D021E2C75D86C00F4E9FF /* unlockVector.svg */,
+				3A5D02202C75D87100F4E9FF /* shineLockVector.svg */,
+			);
+			path = SVG;
+			sourceTree = "<group>";
+		};
+		3A5D01FB2C75D21A00F4E9FF /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				3A5D01FD2C75D23100F4E9FF /* clickAnimation.json */,
+				3A5D01FC2C75D23100F4E9FF /* clickAnimationTransparent.json */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
+		3A5D02022C75D2A400F4E9FF /* RewardShowcase */ = {
+			isa = PBXGroup;
+			children = (
+				3A5D02242C75E3C600F4E9FF /* Coordinator */,
+				3A5D02032C75D2D900F4E9FF /* Domain */,
+				3A5D02072C75D30600F4E9FF /* Data */,
+				3A5D020F2C75D64600F4E9FF /* Presentation */,
+			);
+			path = RewardShowcase;
+			sourceTree = "<group>";
+		};
+		3A5D02032C75D2D900F4E9FF /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				3A5D020C2C75D49E00F4E9FF /* UseCase */,
+				3A5D020B2C75D3A600F4E9FF /* Entities */,
+				3A5D02042C75D2DD00F4E9FF /* Repository */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		3A5D02042C75D2DD00F4E9FF /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				3A5D02052C75D2ED00F4E9FF /* RewardListRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		3A5D02072C75D30600F4E9FF /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				3A5D02082C75D30C00F4E9FF /* Repository */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		3A5D02082C75D30C00F4E9FF /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				3A5D02092C75D31E00F4E9FF /* RewardListRepositoryImpl.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		3A5D020B2C75D3A600F4E9FF /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				3A6759F12C6D048F00983C66 /* RewardModel.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		3A5D020C2C75D49E00F4E9FF /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				3A5D020D2C75D4AE00F4E9FF /* RewardListUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		3A5D020F2C75D64600F4E9FF /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				3A5D02112C75D65100F4E9FF /* ViewModel */,
+				3A5D02102C75D64E00F4E9FF /* View */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		3A5D02102C75D64E00F4E9FF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3A5D02162C75D68000F4E9FF /* RewardView.swift */,
+				3A5D02182C75D68400F4E9FF /* RewardViewModel.swift */,
+				3A5D02142C75D67600F4E9FF /* PresentView.swift */,
+				3A5D02122C75D66700F4E9FF /* ArtView.swift */,
+				3A5D021A2C75D69000F4E9FF /* UnlockedView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3A5D02112C75D65100F4E9FF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3A5D02242C75E3C600F4E9FF /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				3A5D02222C75E3BF00F4E9FF /* RewardShowcaseCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		3A5D02252C75E62100F4E9FF /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				3A5D02272C75E68000F4E9FF /* GetTasksUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		3A5D02262C75E66100F4E9FF /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				3A6759F62C6D048F00983C66 /* Task */,
+				3A4C26BE2C74F1D600E738F0 /* Subtask */,
+				3A4C26C12C74F5DD00E738F0 /* TaskParameters */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		3A5D02292C76182E00F4E9FF /* DetailTask */ = {
+			isa = PBXGroup;
+			children = (
+				3A5D022A2C76184300F4E9FF /* Presentation */,
+			);
+			path = DetailTask;
+			sourceTree = "<group>";
+		};
+		3A5D022A2C76184300F4E9FF /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				3A5D022C2C76184E00F4E9FF /* ViewModel */,
+				3A5D022B2C76184A00F4E9FF /* View */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		3A5D022B2C76184A00F4E9FF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3A5D022F2C7618EF00F4E9FF /* DetailTaskViewController.swift */,
+				3A5D02312C761A4800F4E9FF /* DetailTaskViewControllerRepresentable.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3A5D022C2C76184E00F4E9FF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3A5D022D2C76186B00F4E9FF /* DetailTaskViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -419,6 +633,7 @@
 			isa = PBXGroup;
 			children = (
 				3A6759EA2C6D048F00983C66 /* TaskLocalEntity.swift */,
+				3A5D02002C75D27E00F4E9FF /* RewardLocalEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -450,7 +665,6 @@
 		3A6759F02C6D048F00983C66 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				3A6759EF2C6D048F00983C66 /* Repository */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -458,7 +672,6 @@
 		3A6759F22C6D048F00983C66 /* Reward */ = {
 			isa = PBXGroup;
 			children = (
-				3A6759F12C6D048F00983C66 /* RewardModel.swift */,
 			);
 			path = Reward;
 			sourceTree = "<group>";
@@ -548,6 +761,8 @@
 		3A675A0B2C6D07F500983C66 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				3A5D01FB2C75D21A00F4E9FF /* Lottie */,
+				3A5D01F82C75D17300F4E9FF /* SVG */,
 				3A675A0C2C6D07FA00983C66 /* Fonts */,
 				3AB294F32C7186160026F5AA /* Haptics */,
 				3A4C267A2C7340E000E738F0 /* Sound Effects */,
@@ -575,6 +790,8 @@
 		3A675A292C6D0BBD00983C66 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				3A5D02292C76182E00F4E9FF /* DetailTask */,
+				3A5D02022C75D2A400F4E9FF /* RewardShowcase */,
 				3A4C26AD2C74D37600E738F0 /* AddTask */,
 				3A6759FE2C6D048F00983C66 /* TaskList */,
 			);
@@ -586,6 +803,7 @@
 			children = (
 				3A675A2B2C6D0BD300983C66 /* Font+Extension.swift */,
 				3ABEE1772C6D14090098B08E /* Color+Extension.swift */,
+				3A5D02332C769C0100F4E9FF /* UIFont+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -635,6 +853,7 @@
 			children = (
 				3ABEE1952C6EDC8E0098B08E /* CallToActionButtonStyle.swift */,
 				3A4C26BA2C74E1AF00E738F0 /* CustomCircleButtonStyle.swift */,
+				3A5D021C2C75D77C00F4E9FF /* BackButtonStyle.swift */,
 			);
 			path = ButtonStyle;
 			sourceTree = "<group>";
@@ -725,6 +944,10 @@
 			dependencies = (
 			);
 			name = Monotask;
+			packageProductDependencies = (
+				3A5D01F32C75CD9E00F4E9FF /* Lottie */,
+				3A5D01F62C75CDAC00F4E9FF /* SVGView */,
+			);
 			productName = Monotask;
 			productReference = 3A6759D92C6D033A00983C66 /* Monotask.app */;
 			productType = "com.apple.product-type.application";
@@ -775,6 +998,10 @@
 				Base,
 			);
 			mainGroup = 3A6759D02C6D033A00983C66;
+			packageReferences = (
+				3A5D01F22C75CD9E00F4E9FF /* XCRemoteSwiftPackageReference "lottie-spm" */,
+				3A5D01F52C75CDAC00F4E9FF /* XCRemoteSwiftPackageReference "SVGView" */,
+			);
 			productRefGroup = 3A6759DA2C6D033A00983C66 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -790,6 +1017,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A5D01FA2C75D18D00F4E9FF /* art.svg in Resources */,
+				3A5D01FF2C75D23100F4E9FF /* clickAnimation.json in Resources */,
 				3A4C26952C745D4E00E738F0 /* build-up.mp3 in Resources */,
 				3A5D01F12C75BF1D00F4E9FF /* created.mp3 in Resources */,
 				3AB295032C71AC900026F5AA /* Inflate.ahap in Resources */,
@@ -803,7 +1032,10 @@
 				3A675A262C6D08CF00983C66 /* Oswald-SemiBold.ttf in Resources */,
 				3AB2950E2C7209110026F5AA /* Sparkle.ahap in Resources */,
 				3A6759E42C6D033B00983C66 /* Preview Assets.xcassets in Resources */,
+				3A5D01FE2C75D23100F4E9FF /* clickAnimationTransparent.json in Resources */,
+				3A5D02212C75D87100F4E9FF /* shineLockVector.svg in Resources */,
 				3A6759E12C6D033B00983C66 /* Assets.xcassets in Resources */,
+				3A5D021F2C75D86C00F4E9FF /* unlockVector.svg in Resources */,
 				3A4C26B42C74D42400E738F0 /* switched.mp3 in Resources */,
 				3AB295072C71B1EF0026F5AA /* Transition.ahap in Resources */,
 			);
@@ -824,19 +1056,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A5D01DB2C75627400F4E9FF /* TaskListRepository.swift in Sources */,
+				3A5D02062C75D2ED00F4E9FF /* RewardListRepository.swift in Sources */,
 				3A675A042C6D048F00983C66 /* TaskListUseCase.swift in Sources */,
 				E202CD0B2C74468100AEF012 /* EditTaskViewModel.swift in Sources */,
 				3ABEE1942C6EDC1A0098B08E /* Oswald.swift in Sources */,
+				3A5D021B2C75D69000F4E9FF /* UnlockedView.swift in Sources */,
 				3A4C26792C73362700E738F0 /* AudioManager.swift in Sources */,
 				3ABEE1962C6EDC8E0098B08E /* CallToActionButtonStyle.swift in Sources */,
 				3A4C26CC2C74FB8600E738F0 /* TitleParameterTaskView.swift in Sources */,
 				3A6759FF2C6D048F00983C66 /* TaskLocalEntity.swift in Sources */,
 				3A4C26B62C74D65100E738F0 /* AddTaskViewModel.swift in Sources */,
+				3A5D02132C75D66700F4E9FF /* ArtView.swift in Sources */,
 				3A4C26C52C74F61400E738F0 /* TaskUrgency.swift in Sources */,
 				3A5D01D72C755FE100F4E9FF /* AddTaskRepositoryImpl.swift in Sources */,
 				3A4C26BD2C74F18600E738F0 /* AddTaskPrioritizationView.swift in Sources */,
 				3A4C26D02C75010E00E738F0 /* SelectionParameterTaskView.swift in Sources */,
+				3A5D02172C75D68000F4E9FF /* RewardView.swift in Sources */,
 				E23AB5CA2C736DF3006CE04D /* CreateTaskModel.swift in Sources */,
+				3A5D02152C75D67600F4E9FF /* PresentView.swift in Sources */,
 				3A675A0A2C6D049900983C66 /* SwiftDataContextManager.swift in Sources */,
 				E23AB5D82C736E64006CE04D /* TaskTitleTextField.swift in Sources */,
 				3AB2950A2C71B6DB0026F5AA /* CoreHapticsManager.swift in Sources */,
@@ -848,25 +1085,35 @@
 				3ABEE17B2C6D20BA0098B08E /* CheckTaskView.swift in Sources */,
 				3A5D01E02C75638400F4E9FF /* AddTaskCoordinator.swift in Sources */,
 				3A675A002C6D048F00983C66 /* TaskListRepositoryImpl.swift in Sources */,
+				3A5D020E2C75D4AE00F4E9FF /* RewardListUseCase.swift in Sources */,
 				3A675A2C2C6D0BD300983C66 /* Font+Extension.swift in Sources */,
 				3A5D01E92C7566D500F4E9FF /* AppPresentationStyle.swift in Sources */,
 				3A5D01EB2C75883000F4E9FF /* AddTaskCoordinatorView.swift in Sources */,
+				3A5D02302C7618EF00F4E9FF /* DetailTaskViewController.swift in Sources */,
 				E23AB5CC2C736E03006CE04D /* CreateTaskViewModel.swift in Sources */,
 				3A5D01EF2C75BCAC00F4E9FF /* AddTaskDetailView.swift in Sources */,
 				E23AB5D62C736E53006CE04D /* ParameterSelectionView.swift in Sources */,
 				3A675A022C6D048F00983C66 /* RewardPieceModel.swift in Sources */,
+				3A5D022E2C76186B00F4E9FF /* DetailTaskViewModel.swift in Sources */,
 				3A675A012C6D048F00983C66 /* RewardModel.swift in Sources */,
+				3A5D020A2C75D31E00F4E9FF /* RewardListRepositoryImpl.swift in Sources */,
 				E225BD3A2C74457F00A66FD3 /* EditTaskView.swift in Sources */,
 				3A4C26B92C74D7A200E738F0 /* CustomTextFieldStyle.swift in Sources */,
+				3A5D02192C75D68400F4E9FF /* RewardViewModel.swift in Sources */,
 				E23AB5D42C736E45006CE04D /* ParameterTitleSelectionView.swift in Sources */,
 				3AB295102C7209250026F5AA /* TaskListCoordinator.swift in Sources */,
 				3A4C26C72C74F61E00E738F0 /* TaskDifficulty.swift in Sources */,
 				3A5D01DE2C7562D000F4E9FF /* AddTaskRepository.swift in Sources */,
+				3A5D021D2C75D77D00F4E9FF /* BackButtonStyle.swift in Sources */,
 				3A5D01E32C7564F800F4E9FF /* AppCoordinator.swift in Sources */,
 				E225BD3C2C7445B000A66FD3 /* EditTaskView2.swift in Sources */,
 				E23AB5D02C736E23006CE04D /* CreateTaskView2.swift in Sources */,
 				3A675A062C6D048F00983C66 /* TaskListViewModel.swift in Sources */,
+				3A5D02232C75E3BF00F4E9FF /* RewardShowcaseCoordinator.swift in Sources */,
+				3A5D02012C75D27E00F4E9FF /* RewardLocalEntity.swift in Sources */,
+				3A5D02342C769C0100F4E9FF /* UIFont+Extension.swift in Sources */,
 				3A6759DD2C6D033A00983C66 /* MonotaskApp.swift in Sources */,
+				3A5D02282C75E68000F4E9FF /* GetTasksUseCase.swift in Sources */,
 				E23AB5DA2C736E78006CE04D /* AddSubtaskTextField.swift in Sources */,
 				E23AB5CE2C736E11006CE04D /* CreateTaskView.swift in Sources */,
 				3A675A032C6D048F00983C66 /* TaskModel.swift in Sources */,
@@ -874,6 +1121,7 @@
 				3ABEE1782C6D14090098B08E /* Color+Extension.swift in Sources */,
 				3A4C26BB2C74E1AF00E738F0 /* CustomCircleButtonStyle.swift in Sources */,
 				E23AB5D22C736E36006CE04D /* TitleView.swift in Sources */,
+				3A5D02322C761A4800F4E9FF /* DetailTaskViewControllerRepresentable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1141,6 +1389,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3A5D01F22C75CD9E00F4E9FF /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.0;
+			};
+		};
+		3A5D01F52C75CDAC00F4E9FF /* XCRemoteSwiftPackageReference "SVGView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/SVGView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3A5D01F32C75CD9E00F4E9FF /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A5D01F22C75CD9E00F4E9FF /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
+		3A5D01F62C75CDAC00F4E9FF /* SVGView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A5D01F52C75CDAC00F4E9FF /* XCRemoteSwiftPackageReference "SVGView" */;
+			productName = SVGView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3A6759D12C6D033A00983C66 /* Project object */;
 }

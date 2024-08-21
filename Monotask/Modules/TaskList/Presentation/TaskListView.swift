@@ -12,31 +12,33 @@ struct TaskListView: View {
     @EnvironmentObject private var appCoordinator: AppCoordinator
 
     var body: some View {
-        ZStack {
-            if taskListViewModel.tasks.isEmpty {
-               emptyStateView
-            } else {
-                listTasksView
+        NavigationStack {
+            ZStack {
+                if taskListViewModel.tasks.isEmpty {
+                   emptyStateView
+                } else {
+                    listTasksView
+                }
+                
+                VStack {
+                    todayTextView
+                    
+                    Spacer()
+                    
+                    checkTaskView
+                    
+                    Spacer()
+                    
+                    addTaskButton
+                }
+                .overlay(alignment: .topTrailing) {
+                    showcaseJourneyButton
+                }
+                .padding(.top, 20)
             }
-            
-            VStack {
-                todayTextView
-                
-                Spacer()
-                
-                checkTaskView
-                
-                Spacer()
-                
-                addTaskButton
-            }
-            .overlay(alignment: .topTrailing) {
-                showcaseJourneyButton
-            }
-            .padding(.top, 20)
-        }
-        .onAppear(perform: taskListViewModel.onAppearAction)
-        .uncheckTaskAlert(isShowAlert: $taskListViewModel.isShowRemoveCheckmarkAlert) { taskListViewModel.updateTaskStatus($0) } 
+            .onAppear(perform: taskListViewModel.onAppearAction)
+        .uncheckTaskAlert(isShowAlert: $taskListViewModel.isShowRemoveCheckmarkAlert) { taskListViewModel.updateTaskStatus($0) }
+        } 
     }
 }
 
@@ -152,7 +154,7 @@ extension TaskListView {
     
     private var showcaseJourneyButton: some View {
         Button {
-            
+            appCoordinator.push(.showcaseJourney)
         } label: {
             Circle()
                 .foregroundStyle(.black)
