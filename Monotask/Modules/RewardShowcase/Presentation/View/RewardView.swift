@@ -30,15 +30,14 @@ struct RewardView: View {
             viewModel.fetchRewards()
             viewModel.resetUnlockedRewardsIfNeeded()
             viewModel.updateCurrentRewardState()
+            viewModel.playShowcaseSoundEffect()
         }
+        .onDisappear(perform: viewModel.stopShowcaseSoundEffect)
         .overlay {
             if showPresent {
                 PresentView(showPresent: $showPresent)
             }
         }
-        
-        
-        
     }
     
     func goalText(reward: RewardModel) -> some View {
@@ -64,15 +63,14 @@ struct RewardView: View {
     
 }
 
-//#Preview {
-//    let repository = RewardListRepositoryImpl()
-//    let taskRepository = TaskListRepositoryImpl()
-//        
-//    let viewModel = RewardViewModel(useCaseReward: useCaseReward, useCaseTask: taskUseCase)
-//    let taskListViewModel = TaskListViewModel(useCase: taskUseCase)
-//    
-//    return RewardView(viewModel: viewModel, taskListViewModel: taskListViewModel)
-//}
+#Preview {
+    let repository = RewardListRepositoryImpl()
+    let taskRepository = TaskListRepositoryImpl()
+    let useCase = RewardListUseCaseImpl(rewardRepository: repository, taskRepository: taskRepository)
+    let viewModel = RewardViewModel(useCaseReward: useCase)
+    
+    return RewardView(viewModel: viewModel)
+}
 
 
 extension RewardView {
@@ -157,7 +155,7 @@ extension RewardView {
         .scrollIndicators(.hidden)
         .scrollTargetBehavior(.viewAligned)
         .scrollPosition(id: $viewModel.currentReward, anchor: .center)
-        .safeAreaPadding(.horizontal, 90)
+        .safeAreaPadding(.horizontal, 97)
         .overlay {
             LinearGradient(colors: viewModel.whiteOverlay,
                            startPoint: .leading,

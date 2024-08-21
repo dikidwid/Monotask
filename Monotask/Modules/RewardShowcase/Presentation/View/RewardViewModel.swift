@@ -15,6 +15,7 @@ final class RewardViewModel: ObservableObject {
     
     var lastReward: Int = 0
     private let useCaseReward: RewardListUseCase
+    let audioManager: AudioManager = AudioManager.shared
     
     let whiteOverlay: [Color] = [.white.opacity(0.7),
                                    .clear,
@@ -76,4 +77,11 @@ final class RewardViewModel: ObservableObject {
         }
     }
     
+    func playShowcaseSoundEffect() {
+        audioManager.playAudioPlayerOne(.idled, volume: 0.09, atTime: 3)
+    }
+    
+    func stopShowcaseSoundEffect() {
+        audioManager.stopSound()
+    }
 }

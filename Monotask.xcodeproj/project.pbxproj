@@ -10,7 +10,6 @@
 		3A4C26792C73362700E738F0 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4C26782C73362700E738F0 /* AudioManager.swift */; };
 		3A4C26942C745D4E00E738F0 /* build-complete.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A4C26922C745D4E00E738F0 /* build-complete.mp3 */; };
 		3A4C26952C745D4E00E738F0 /* build-up.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A4C26932C745D4E00E738F0 /* build-up.mp3 */; };
-		3A4C26B42C74D42400E738F0 /* switched.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A4C26B32C74D42400E738F0 /* switched.mp3 */; };
 		3A4C26B62C74D65100E738F0 /* AddTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4C26B52C74D65100E738F0 /* AddTaskViewModel.swift */; };
 		3A4C26B92C74D7A200E738F0 /* CustomTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4C26B82C74D7A200E738F0 /* CustomTextFieldStyle.swift */; };
 		3A4C26BB2C74E1AF00E738F0 /* CustomCircleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4C26BA2C74E1AF00E738F0 /* CustomCircleButtonStyle.swift */; };
@@ -55,6 +54,8 @@
 		3A5D02302C7618EF00F4E9FF /* DetailTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D022F2C7618EF00F4E9FF /* DetailTaskViewController.swift */; };
 		3A5D02322C761A4800F4E9FF /* DetailTaskViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D02312C761A4800F4E9FF /* DetailTaskViewControllerRepresentable.swift */; };
 		3A5D02342C769C0100F4E9FF /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D02332C769C0100F4E9FF /* UIFont+Extension.swift */; };
+		3A5D02362C76A09D00F4E9FF /* switched.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A5D02352C76A09D00F4E9FF /* switched.mp3 */; };
+		3A5D02382C76A24000F4E9FF /* idle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A5D02372C76A24000F4E9FF /* idle.mp3 */; };
 		3A6759DD2C6D033A00983C66 /* MonotaskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6759DC2C6D033A00983C66 /* MonotaskApp.swift */; };
 		3A6759E12C6D033B00983C66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A6759E02C6D033B00983C66 /* Assets.xcassets */; };
 		3A6759E42C6D033B00983C66 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A6759E32C6D033B00983C66 /* Preview Assets.xcassets */; };
@@ -113,7 +114,6 @@
 		3A4C26782C73362700E738F0 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		3A4C26922C745D4E00E738F0 /* build-complete.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "build-complete.mp3"; sourceTree = "<group>"; };
 		3A4C26932C745D4E00E738F0 /* build-up.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "build-up.mp3"; sourceTree = "<group>"; };
-		3A4C26B32C74D42400E738F0 /* switched.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = switched.mp3; sourceTree = "<group>"; };
 		3A4C26B52C74D65100E738F0 /* AddTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewModel.swift; sourceTree = "<group>"; };
 		3A4C26B82C74D7A200E738F0 /* CustomTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldStyle.swift; sourceTree = "<group>"; };
 		3A4C26BA2C74E1AF00E738F0 /* CustomCircleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCircleButtonStyle.swift; sourceTree = "<group>"; };
@@ -156,6 +156,8 @@
 		3A5D022F2C7618EF00F4E9FF /* DetailTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTaskViewController.swift; sourceTree = "<group>"; };
 		3A5D02312C761A4800F4E9FF /* DetailTaskViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTaskViewControllerRepresentable.swift; sourceTree = "<group>"; };
 		3A5D02332C769C0100F4E9FF /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		3A5D02352C76A09D00F4E9FF /* switched.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = switched.mp3; sourceTree = "<group>"; };
+		3A5D02372C76A24000F4E9FF /* idle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = idle.mp3; sourceTree = "<group>"; };
 		3A6759D92C6D033A00983C66 /* Monotask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Monotask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A6759DC2C6D033A00983C66 /* MonotaskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonotaskApp.swift; sourceTree = "<group>"; };
 		3A6759E02C6D033B00983C66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -235,7 +237,8 @@
 			isa = PBXGroup;
 			children = (
 				3A5D01F02C75BF1D00F4E9FF /* created.mp3 */,
-				3A4C26B32C74D42400E738F0 /* switched.mp3 */,
+				3A5D02352C76A09D00F4E9FF /* switched.mp3 */,
+				3A5D02372C76A24000F4E9FF /* idle.mp3 */,
 				3A4C268D2C7455A200E738F0 /* Transition */,
 			);
 			path = "Sound Effects";
@@ -1027,16 +1030,17 @@
 				3A675A1E2C6D083C00983C66 /* Oswald-Light.ttf in Resources */,
 				3A675A242C6D08C500983C66 /* Oswald-Regular.ttf in Resources */,
 				3A675A132C6D080800983C66 /* Oswald-Medium.ttf in Resources */,
+				3A5D02382C76A24000F4E9FF /* idle.mp3 in Resources */,
 				3AB294F72C719BEA0026F5AA /* Gravel.ahap in Resources */,
 				3A675A202C6D084B00983C66 /* Oswald-Bold.ttf in Resources */,
 				3A675A262C6D08CF00983C66 /* Oswald-SemiBold.ttf in Resources */,
 				3AB2950E2C7209110026F5AA /* Sparkle.ahap in Resources */,
 				3A6759E42C6D033B00983C66 /* Preview Assets.xcassets in Resources */,
 				3A5D01FE2C75D23100F4E9FF /* clickAnimationTransparent.json in Resources */,
+				3A5D02362C76A09D00F4E9FF /* switched.mp3 in Resources */,
 				3A5D02212C75D87100F4E9FF /* shineLockVector.svg in Resources */,
 				3A6759E12C6D033B00983C66 /* Assets.xcassets in Resources */,
 				3A5D021F2C75D86C00F4E9FF /* unlockVector.svg in Resources */,
-				3A4C26B42C74D42400E738F0 /* switched.mp3 in Resources */,
 				3AB295072C71B1EF0026F5AA /* Transition.ahap in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

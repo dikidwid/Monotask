@@ -14,11 +14,10 @@ public enum SoundEffect {
     case switched
     case checked
     case unchecked
-    case unlocked
-    case locked
     case buildUp
     case buildComplete
     case created
+    case idled
     
     var value: String {
         switch self {
@@ -32,16 +31,14 @@ public enum SoundEffect {
             "tuing"
         case .unchecked:
             ""
-        case .unlocked:
-            ""
-        case .locked:
-            ""
         case .buildUp:
             "build-up"
         case .buildComplete:
             "build-complete"
         case .created:
             "created"
+        case .idled:
+            "idle"
         }
     }
 }
