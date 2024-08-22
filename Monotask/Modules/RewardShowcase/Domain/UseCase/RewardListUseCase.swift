@@ -7,9 +7,10 @@
 
 import Foundation
 
-protocol RewardListUseCase: GetTasksUseCase {
+protocol RewardListUseCase {
     func getRewards() -> [RewardModel]
     func updateReward(_ updatedReward: RewardModel)
+    func getTasks() -> [TaskModel] 
 }
 
 struct RewardListUseCaseImpl: RewardListUseCase {

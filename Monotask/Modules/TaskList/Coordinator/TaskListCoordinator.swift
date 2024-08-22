@@ -10,8 +10,9 @@ import SwiftUI
 public final class TaskListCoordinator {
 
     func makeTaskListView() -> TaskListView {
-        let repository = makeTaskListRepository()
-        let useCase = makeTaskListUseCase(repository: repository)
+        let taskListRepository = makeTaskListRepository()
+        let rewardListRepository = makeRewardListRepository()
+        let useCase = makeTaskListUseCase(taskListRepository: taskListRepository, rewardListRepository: rewardListRepository)
         let viewModel = makeTaskListViewModel(useCase: useCase)
         let view = TaskListView(taskListViewModel: viewModel)
         
@@ -23,11 +24,15 @@ public final class TaskListCoordinator {
         return TaskListViewModel(useCase: useCase)
     }
     
-    private func makeTaskListUseCase(repository: TaskListRepository) -> TaskListUseCase {
-        return TaskListUseCaseImpl(repository: repository)
+    private func makeTaskListUseCase(taskListRepository: TaskListRepository, rewardListRepository: RewardListRepository) -> TaskListUseCase {
+        return TaskListUseCaseImpl(repository: taskListRepository, rewardListRepository: rewardListRepository)
     }
     
     private func makeTaskListRepository() -> TaskListRepository {
         return TaskListRepositoryImpl()
+    }
+    
+    private func makeRewardListRepository() -> RewardListRepository {
+        return RewardListRepositoryImpl()
     }
 }

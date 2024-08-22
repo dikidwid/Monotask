@@ -53,7 +53,6 @@ class AddTaskViewModel: ObservableObject {
         if taskName.count > maximumCharacterTaskName {
             taskName = String(taskName.prefix(maximumCharacterTaskName))
         }
-        print(taskName)
     }
     
     func deleteSubtask(_ subtask: SubtaskModel) {
@@ -61,7 +60,9 @@ class AddTaskViewModel: ObservableObject {
     }
     
     func addNewTask() {
-        localNotificationManager.scheduleNotification(notificationTitle: taskName, notificationMessage: "Don’t forget that you still have this task.", reminderTime: reminderTime)
+        localNotificationManager.scheduleNotification(notificationTitle: taskName,
+                                                      notificationMessage: "Don’t forget that you still have this task.",
+                                                      reminderTime: reminderTime)
         
         #warning("Ask mentors, should we create a DTO for creating this object into SwiftData?")
         let newTask = TaskModel(id: UUID().uuidString,
@@ -73,9 +74,17 @@ class AddTaskViewModel: ObservableObject {
                                 difficultyMetric: selectedDifficultyParameter?.value ?? 1,
                                 interestMetric: selectedFunParameter?.value ?? 1)
         
-        print(newTask)
         useCase.addNewTask(newTask)
+        
+        resetAllField()
     }
     
-    
+    func resetAllField() {
+        taskName = ""
+        subtasks = []
+        isReminderOn = false
+        selectedUrgencyParameter = nil
+        selectedFunParameter = nil
+        selectedDifficultyParameter = nil
+    }
 }

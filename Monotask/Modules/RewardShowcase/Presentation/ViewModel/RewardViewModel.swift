@@ -12,6 +12,7 @@ final class RewardViewModel: ObservableObject {
     @Published var tasks: [TaskModel] = []
     @Published var currentReward: RewardModel?
     @Published var currentIndexReward: Int?
+    @Published var isShowPresentView: Bool = false
     
     var lastReward: Int = 0
     private let useCaseReward: RewardListUseCase
@@ -45,12 +46,26 @@ final class RewardViewModel: ObservableObject {
         currentReward = rewards.first
     }
     
+    func onDismissPresentView() {
+       isShowPresentView = false
+    }
+    
     func unlockReward(_ reward: RewardModel) {
+        isShowPresentView = true
+        
         var updatedReward = reward
         updatedReward.isUnlockedTap = true
         currentReward = updatedReward
         useCaseReward.updateReward(updatedReward)
         fetchRewards()
+    }
+    
+    func displayRewardTotalTasks(_ reward: RewardModel) -> Int {
+        if totalCompletedTasks >= reward.minimumTask {
+            return reward.minimumTask
+        } else {
+            return totalCompletedTasks
+        }
     }
 
     func playShowcaseSoundEffect() {

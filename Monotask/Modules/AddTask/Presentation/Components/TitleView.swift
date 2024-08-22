@@ -9,15 +9,11 @@ import SwiftUI
 
 struct TitleView: View {
     var text: String
-    var font: Font = .oswaldTitle2
-    var color: Color = .black
-    var weight: Font.Weight = .regular
 
     var body: some View {
         Text(text)
-            .font(font)
-            .foregroundColor(color)
-            .fontWeight(weight)
+            .font(.oswaldTitle2)
+            .foregroundColor(.black)
             .frame(maxWidth: .infinity, alignment: .leading)
     }
 }

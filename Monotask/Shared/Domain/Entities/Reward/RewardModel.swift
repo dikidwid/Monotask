@@ -13,6 +13,7 @@ struct RewardModel: Identifiable, Hashable {
     let rewardNumber: Int
     let rewardName: String
     let rewardDescription: String
+    let rewardMessage: String
     let rewardWallpaper: String
     let rewardPresentImage: String
     let minimumTask: Int

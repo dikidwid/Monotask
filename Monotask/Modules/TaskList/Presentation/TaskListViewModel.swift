@@ -15,6 +15,7 @@ final class TaskListViewModel: ObservableObject {
     @Published var isShowRemoveCheckmarkAlert: Bool =  false
     
     let useCase: TaskListUseCase
+    let audioManager: AudioManager = AudioManager.shared
     
     let whiteOverlay: [Color] = [.white.opacity(0.7),
                                    .clear,
@@ -44,20 +45,6 @@ final class TaskListViewModel: ObservableObject {
     
     func getTasks() {
        tasks = useCase.getTasks()
-    }
-    
-    func addNewTask() {
-        let newTask = TaskModel(id: UUID().uuidString,
-                                taskName: "New task",
-                                isCompleted: false,
-                                subtasks: [],
-                                reminderTime: .now,
-                                urgencyMetric: 1,
-                                difficultyMetric: 1,
-                                interestMetric: 1)
-        
-//        useCase.createNewTask(newTask)
-        getTasks()
     }
     
     func resetUnlockedRewardsIfNeeded() {

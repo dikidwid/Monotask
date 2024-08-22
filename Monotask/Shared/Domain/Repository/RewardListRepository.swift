@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol RewardListRepository{
+protocol RewardListRepository {
     func fetchRewards() -> [RewardModel]
     func updateReward(_ updatedReward: RewardModel)
 }

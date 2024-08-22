@@ -10,7 +10,6 @@ struct RewardView: View {
     @StateObject var viewModel: RewardViewModel
     @EnvironmentObject var appCoordinator: AppCoordinator
     
-    @State private var showPresent = false
     
     var body: some View {
         VStack {
@@ -33,12 +32,15 @@ struct RewardView: View {
         }
         .onDisappear(perform: viewModel.stopShowcaseSoundEffect)
         .overlay {
-            if showPresent {
-                PresentView(showPresent: $showPresent,
-                            artImage: viewModel.currentReward!.rewardPresentImage,
-                            artName: viewModel.currentReward!.rewardName)
+            if viewModel.isShowPresentView,
+               let currentReward = viewModel.currentReward {
+                PresentView(rewardImage: currentReward.rewardPresentImage,
+                            rewardName: currentReward.rewardName, 
+                            rewardMessage: currentReward.rewardMessage, 
+                            onDismiss: viewModel.onDismissPresentView)
             }
         }
+        .animation(.easeInOut, value: viewModel.isShowPresentView)
     }
 }
 
@@ -68,7 +70,7 @@ extension RewardView {
                             }
                             .padding(.top)
                         
-                        Text("\(viewModel.totalCompletedTasks)/\(reward.minimumTask) tasks")
+                        Text("\(viewModel.displayRewardTotalTasks(reward))/\(reward.minimumTask) tasks")
                             .font(.oswaldTitle2)
                             .scrollTransition(.animated, axis: .horizontal) { content, phase in
                                 content
@@ -88,12 +90,7 @@ extension RewardView {
                             else if (!reward.isUnlockedTap){
                                 UnlockedView()
                                     .onTapGesture {
-                                        withAnimation {
-                                            showPresent = true
-                                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-                                                viewModel.unlockReward(reward)
-                                            }
-                                        }
+                                        viewModel.unlockReward(reward)
                                     }
                                 
                                 Spacer()
@@ -103,12 +100,21 @@ extension RewardView {
                                 case 1:
                                     ArtWaterView()
                                         .frame(width: 280)
+                                        .onTapGesture {
+                                            viewModel.isShowPresentView.toggle()
+                                        }
                                 case 2 :
                                     ArtHoldView()
                                         .frame(width: 280)
+                                        .onTapGesture {
+                                            viewModel.isShowPresentView.toggle()
+                                        }
                                 case 3:
                                     ArtStarView()
                                         .frame(width: 280)
+                                        .onTapGesture {
+                                            viewModel.isShowPresentView.toggle()
+                                        }
                                 default:
                                     ArtStarView()
                                         .frame(width: 280) // Default case

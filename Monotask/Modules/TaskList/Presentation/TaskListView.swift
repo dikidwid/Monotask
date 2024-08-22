@@ -37,14 +37,18 @@ struct TaskListView: View {
                 .padding(.top, 20)
             }
             .onAppear(perform: taskListViewModel.onAppearAction)
-            .uncheckTaskAlert(isShowAlert: $taskListViewModel.isShowRemoveCheckmarkAlert) { taskListViewModel.updateTaskStatus($0) }
+            .uncheckTaskAlert(isShowAlert: $taskListViewModel.isShowRemoveCheckmarkAlert) {
+                taskListViewModel.updateTaskStatus($0)
+                taskListViewModel.audioManager.playSoundEffectTwo(.unchecked, volume: 0.1)
+            }
         }
     }
 }
 
 #Preview {
-    let repository = TaskListRepositoryImpl()
-    let useCase = TaskListUseCaseImpl(repository: repository)
+    let taskListRepository = TaskListRepositoryImpl()
+    let rewardListRepository = RewardListRepositoryImpl()
+    let useCase = TaskListUseCaseImpl(repository: taskListRepository, rewardListRepository: rewardListRepository)
     let viewModel = TaskListViewModel(useCase: useCase)
     
     return TaskListView(taskListViewModel: viewModel)
@@ -57,9 +61,9 @@ extension TaskListView {
         VStack(spacing: 17) {
             Text("Create a New Task")
                 .font(.oswaldLargeEmphasized)
-                .padding(.top, 26 + 50)
+                .padding(.top, 49 + 50)
             
-            Spacer().frame(height: 160)
+            Spacer().frame(height: 130)
             
             Image(.emptyState)
             

@@ -38,9 +38,6 @@ struct AddTaskPrioritizationView: View {
                 confirmButton
             }
         }
-        .onAppear {
-            print(addTaskViewModel.taskName)
-        }
     }
 }
 

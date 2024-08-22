@@ -8,46 +8,48 @@
 import SwiftUI
 
 struct PresentView: View {
-    @Binding var showPresent: Bool
-    
-    let artImage: String
-    let artName: String
+    let rewardImage: String
+    let rewardName: String
+    let rewardMessage: String
+
+    let onDismiss: (() -> Void)
     
     var body: some View {
         ZStack{
             Color.black
                 .edgesIgnoringSafeArea(.all)
             
-            Image("\(artImage)")
-            //                            .resizable()
-            //                            .scaledToFill()
+            Image("\(rewardImage)")
                 .ignoresSafeArea(edges: .bottom)
             
-            VStack{
-                Text("Hooray, you got")
+            VStack {
+                Text("Hooray!, you got")
                     .font(.oswaldLargeTitle)
                     .foregroundColor(.white)
                 
-                Text(" \"\(artName)\"")
+                Text(" \"\(rewardName)\"")
                     .font(.oswaldLargeTitle)
                     .foregroundColor(.white)
+                    .padding(.bottom, 10)
                 
-                Text("Completing tasks can be a real challenge, but\nyou powered through and made it happen.")
+                Text(rewardMessage)
                     .font(.oswaldBody)
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
+                    .padding(.horizontal, 60)
                 
                 Spacer()
             }
             .padding(.top, 95)
         }
         .onTapGesture {
-            showPresent = false
+            onDismiss()
         }
+        .onAppear { AudioManager.shared.playSoundEffectTwo(.presented, volume: 0.2) }
     }
     
 }
-//
-//#Preview {
-//    PresentView(showPresent: .constant(true))
-//}
+
+#Preview {
+    PresentView(rewardImage: "artStarPreview", rewardName: "The Angel", rewardMessage: "Completing tasks can be a real challenge, but you powered through and made it happen.", onDismiss: {})
+}

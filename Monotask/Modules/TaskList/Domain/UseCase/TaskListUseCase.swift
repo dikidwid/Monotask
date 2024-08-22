@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol TaskListUseCase: GetTasksUseCase {
+protocol TaskListUseCase {
     func getTasks() -> [TaskModel]
     func updateTaskStatus(_ updatedTask: TaskModel)
     func getRewards() -> [RewardModel]
@@ -16,6 +16,7 @@ protocol TaskListUseCase: GetTasksUseCase {
 
 struct TaskListUseCaseImpl: TaskListUseCase {
     let repository: TaskListRepository
+    let rewardListRepository: RewardListRepository
     
     #warning("TODO: Create logic to sort the task based on those 3 parameters")
     func getTasks() -> [TaskModel] {
@@ -38,10 +39,10 @@ struct TaskListUseCaseImpl: TaskListUseCase {
     }
     
     func getRewards() -> [RewardModel] {
-        repository.fetchRewards()
+        rewardListRepository.fetchRewards()
     }
     
     func updateReward(_ updatedReward: RewardModel) {
-        repository.updateReward(updatedReward)
+        rewardListRepository.updateReward(updatedReward)
     }
 }

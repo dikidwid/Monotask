@@ -15,22 +15,33 @@ class RewardLocalEntity{
     var rewardNumber: Int
     var rewardName: String
     var rewardDescription: String
+    var rewardMessage: String
     var rewardWallpaper: String
     var rewardPresentImage: String
     var minimumTask: Int
     var isUnlockedTap: Bool
     
-    init(id: String, rewardNumber: Int, rewardName: String, rewardDescription: String, rewardWallpaper: String, rewardPresentImage: String, minimumTask: Int, isUnlockedTap: Bool) {
+    init(
+        id: String,
+        rewardNumber: Int,
+        rewardName: String,
+        rewardDescription: String,
+        rewardMessage: String,
+        rewardWallpaper: String,
+        rewardPresentImage: String,
+        minimumTask: Int,
+        isUnlockedTap: Bool
+    ) {
         self.id = id
         self.rewardNumber = rewardNumber
         self.rewardName = rewardName
         self.rewardDescription = rewardDescription
+        self.rewardMessage = rewardMessage
         self.rewardWallpaper = rewardWallpaper
         self.rewardPresentImage = rewardPresentImage
         self.minimumTask = minimumTask
         self.isUnlockedTap = isUnlockedTap
     }
-    
 }
 
 extension RewardLocalEntity{
@@ -40,6 +51,7 @@ extension RewardLocalEntity{
             rewardNumber: self.rewardNumber,
             rewardName: self.rewardName,
             rewardDescription: self.rewardDescription,
+            rewardMessage: self.rewardMessage,
             rewardWallpaper: self.rewardWallpaper,
             rewardPresentImage: self.rewardPresentImage,
             minimumTask: self.minimumTask,
