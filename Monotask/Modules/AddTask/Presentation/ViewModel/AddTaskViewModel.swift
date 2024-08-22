@@ -11,7 +11,9 @@ class AddTaskViewModel: ObservableObject {
     @Published var taskName: String = ""
     @Published var subtaskName: String = ""
     @Published var subtasks: [SubtaskModel] = []
-    @Published var isReminderOn: Bool = false
+    @Published var isReminderOn: Bool = false {
+        didSet { localNotificationManager.requestNotificationAuthorization() }
+    }
     @Published var reminderTime: Date = .now
     @Published var selectedUrgencyParameter: TaskUrgency?
     @Published var selectedDifficultyParameter: TaskDifficulty?
@@ -35,6 +37,7 @@ class AddTaskViewModel: ObservableObject {
     
     let useCase: AddTaskUseCase
     let audioManager = AudioManager.shared
+    let localNotificationManager = LocalNotificationManager.shared
     
     init(useCase: AddTaskUseCase) {
         self.useCase = useCase
@@ -58,6 +61,8 @@ class AddTaskViewModel: ObservableObject {
     }
     
     func addNewTask() {
+        localNotificationManager.scheduleNotification(notificationTitle: taskName, notificationMessage: "Don’t forget that you still have this task.", reminderTime: reminderTime)
+        
         #warning("Ask mentors, should we create a DTO for creating this object into SwiftData?")
         let newTask = TaskModel(id: UUID().uuidString,
                                 taskName: taskName,

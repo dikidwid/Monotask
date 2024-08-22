@@ -60,6 +60,8 @@
 		3A5D023F2C76ED4300F4E9FF /* DetailTaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D023E2C76ED4300F4E9FF /* DetailTaskRepository.swift */; };
 		3A5D02442C76EEA500F4E9FF /* DetailTaskRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D02432C76EEA500F4E9FF /* DetailTaskRepositoryImpl.swift */; };
 		3A5D02472C77010900F4E9FF /* DetailTaskCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D02462C77010900F4E9FF /* DetailTaskCoordinator.swift */; };
+		3A5D024A2C7730F500F4E9FF /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D02492C7730F500F4E9FF /* LocalNotificationManager.swift */; };
+		3A5D024D2C77324F00F4E9FF /* local-notification-sound.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3A5D024C2C77324F00F4E9FF /* local-notification-sound.caf */; };
 		3A6759DD2C6D033A00983C66 /* MonotaskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6759DC2C6D033A00983C66 /* MonotaskApp.swift */; };
 		3A6759E12C6D033B00983C66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A6759E02C6D033B00983C66 /* Assets.xcassets */; };
 		3A6759E42C6D033B00983C66 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A6759E32C6D033B00983C66 /* Preview Assets.xcassets */; };
@@ -166,6 +168,8 @@
 		3A5D023E2C76ED4300F4E9FF /* DetailTaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTaskRepository.swift; sourceTree = "<group>"; };
 		3A5D02432C76EEA500F4E9FF /* DetailTaskRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTaskRepositoryImpl.swift; sourceTree = "<group>"; };
 		3A5D02462C77010900F4E9FF /* DetailTaskCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTaskCoordinator.swift; sourceTree = "<group>"; };
+		3A5D02492C7730F500F4E9FF /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
+		3A5D024C2C77324F00F4E9FF /* local-notification-sound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "local-notification-sound.caf"; sourceTree = "<group>"; };
 		3A6759D92C6D033A00983C66 /* Monotask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Monotask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A6759DC2C6D033A00983C66 /* MonotaskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonotaskApp.swift; sourceTree = "<group>"; };
 		3A6759E02C6D033B00983C66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -649,6 +653,22 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		3A5D02482C7730D300F4E9FF /* LocalNotification */ = {
+			isa = PBXGroup;
+			children = (
+				3A5D02492C7730F500F4E9FF /* LocalNotificationManager.swift */,
+			);
+			path = LocalNotification;
+			sourceTree = "<group>";
+		};
+		3A5D024B2C77322500F4E9FF /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				3A5D024C2C77324F00F4E9FF /* local-notification-sound.caf */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
 		3A6759D02C6D033A00983C66 = {
 			isa = PBXGroup;
 			children = (
@@ -814,6 +834,7 @@
 		3A675A092C6D049900983C66 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				3A5D02482C7730D300F4E9FF /* LocalNotification */,
 				3A4C26772C7335DF00E738F0 /* AVFAudio */,
 				3AB295082C71B6C60026F5AA /* CoreHaptics */,
 				3A675A082C6D049900983C66 /* SwiftData */,
@@ -824,6 +845,7 @@
 		3A675A0B2C6D07F500983C66 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				3A5D024B2C77322500F4E9FF /* Notification */,
 				3A5D01FB2C75D21A00F4E9FF /* Lottie */,
 				3A5D01F82C75D17300F4E9FF /* SVG */,
 				3A675A0C2C6D07FA00983C66 /* Fonts */,
@@ -1096,6 +1118,7 @@
 				3A675A262C6D08CF00983C66 /* Oswald-SemiBold.ttf in Resources */,
 				3AB2950E2C7209110026F5AA /* Sparkle.ahap in Resources */,
 				3A6759E42C6D033B00983C66 /* Preview Assets.xcassets in Resources */,
+				3A5D024D2C77324F00F4E9FF /* local-notification-sound.caf in Resources */,
 				3A5D01FE2C75D23100F4E9FF /* clickAnimationTransparent.json in Resources */,
 				3A5D02362C76A09D00F4E9FF /* switched.mp3 in Resources */,
 				3A5D02212C75D87100F4E9FF /* shineLockVector.svg in Resources */,
@@ -1125,6 +1148,7 @@
 				E202CD0B2C74468100AEF012 /* EditTaskViewModel.swift in Sources */,
 				3ABEE1942C6EDC1A0098B08E /* Oswald.swift in Sources */,
 				3A5D021B2C75D69000F4E9FF /* UnlockedView.swift in Sources */,
+				3A5D024A2C7730F500F4E9FF /* LocalNotificationManager.swift in Sources */,
 				3A4C26792C73362700E738F0 /* AudioManager.swift in Sources */,
 				3ABEE1962C6EDC8E0098B08E /* CallToActionButtonStyle.swift in Sources */,
 				3A5D02472C77010900F4E9FF /* DetailTaskCoordinator.swift in Sources */,
