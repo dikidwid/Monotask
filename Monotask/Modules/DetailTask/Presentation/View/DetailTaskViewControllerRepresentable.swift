@@ -55,7 +55,7 @@ struct DetailTaskViewControllerRepresentable: UIViewControllerRepresentable {
 #Preview {
     let repository = DetailTaskRepositoryImpl()
     let useCase = DetailTaskUseCaseImpl(repository: repository)
-    let task = TaskModel(id: "", taskName: "Implementing Clean Architecture", isCompleted: false, subtasks: [], reminderTime: .now, difficultyMetric: 0, interestMetric: 0, urgencyMetric: 0)
+    let task = TaskModel(id: "", taskName: "Implementing Clean Architecture", isCompleted: false, subtasks: [], reminderTime: .now, urgencyMetric: 0, difficultyMetric: 0, interestMetric: 0)
     let viewModel = DetailTaskViewModel(task: task, useCase: useCase, appCoordinator: AppCoordinator())
         
     return DetailTaskViewControllerRepresentable(detailTaskViewModel: viewModel, onDismiss: { print("hehe") })

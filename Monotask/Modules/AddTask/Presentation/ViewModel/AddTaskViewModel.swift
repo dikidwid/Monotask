@@ -64,9 +64,9 @@ class AddTaskViewModel: ObservableObject {
                                 isCompleted: false,
                                 subtasks: subtasks.map({ $0.title }),
                                 reminderTime: reminderTime,
+                                urgencyMetric: selectedUrgencyParameter?.value ?? 1,
                                 difficultyMetric: selectedDifficultyParameter?.value ?? 1,
-                                interestMetric: selectedFunParameter?.value ?? 1,
-                                urgencyMetric: selectedUrgencyParameter?.value ?? 1)
+                                interestMetric: selectedFunParameter?.value ?? 1)
         
         print(newTask)
         useCase.addNewTask(newTask)

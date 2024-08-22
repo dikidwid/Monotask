@@ -16,9 +16,9 @@ class TaskLocalEntity {
     var isCompleted: Bool
     var subtasks: [String]
     var reminderTime: Date
+    var urgencyMetric: Int
     var difficultyMetric: Int
     var interestMetric: Int
-    var urgencyMetric: Int
     
     init(
         id: String,
@@ -26,18 +26,18 @@ class TaskLocalEntity {
         isCompleted: Bool,
         subtasks: [String],
         reminderTime: Date,
+        urgencyMetric: Int,
         difficultyMetric: Int,
-        interestMetric: Int,
-        urgencyMetric: Int
+        interestMetric: Int
     ) {
         self.id = id
         self.taskName = taskName
         self.isCompleted = isCompleted
         self.subtasks = subtasks
         self.reminderTime = reminderTime
+        self.urgencyMetric = urgencyMetric
         self.difficultyMetric = difficultyMetric
         self.interestMetric = interestMetric
-        self.urgencyMetric = urgencyMetric
     }
 }
 
@@ -49,9 +49,9 @@ extension TaskLocalEntity {
             isCompleted: self.isCompleted,
             subtasks: self.subtasks,
             reminderTime: self.reminderTime,
+            urgencyMetric: self.urgencyMetric,
             difficultyMetric: self.difficultyMetric,
-            interestMetric: self.interestMetric,
-            urgencyMetric: self.urgencyMetric
+            interestMetric: self.interestMetric
         )
     }
 }

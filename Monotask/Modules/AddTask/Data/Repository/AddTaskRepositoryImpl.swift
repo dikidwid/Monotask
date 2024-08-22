@@ -18,9 +18,9 @@ struct AddTaskRepositoryImpl: AddTaskRepository{
                                    isCompleted: newTask.isCompleted,
                                    subtasks: newTask.subtasks,
                                    reminderTime: newTask.reminderTime,
+                                   urgencyMetric: newTask.urgencyMetric, 
                                    difficultyMetric: newTask.difficultyMetric,
-                                   interestMetric: newTask.interestMetric,
-                                   urgencyMetric: newTask.urgencyMetric)
+                                   interestMetric: newTask.interestMetric)
         
         container.mainContext.insert(task)
         

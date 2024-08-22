@@ -13,7 +13,7 @@ struct TaskModel: Identifiable, Hashable {
     var isCompleted: Bool
     let subtasks: [String]
     let reminderTime: Date
+    let urgencyMetric: Int
     let difficultyMetric: Int
     let interestMetric: Int
-    let urgencyMetric: Int
 }

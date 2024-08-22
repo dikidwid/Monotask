@@ -50,9 +50,9 @@ final class TaskListViewModel: ObservableObject {
                                 isCompleted: false,
                                 subtasks: [],
                                 reminderTime: .now,
+                                urgencyMetric: 1, 
                                 difficultyMetric: 1,
-                                interestMetric: 1,
-                                urgencyMetric: 1)
+                                interestMetric: 1)
         
 //        useCase.createNewTask(newTask)
         getTasks()

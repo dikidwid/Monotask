@@ -15,36 +15,35 @@ struct TaskListRepositoryImpl: TaskListRepository {
     @MainActor 
     func fetchTasks() -> [TaskModel] {
         do {
-            #warning("TODO: Dummy data purpose, telete this if you want to:D")
+#warning("TODO: Dummy data purpose, telete this if you want to:D")
             let totalLocalTasks = try self.container.mainContext.fetch(FetchDescriptor<TaskLocalEntity>())
             if totalLocalTasks.count == 0 {
                 let firstTask = TaskLocalEntity(id: UUID().uuidString,
-                                           taskName: "Research on ADHD",
-                                           isCompleted: true,
-                                           subtasks: [],
-                                           reminderTime: Date(),
-                                           difficultyMetric: 0,
-                                           interestMetric: 0,
-                                           urgencyMetric: 0)
-                
-                
+                                                taskName: "Task 1",
+                                                isCompleted: true,
+                                                subtasks: [],
+                                                reminderTime: Date(),
+                                                urgencyMetric: 1,
+                                                difficultyMetric: 2,
+                                                interestMetric: 3)
+
                 let secondTask = TaskLocalEntity(id: UUID().uuidString,
-                                           taskName: "Learning UIKit",
-                                           isCompleted: true,
-                                           subtasks: [],
-                                           reminderTime: Date(),
-                                           difficultyMetric: 0,
-                                           interestMetric: 0,
-                                           urgencyMetric: 0)
+                                                 taskName: "Task 2",
+                                                 isCompleted: true,
+                                                 subtasks: [],
+                                                 reminderTime: Date(),
+                                                 urgencyMetric: 2,
+                                                 difficultyMetric: 2,
+                                                 interestMetric: 2)
                 
                 let thirdTask = TaskLocalEntity(id: UUID().uuidString,
-                                           taskName: "Implement Clean Architecture",
-                                           isCompleted: true,
-                                           subtasks: [],
-                                           reminderTime: Date(),
-                                           difficultyMetric: 0,
-                                           interestMetric: 0,
-                                           urgencyMetric: 0)
+                                                taskName: "Task 3",
+                                                isCompleted: true,
+                                                subtasks: [],
+                                                reminderTime: Date(),
+                                                urgencyMetric: 2,
+                                                difficultyMetric: 2,
+                                                interestMetric: 1)
                 
                 container.mainContext.insert(firstTask)
                 container.mainContext.insert(secondTask)
