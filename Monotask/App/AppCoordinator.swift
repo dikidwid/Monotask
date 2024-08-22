@@ -9,6 +9,7 @@ import SwiftUI
 
 final class AppCoordinator: ObservableObject {
     let taskListCoordinator: TaskListCoordinator = TaskListCoordinator()
+    let detailTaskCoordinator: DetailTaskCoordinator = DetailTaskCoordinator()
     let rewardListCoordinator: RewardShowcaseCoordinator = RewardShowcaseCoordinator()
     @Published var addTaskCoordinator: AddTaskCoordinator = AddTaskCoordinator()
     
@@ -59,8 +60,8 @@ final class AppCoordinator: ObservableObject {
     @ViewBuilder
     func build(_ sheet: AppSheet) -> some View {
         switch sheet {
-        case .detailTask:
-            Text("Detail Task")
+        case .detailTask(let task, let onDismiss):
+            detailTaskCoordinator.makeDetailTaskView(task: task, appCoordinator: self, onDismiss: onDismiss)
         }
     }
     
@@ -69,6 +70,8 @@ final class AppCoordinator: ObservableObject {
         switch fullScreenCover {
         case .addTaskDetail(let onDismiss):
             AddTaskCoordinatorView(coordinator: self.addTaskCoordinator, onDismiss: onDismiss)
+        case .updateTaskDetail(onDismiss: let onDismiss):
+            Text("Update Task")
         }
     }
 }

@@ -56,6 +56,10 @@
 		3A5D02342C769C0100F4E9FF /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D02332C769C0100F4E9FF /* UIFont+Extension.swift */; };
 		3A5D02362C76A09D00F4E9FF /* switched.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A5D02352C76A09D00F4E9FF /* switched.mp3 */; };
 		3A5D02382C76A24000F4E9FF /* idle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A5D02372C76A24000F4E9FF /* idle.mp3 */; };
+		3A5D023C2C76ECDA00F4E9FF /* DetailTaskUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D023B2C76ECDA00F4E9FF /* DetailTaskUseCase.swift */; };
+		3A5D023F2C76ED4300F4E9FF /* DetailTaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D023E2C76ED4300F4E9FF /* DetailTaskRepository.swift */; };
+		3A5D02442C76EEA500F4E9FF /* DetailTaskRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D02432C76EEA500F4E9FF /* DetailTaskRepositoryImpl.swift */; };
+		3A5D02472C77010900F4E9FF /* DetailTaskCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D02462C77010900F4E9FF /* DetailTaskCoordinator.swift */; };
 		3A6759DD2C6D033A00983C66 /* MonotaskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6759DC2C6D033A00983C66 /* MonotaskApp.swift */; };
 		3A6759E12C6D033B00983C66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A6759E02C6D033B00983C66 /* Assets.xcassets */; };
 		3A6759E42C6D033B00983C66 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A6759E32C6D033B00983C66 /* Preview Assets.xcassets */; };
@@ -158,6 +162,10 @@
 		3A5D02332C769C0100F4E9FF /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		3A5D02352C76A09D00F4E9FF /* switched.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = switched.mp3; sourceTree = "<group>"; };
 		3A5D02372C76A24000F4E9FF /* idle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = idle.mp3; sourceTree = "<group>"; };
+		3A5D023B2C76ECDA00F4E9FF /* DetailTaskUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTaskUseCase.swift; sourceTree = "<group>"; };
+		3A5D023E2C76ED4300F4E9FF /* DetailTaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTaskRepository.swift; sourceTree = "<group>"; };
+		3A5D02432C76EEA500F4E9FF /* DetailTaskRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTaskRepositoryImpl.swift; sourceTree = "<group>"; };
+		3A5D02462C77010900F4E9FF /* DetailTaskCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTaskCoordinator.swift; sourceTree = "<group>"; };
 		3A6759D92C6D033A00983C66 /* Monotask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Monotask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A6759DC2C6D033A00983C66 /* MonotaskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonotaskApp.swift; sourceTree = "<group>"; };
 		3A6759E02C6D033B00983C66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -558,6 +566,9 @@
 		3A5D02292C76182E00F4E9FF /* DetailTask */ = {
 			isa = PBXGroup;
 			children = (
+				3A5D02452C7700FA00F4E9FF /* Coordinator */,
+				3A5D02402C76EE6000F4E9FF /* Data */,
+				3A5D02392C76ECC400F4E9FF /* Domain */,
 				3A5D022A2C76184300F4E9FF /* Presentation */,
 			);
 			path = DetailTask;
@@ -587,6 +598,55 @@
 				3A5D022D2C76186B00F4E9FF /* DetailTaskViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3A5D02392C76ECC400F4E9FF /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				3A5D023D2C76ED2000F4E9FF /* Repository */,
+				3A5D023A2C76ECC900F4E9FF /* UseCase */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		3A5D023A2C76ECC900F4E9FF /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				3A5D023B2C76ECDA00F4E9FF /* DetailTaskUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		3A5D023D2C76ED2000F4E9FF /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				3A5D023E2C76ED4300F4E9FF /* DetailTaskRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		3A5D02402C76EE6000F4E9FF /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				3A5D02422C76EE7700F4E9FF /* Repository */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		3A5D02422C76EE7700F4E9FF /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				3A5D02432C76EEA500F4E9FF /* DetailTaskRepositoryImpl.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		3A5D02452C7700FA00F4E9FF /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				3A5D02462C77010900F4E9FF /* DetailTaskCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		3A6759D02C6D033A00983C66 = {
@@ -1067,6 +1127,7 @@
 				3A5D021B2C75D69000F4E9FF /* UnlockedView.swift in Sources */,
 				3A4C26792C73362700E738F0 /* AudioManager.swift in Sources */,
 				3ABEE1962C6EDC8E0098B08E /* CallToActionButtonStyle.swift in Sources */,
+				3A5D02472C77010900F4E9FF /* DetailTaskCoordinator.swift in Sources */,
 				3A4C26CC2C74FB8600E738F0 /* TitleParameterTaskView.swift in Sources */,
 				3A6759FF2C6D048F00983C66 /* TaskLocalEntity.swift in Sources */,
 				3A4C26B62C74D65100E738F0 /* AddTaskViewModel.swift in Sources */,
@@ -1108,6 +1169,7 @@
 				3AB295102C7209250026F5AA /* TaskListCoordinator.swift in Sources */,
 				3A4C26C72C74F61E00E738F0 /* TaskDifficulty.swift in Sources */,
 				3A5D01DE2C7562D000F4E9FF /* AddTaskRepository.swift in Sources */,
+				3A5D023F2C76ED4300F4E9FF /* DetailTaskRepository.swift in Sources */,
 				3A5D021D2C75D77D00F4E9FF /* BackButtonStyle.swift in Sources */,
 				3A5D01E32C7564F800F4E9FF /* AppCoordinator.swift in Sources */,
 				E225BD3C2C7445B000A66FD3 /* EditTaskView2.swift in Sources */,
@@ -1116,6 +1178,7 @@
 				3A5D02232C75E3BF00F4E9FF /* RewardShowcaseCoordinator.swift in Sources */,
 				3A5D02012C75D27E00F4E9FF /* RewardLocalEntity.swift in Sources */,
 				3A5D02342C769C0100F4E9FF /* UIFont+Extension.swift in Sources */,
+				3A5D023C2C76ECDA00F4E9FF /* DetailTaskUseCase.swift in Sources */,
 				3A6759DD2C6D033A00983C66 /* MonotaskApp.swift in Sources */,
 				3A5D02282C75E68000F4E9FF /* GetTasksUseCase.swift in Sources */,
 				E23AB5DA2C736E78006CE04D /* AddSubtaskTextField.swift in Sources */,
@@ -1124,6 +1187,7 @@
 				3A4C26C92C74F62500E738F0 /* TaskFun.swift in Sources */,
 				3ABEE1782C6D14090098B08E /* Color+Extension.swift in Sources */,
 				3A4C26BB2C74E1AF00E738F0 /* CustomCircleButtonStyle.swift in Sources */,
+				3A5D02442C76EEA500F4E9FF /* DetailTaskRepositoryImpl.swift in Sources */,
 				E23AB5D22C736E36006CE04D /* TitleView.swift in Sources */,
 				3A5D02322C761A4800F4E9FF /* DetailTaskViewControllerRepresentable.swift in Sources */,
 			);

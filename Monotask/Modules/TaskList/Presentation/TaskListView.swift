@@ -76,21 +76,27 @@ extension TaskListView {
         ScrollView(.horizontal) {
             LazyHStack(spacing: 0) {
                 ForEach(taskListViewModel.tasks, id: \.self) { task in
-                    Rectangle()
-                        .fill(.clear)
-                        .overlay(alignment: .top) {
-                            Text(task.taskName)
-                                .font(.oswaldLargeTitle)
-                                .underline(taskListViewModel.currentTask == task)
-                                .multilineTextAlignment(.center)
-                                .scrollTransition(.animated, axis: .horizontal) { content, phase in
-                                    content
-                                        .scaleEffect(phase.isIdentity ? 1.0 : 0.8)
-                                        .brightness(phase.isIdentity ? 0 : 0.6)
-                                }
-                        }
-                        .frame(width: 250)
-                        .padding(.top, 100)
+                    Button {
+                        appCoordinator.present(.detailTask(task: task, onDismiss: {taskListViewModel.getTasks()}))
+                    } label: {
+                        Rectangle()
+                            .fill(.clear)
+                            .overlay(alignment: .top) {
+                                Text(task.taskName)
+                                    .font(.oswaldLargeTitle)
+                                    .underline(taskListViewModel.currentTask == task)
+                                    .multilineTextAlignment(.center)
+                                    .scrollTransition(.animated, axis: .horizontal) { content, phase in
+                                        content
+                                            .scaleEffect(phase.isIdentity ? 1.0 : 0.8)
+                                            .brightness(phase.isIdentity ? 0 : 0.6)
+                                    }
+                            }
+                            .frame(width: 250)
+                            .padding(.top, 100)
+                            .tint(.black)
+                    }
+                   
                 }
             }
             .scrollTargetLayout()

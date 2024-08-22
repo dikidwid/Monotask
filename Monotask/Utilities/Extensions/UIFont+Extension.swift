@@ -8,7 +8,15 @@
 import UIKit
 
 extension UIFont {
+    static var oswaldLargeTitle: UIFont = {
+        .oswald(.medium, size: 34)
+    }()
+    
     static var oswaldTitle2: UIFont = {
         .oswald(.regular, size: 22)
+    }()
+    
+    static var oswaldTitle3: UIFont = {
+        .oswald(.regular, size: 20)
     }()
 }
