@@ -9,5 +9,7 @@ import Foundation
 
 protocol TaskListRepository {
     func fetchTasks() -> [TaskModel]
+    func fetchRewards() -> [RewardModel]
     func updateTask(_ updatedTask: TaskModel)
+    func updateReward(_ reward: RewardModel)
 }

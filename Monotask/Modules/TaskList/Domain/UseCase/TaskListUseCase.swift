@@ -10,6 +10,8 @@ import Foundation
 protocol TaskListUseCase: GetTasksUseCase {
     func getTasks() -> [TaskModel]
     func updateTaskStatus(_ updatedTask: TaskModel)
+    func getRewards() -> [RewardModel]
+    func updateReward(_ updatedReward: RewardModel)
 }
 
 struct TaskListUseCaseImpl: TaskListUseCase {
@@ -33,5 +35,13 @@ struct TaskListUseCaseImpl: TaskListUseCase {
     
     func updateTaskStatus(_ updatedTask: TaskModel) {
         repository.updateTask(updatedTask)
+    }
+    
+    func getRewards() -> [RewardModel] {
+        repository.fetchRewards()
+    }
+    
+    func updateReward(_ updatedReward: RewardModel) {
+        repository.updateReward(updatedReward)
     }
 }

@@ -10,24 +10,25 @@ import SwiftUI
 struct PresentView: View {
     @Binding var showPresent: Bool
     
+    let artImage: String
+    let artName: String
     
     var body: some View {
         ZStack{
             Color.black
                 .edgesIgnoringSafeArea(.all)
             
-            Image("artPreview")
-//                            .resizable()
-//                            .scaledToFill()
-                            .ignoresSafeArea(edges: .bottom)
-              
+            Image("\(artImage)")
+            //                            .resizable()
+            //                            .scaledToFill()
+                .ignoresSafeArea(edges: .bottom)
             
             VStack{
                 Text("Hooray, you got")
                     .font(.oswaldLargeTitle)
                     .foregroundColor(.white)
                 
-                Text(" \"The Angel\"")
+                Text(" \"\(artName)\"")
                     .font(.oswaldLargeTitle)
                     .foregroundColor(.white)
                 
@@ -36,23 +37,17 @@ struct PresentView: View {
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
                 
-                    Spacer()
+                Spacer()
             }
             .padding(.top, 95)
-            
-            
-            
         }
-
         .onTapGesture {
             showPresent = false
         }
-        
-      
     }
     
 }
-
-#Preview {
-    PresentView(showPresent: .constant(true))
-}
+//
+//#Preview {
+//    PresentView(showPresent: .constant(true))
+//}

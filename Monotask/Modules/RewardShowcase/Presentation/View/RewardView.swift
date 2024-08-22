@@ -28,49 +28,28 @@ struct RewardView: View {
         .navigationBarBackButtonHidden(true)
         .onAppear {
             viewModel.fetchRewards()
-            viewModel.resetUnlockedRewardsIfNeeded()
-            viewModel.updateCurrentRewardState()
+            viewModel.setCurrentReward()
             viewModel.playShowcaseSoundEffect()
         }
         .onDisappear(perform: viewModel.stopShowcaseSoundEffect)
         .overlay {
             if showPresent {
-                PresentView(showPresent: $showPresent)
+                PresentView(showPresent: $showPresent,
+                            artImage: viewModel.currentReward!.rewardPresentImage,
+                            artName: viewModel.currentReward!.rewardName)
             }
         }
     }
-    
-    func goalText(reward: RewardModel) -> some View {
-        let displayedCompletedTasks: Int
-        
-        if viewModel.totalCompletedTasks >= reward.minimumTask {
-            displayedCompletedTasks = reward.minimumTask
-        } else {
-            displayedCompletedTasks = viewModel.totalCompletedTasks
-        }
-        
-        if reward.id == "1" {
-            return Text("\(displayedCompletedTasks)/\(reward.minimumTask) tasks")
-                .font(.oswaldTitle2)
-        } else if reward.id == "2" {
-            return Text("\(displayedCompletedTasks)/\(reward.minimumTask) tasks")
-                .font(.oswaldTitle2)
-        } else {
-            return Text("\(displayedCompletedTasks)/\(reward.minimumTask) tasks")
-                .font(.oswaldTitle2)
-        }
-    }
-    
 }
 
-#Preview {
-    let repository = RewardListRepositoryImpl()
-    let taskRepository = TaskListRepositoryImpl()
-    let useCase = RewardListUseCaseImpl(rewardRepository: repository, taskRepository: taskRepository)
-    let viewModel = RewardViewModel(useCaseReward: useCase)
-    
-    return RewardView(viewModel: viewModel)
-}
+//#Preview {
+//    let repository = RewardListRepositoryImpl()
+//    let taskRepository = TaskListRepositoryImpl()
+//    let useCase = RewardListUseCaseImpl(rewardRepository: repository, taskRepository: taskRepository)
+//    let viewModel = RewardViewModel(useCaseReward: useCase)
+//
+//    return RewardView(viewModel: viewModel)
+//}
 
 
 extension RewardView {
@@ -80,7 +59,7 @@ extension RewardView {
             LazyHStack(spacing: 0) {
                 ForEach(viewModel.rewards, id: \.self) { reward in
                     VStack {
-                        Text("Stage \(reward.id)")
+                        Text("Stage \(reward.rewardNumber)")
                             .font(.oswaldLargeTitle)
                             .scrollTransition(.animated, axis: .horizontal) { content, phase in
                                 content
@@ -89,7 +68,8 @@ extension RewardView {
                             }
                             .padding(.top)
                         
-                        goalText(reward: reward)
+                        Text("\(viewModel.totalCompletedTasks)/\(reward.minimumTask) tasks")
+                            .font(.oswaldTitle2)
                             .scrollTransition(.animated, axis: .horizontal) { content, phase in
                                 content
                                     .opacity(phase.isIdentity ? 1 : 0)
@@ -118,10 +98,21 @@ extension RewardView {
                                 
                                 Spacer()
                                 
-                            }
-                            else{
-                                ArtView()
-                                    .frame(width: 280)
+                            } else {
+                                switch reward.rewardNumber{
+                                case 1:
+                                    ArtWaterView()
+                                        .frame(width: 280)
+                                case 2 :
+                                    ArtHoldView()
+                                        .frame(width: 280)
+                                case 3:
+                                    ArtStarView()
+                                        .frame(width: 280)
+                                default:
+                                    ArtStarView()
+                                        .frame(width: 280) // Default case
+                                }
                             }
                         }
                         .scrollTransition(.animated, axis: .horizontal) { content, phase in
@@ -140,6 +131,8 @@ extension RewardView {
                                 .padding(.horizontal)
                                 .padding(.bottom)
                                 .frame(width: 250)
+                            
+                            
                         }
                         .scrollTransition(.animated, axis: .horizontal) { content, phase in
                             content
@@ -166,8 +159,8 @@ extension RewardView {
     
     var shareShowcaseButton: some View {
         ShareLink(
-            item: Image("Wallpaper"),
-            preview: SharePreview("Share Wallpaper", image: Image("Wallpaper"))
+            item: Image(viewModel.currentReward?.rewardWallpaper ?? ""),
+            preview: SharePreview("Share Wallpaper", image: Image(viewModel.currentReward?.rewardWallpaper ?? ""))
         ) {
             HStack {
                 Image(systemName: "square.and.arrow.down")

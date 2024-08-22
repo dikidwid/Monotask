@@ -10,12 +10,12 @@ import SwiftUI
 struct TaskListView: View {
     @StateObject var taskListViewModel: TaskListViewModel
     @EnvironmentObject private var appCoordinator: AppCoordinator
-
+    
     var body: some View {
         NavigationStack {
             ZStack {
                 if taskListViewModel.tasks.isEmpty {
-                   emptyStateView
+                    emptyStateView
                 } else {
                     listTasksView
                 }
@@ -37,8 +37,8 @@ struct TaskListView: View {
                 .padding(.top, 20)
             }
             .onAppear(perform: taskListViewModel.onAppearAction)
-        .uncheckTaskAlert(isShowAlert: $taskListViewModel.isShowRemoveCheckmarkAlert) { taskListViewModel.updateTaskStatus($0) }
-        } 
+            .uncheckTaskAlert(isShowAlert: $taskListViewModel.isShowRemoveCheckmarkAlert) { taskListViewModel.updateTaskStatus($0) }
+        }
     }
 }
 
@@ -76,12 +76,13 @@ extension TaskListView {
         ScrollView(.horizontal) {
             LazyHStack(spacing: 0) {
                 ForEach(taskListViewModel.tasks, id: \.self) { task in
-                    Button {
-                        appCoordinator.present(.detailTask(task: task, onDismiss: {taskListViewModel.getTasks()}))
-                    } label: {
-                        Rectangle()
-                            .fill(.clear)
-                            .overlay(alignment: .top) {
+                    Rectangle()
+                        .fill(.clear)
+                        .overlay(alignment: .top) {
+                            Button {
+                                appCoordinator.present(.detailTask(task: task, onDismiss: {taskListViewModel.getTasks()}))
+                                
+                            } label: {
                                 Text(task.taskName)
                                     .font(.oswaldLargeTitle)
                                     .underline(taskListViewModel.currentTask == task)
@@ -92,11 +93,10 @@ extension TaskListView {
                                             .brightness(phase.isIdentity ? 0 : 0.6)
                                     }
                             }
-                            .frame(width: 250)
-                            .padding(.top, 100)
-                            .tint(.black)
-                    }
-                   
+                        }
+                        .frame(width: 250)
+                        .padding(.top, 100)
+                        .tint(.black)
                 }
             }
             .scrollTargetLayout()
@@ -148,13 +148,13 @@ extension TaskListView {
             .overlay {
                 if let task = taskListViewModel.currentTask,
                    task.isCompleted {
-                Rectangle()
-                    .fill(.clear)
-                    .contentShape(Circle())
-                    .onTapGesture {
-                        taskListViewModel.isShowRemoveCheckmarkAlert = true
-                        
-                    }}
+                    Rectangle()
+                        .fill(.clear)
+                        .contentShape(Circle())
+                        .onTapGesture {
+                            taskListViewModel.isShowRemoveCheckmarkAlert = true
+                            
+                        }}
             }
     }
     
@@ -191,7 +191,7 @@ extension TaskListView {
 }
 
 extension View {
-   fileprivate func uncheckTaskAlert(isShowAlert: Binding<Bool>, onDismiss: @escaping ((Bool) -> Void?)) -> some View {
+    fileprivate func uncheckTaskAlert(isShowAlert: Binding<Bool>, onDismiss: @escaping ((Bool) -> Void?)) -> some View {
         modifier(TaskListAlertModifier(isShowAlert: isShowAlert, onDismiss: onDismiss))
     }
 }

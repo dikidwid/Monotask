@@ -62,6 +62,12 @@
 		3A5D02472C77010900F4E9FF /* DetailTaskCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D02462C77010900F4E9FF /* DetailTaskCoordinator.swift */; };
 		3A5D024A2C7730F500F4E9FF /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D02492C7730F500F4E9FF /* LocalNotificationManager.swift */; };
 		3A5D024D2C77324F00F4E9FF /* local-notification-sound.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3A5D024C2C77324F00F4E9FF /* local-notification-sound.caf */; };
+		3A5D02742C776D5700F4E9FF /* clickAnimationFinal.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A5D02732C776D5700F4E9FF /* clickAnimationFinal.json */; };
+		3A5D02772C776D7300F4E9FF /* artHoldFlower.svg in Resources */ = {isa = PBXBuildFile; fileRef = 3A5D02752C776D7300F4E9FF /* artHoldFlower.svg */; };
+		3A5D02782C776D7300F4E9FF /* artWaterFlower.svg in Resources */ = {isa = PBXBuildFile; fileRef = 3A5D02762C776D7300F4E9FF /* artWaterFlower.svg */; };
+		3A5D027C2C776E8200F4E9FF /* ArtWaterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D02792C776E8100F4E9FF /* ArtWaterView.swift */; };
+		3A5D027D2C776E8200F4E9FF /* ArtHoldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D027A2C776E8200F4E9FF /* ArtHoldView.swift */; };
+		3A5D027E2C776E8200F4E9FF /* ArtStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D027B2C776E8200F4E9FF /* ArtStarView.swift */; };
 		3A6759DD2C6D033A00983C66 /* MonotaskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6759DC2C6D033A00983C66 /* MonotaskApp.swift */; };
 		3A6759E12C6D033B00983C66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A6759E02C6D033B00983C66 /* Assets.xcassets */; };
 		3A6759E42C6D033B00983C66 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A6759E32C6D033B00983C66 /* Preview Assets.xcassets */; };
@@ -170,6 +176,12 @@
 		3A5D02462C77010900F4E9FF /* DetailTaskCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTaskCoordinator.swift; sourceTree = "<group>"; };
 		3A5D02492C7730F500F4E9FF /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 		3A5D024C2C77324F00F4E9FF /* local-notification-sound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "local-notification-sound.caf"; sourceTree = "<group>"; };
+		3A5D02732C776D5700F4E9FF /* clickAnimationFinal.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = clickAnimationFinal.json; sourceTree = "<group>"; };
+		3A5D02752C776D7300F4E9FF /* artHoldFlower.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = artHoldFlower.svg; sourceTree = "<group>"; };
+		3A5D02762C776D7300F4E9FF /* artWaterFlower.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = artWaterFlower.svg; sourceTree = "<group>"; };
+		3A5D02792C776E8100F4E9FF /* ArtWaterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtWaterView.swift; sourceTree = "<group>"; };
+		3A5D027A2C776E8200F4E9FF /* ArtHoldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtHoldView.swift; sourceTree = "<group>"; };
+		3A5D027B2C776E8200F4E9FF /* ArtStarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtStarView.swift; sourceTree = "<group>"; };
 		3A6759D92C6D033A00983C66 /* Monotask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Monotask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A6759DC2C6D033A00983C66 /* MonotaskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonotaskApp.swift; sourceTree = "<group>"; };
 		3A6759E02C6D033B00983C66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -436,6 +448,8 @@
 		3A5D01F82C75D17300F4E9FF /* SVG */ = {
 			isa = PBXGroup;
 			children = (
+				3A5D02752C776D7300F4E9FF /* artHoldFlower.svg */,
+				3A5D02762C776D7300F4E9FF /* artWaterFlower.svg */,
 				3A5D01F92C75D18D00F4E9FF /* art.svg */,
 				3A5D021E2C75D86C00F4E9FF /* unlockVector.svg */,
 				3A5D02202C75D87100F4E9FF /* shineLockVector.svg */,
@@ -446,6 +460,7 @@
 		3A5D01FB2C75D21A00F4E9FF /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
+				3A5D02732C776D5700F4E9FF /* clickAnimationFinal.json */,
 				3A5D01FD2C75D23100F4E9FF /* clickAnimation.json */,
 				3A5D01FC2C75D23100F4E9FF /* clickAnimationTransparent.json */,
 			);
@@ -525,6 +540,7 @@
 		3A5D02102C75D64E00F4E9FF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3A5D027F2C776E8600F4E9FF /* Arts */,
 				3A5D02162C75D68000F4E9FF /* RewardView.swift */,
 				3A5D02182C75D68400F4E9FF /* RewardViewModel.swift */,
 				3A5D02142C75D67600F4E9FF /* PresentView.swift */,
@@ -667,6 +683,16 @@
 				3A5D024C2C77324F00F4E9FF /* local-notification-sound.caf */,
 			);
 			path = Notification;
+			sourceTree = "<group>";
+		};
+		3A5D027F2C776E8600F4E9FF /* Arts */ = {
+			isa = PBXGroup;
+			children = (
+				3A5D027A2C776E8200F4E9FF /* ArtHoldView.swift */,
+				3A5D027B2C776E8200F4E9FF /* ArtStarView.swift */,
+				3A5D02792C776E8100F4E9FF /* ArtWaterView.swift */,
+			);
+			path = Arts;
 			sourceTree = "<group>";
 		};
 		3A6759D02C6D033A00983C66 = {
@@ -1116,9 +1142,12 @@
 				3AB294F72C719BEA0026F5AA /* Gravel.ahap in Resources */,
 				3A675A202C6D084B00983C66 /* Oswald-Bold.ttf in Resources */,
 				3A675A262C6D08CF00983C66 /* Oswald-SemiBold.ttf in Resources */,
+				3A5D02772C776D7300F4E9FF /* artHoldFlower.svg in Resources */,
 				3AB2950E2C7209110026F5AA /* Sparkle.ahap in Resources */,
 				3A6759E42C6D033B00983C66 /* Preview Assets.xcassets in Resources */,
+				3A5D02742C776D5700F4E9FF /* clickAnimationFinal.json in Resources */,
 				3A5D024D2C77324F00F4E9FF /* local-notification-sound.caf in Resources */,
+				3A5D02782C776D7300F4E9FF /* artWaterFlower.svg in Resources */,
 				3A5D01FE2C75D23100F4E9FF /* clickAnimationTransparent.json in Resources */,
 				3A5D02362C76A09D00F4E9FF /* switched.mp3 in Resources */,
 				3A5D02212C75D87100F4E9FF /* shineLockVector.svg in Resources */,
@@ -1143,6 +1172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A5D01DB2C75627400F4E9FF /* TaskListRepository.swift in Sources */,
+				3A5D027D2C776E8200F4E9FF /* ArtHoldView.swift in Sources */,
 				3A5D02062C75D2ED00F4E9FF /* RewardListRepository.swift in Sources */,
 				3A675A042C6D048F00983C66 /* TaskListUseCase.swift in Sources */,
 				E202CD0B2C74468100AEF012 /* EditTaskViewModel.swift in Sources */,
@@ -1165,6 +1195,7 @@
 				3A5D02152C75D67600F4E9FF /* PresentView.swift in Sources */,
 				3A675A0A2C6D049900983C66 /* SwiftDataContextManager.swift in Sources */,
 				E23AB5D82C736E64006CE04D /* TaskTitleTextField.swift in Sources */,
+				3A5D027C2C776E8200F4E9FF /* ArtWaterView.swift in Sources */,
 				3AB2950A2C71B6DB0026F5AA /* CoreHapticsManager.swift in Sources */,
 				3A675A052C6D048F00983C66 /* TaskListView.swift in Sources */,
 				3ABEE1982C6EDD7F0098B08E /* AppColors.swift in Sources */,
@@ -1205,6 +1236,7 @@
 				3A5D023C2C76ECDA00F4E9FF /* DetailTaskUseCase.swift in Sources */,
 				3A6759DD2C6D033A00983C66 /* MonotaskApp.swift in Sources */,
 				3A5D02282C75E68000F4E9FF /* GetTasksUseCase.swift in Sources */,
+				3A5D027E2C776E8200F4E9FF /* ArtStarView.swift in Sources */,
 				E23AB5DA2C736E78006CE04D /* AddSubtaskTextField.swift in Sources */,
 				E23AB5CE2C736E11006CE04D /* CreateTaskView.swift in Sources */,
 				3A675A032C6D048F00983C66 /* TaskModel.swift in Sources */,

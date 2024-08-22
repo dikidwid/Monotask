@@ -36,8 +36,10 @@ final class TaskListViewModel: ObservableObject {
     }
     
     func onAppearAction() {
+        let rewards = useCase.getRewards()
         getTasks()
         currentTask = tasks.first
+        print("on appear in tasklist: \(rewards[0].rewardName) is \(rewards[0].isUnlockedTap)")
     }
     
     func getTasks() {
@@ -50,7 +52,7 @@ final class TaskListViewModel: ObservableObject {
                                 isCompleted: false,
                                 subtasks: [],
                                 reminderTime: .now,
-                                urgencyMetric: 1, 
+                                urgencyMetric: 1,
                                 difficultyMetric: 1,
                                 interestMetric: 1)
         
@@ -58,10 +60,28 @@ final class TaskListViewModel: ObservableObject {
         getTasks()
     }
     
+    func resetUnlockedRewardsIfNeeded() {
+        let rewards = useCase.getRewards()
+        
+        for index in rewards.indices {
+            var reward = rewards[index]
+            if totalCompletedTasks < reward.minimumTask {
+                reward.isUnlockedTap = false
+                useCase.updateReward(reward)
+                print("isUnlockedTap status of in tasklist : \(reward.rewardName) is \(reward.isUnlockedTap)")
+                print("Reset reward in tasklist: \(reward.rewardName) to locked")
+            }
+        }
+    }
+    
     func updateTaskStatus(_ isCompleted: Bool) {
         currentTask?.isCompleted = isCompleted
         guard let updatedTask = currentTask else { return }
+                
         useCase.updateTaskStatus(updatedTask)
         getTasks()
+        
+        resetUnlockedRewardsIfNeeded()
+
     }
 }

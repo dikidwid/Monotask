@@ -39,44 +39,20 @@ final class RewardViewModel: ObservableObject {
     func fetchRewards() {
         rewards = useCaseReward.getRewards()
         tasks = useCaseReward.getTasks()
-        
+    }
+    
+    func setCurrentReward() {
         currentReward = rewards.first
     }
     
     func unlockReward(_ reward: RewardModel) {
         var updatedReward = reward
         updatedReward.isUnlockedTap = true
+        currentReward = updatedReward
         useCaseReward.updateReward(updatedReward)
         fetchRewards()
-        print("Unlocked reward: \(updatedReward.rewardName)")
     }
-    
-    func resetUnlockedRewardsIfNeeded() {
-            var updatedRewards = rewards
-            
-            for index in updatedRewards.indices {
-                var reward = updatedRewards[index]
-                if totalCompletedTasks < reward.minimumTask {
-                    reward.isUnlockedTap = false
-                    useCaseReward.updateReward(reward)
-                    print("Reset reward: \(reward.rewardName) to locked")
-                }
-            }
-            
-            rewards = updatedRewards
-        }
-    
-    func updateCurrentRewardState() {
-        // Re-check the current reward based on the latest task completion status
-        if let currentReward = currentReward, totalCompletedTasks < currentReward.minimumTask {
-            var updatedReward = currentReward
-            updatedReward.isUnlockedTap = false
-            useCaseReward.updateReward(updatedReward)
-            fetchRewards() // Refetch to update the UI with the latest state
-            print("Reset reward: \(updatedReward.rewardName) to locked")
-        }
-    }
-    
+
     func playShowcaseSoundEffect() {
         audioManager.playAudioPlayerOne(.idled, volume: 0.09, atTime: 3)
     }

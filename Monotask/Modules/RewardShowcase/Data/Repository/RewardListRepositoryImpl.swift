@@ -15,7 +15,7 @@ struct RewardListRepositoryImpl: RewardListRepository {
     func fetchRewards() -> [RewardModel] {
         do {
             // Fetch the existing rewards from the local storage
-            let fetchDescriptor = FetchDescriptor<RewardLocalEntity>(sortBy: [SortDescriptor(\RewardLocalEntity.rewardName)])
+            let fetchDescriptor = FetchDescriptor<RewardLocalEntity>(sortBy: [SortDescriptor(\RewardLocalEntity.rewardNumber)])
             let localRewards = try self.container.mainContext.fetch(fetchDescriptor)
             
             // If rewards already exist, return them without reinitializing
@@ -24,21 +24,30 @@ struct RewardListRepositoryImpl: RewardListRepository {
             }
             
             // If no rewards exist, initialize the predefined rewards
-            let firstReward = RewardLocalEntity(id: "1",
-                                                rewardName: "The Angel",
-                                                rewardDescription: "Amidst the challenges, a star is preserved as something pure. ",
+            let firstReward = RewardLocalEntity(id: "Stage1",
+                                                rewardNumber: 1,
+                                                rewardName: "The Hope",
+                                                rewardDescription: "Patience and care in fostering new beginnings.",
+                                                rewardWallpaper: "wallpaperWater",
+                                                rewardPresentImage: "artWaterPreview",
                                                 minimumTask: 3,
                                                 isUnlockedTap: false)
             
-            let secondReward = RewardLocalEntity(id: "2",
-                                                 rewardName: "The second reward",
-                                                 rewardDescription: "The second reward desc",
+            let secondReward = RewardLocalEntity(id: "Stage2",
+                                                 rewardNumber: 2,
+                                                 rewardName: "The Light",
+                                                 rewardDescription: "Golden flowers, now in full bloom, illuminated the path ahead.",
+                                                 rewardWallpaper: "wallpaperHold",
+                                                 rewardPresentImage: "artHoldPreview",
                                                  minimumTask: 5,
                                                  isUnlockedTap: false)
             
-            let thirdReward = RewardLocalEntity(id: "3",
-                                                rewardName: "The third reward",
-                                                rewardDescription: "The third reward desc",
+            let thirdReward = RewardLocalEntity(id: "Stage3",
+                                                rewardNumber: 3,
+                                                rewardName: "The Star",
+                                                rewardDescription: "Amidst the challenges, a star is preserved as something pure.",
+                                                rewardWallpaper: "wallpaperStar",
+                                                rewardPresentImage: "artStarPreview",
                                                 minimumTask: 10,
                                                 isUnlockedTap: false)
             
