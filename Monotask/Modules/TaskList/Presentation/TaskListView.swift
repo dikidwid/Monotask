@@ -24,7 +24,7 @@ struct TaskListView: View {
                     todayTextView
                     
                     Spacer()
-                    
+                
                     checkTaskView
                     
                     Spacer()
@@ -134,7 +134,7 @@ extension TaskListView {
     
     private var addTaskButton: some View {
         Button {
-            appCoordinator.fullScreenCover(.addTaskDetail(onDismiss: { taskListViewModel.getTasks() }))
+            appCoordinator.fullScreenCover(.addTaskDetail(onDismiss: { taskListViewModel.setAddedTask() }))
         } label: {
             HStack {
                 Image(systemName: "plus")
@@ -157,7 +157,6 @@ extension TaskListView {
                         .contentShape(Circle())
                         .onTapGesture {
                             taskListViewModel.isShowRemoveCheckmarkAlert = true
-                            
                         }}
             }
     }

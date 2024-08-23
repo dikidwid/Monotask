@@ -18,8 +18,8 @@ class DetailTaskViewController: UIViewController {
     
     private var taskNameLabel: UILabel!
     private var subtaskCollectionView: UICollectionView!
-    private let deleteButton = DeleteButton()
-    private let closeButton = CloseButton()
+    private let deleteButton: CircularButton = CircularButton(iconName: "trash")
+    private let closeButton: CircularButton = CircularButton(iconName: "xmark")
     private let editButton = EditButton()
     private var horizontalStackView = UIStackView()
     
@@ -179,135 +179,5 @@ extension DetailTaskViewController: UICollectionViewDataSource {
 extension DetailTaskViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width - 40, height: 30)
-    }
-}
-
-class SubtaskCell: UICollectionViewCell {
-    
-    private let subtaskLabel: UILabel = {
-        let label = UILabel()
-        label.font = .oswaldTitle3
-        label.textColor = .black
-        label.textAlignment = .left
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        contentView.addSubview(subtaskLabel)
-        
-        // Subtask Label Constraints
-        NSLayoutConstraint.activate([
-            subtaskLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
-        ])
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func configure(with task: String) {
-        subtaskLabel.text = "• \(task)"
-    }
-}
-
-
-class SubtaskLabel: UILabel {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupLabel()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setupLabel() {
-        translatesAutoresizingMaskIntoConstraints = false
-        font = .oswaldTitle3
-        textColor = .black
-    }
-}
-
-class EditButton: UIButton {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupButton()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func setupButton() {
-        translatesAutoresizingMaskIntoConstraints = false
-        
-        backgroundColor = .black
-        tintColor = .white
-    
-        titleLabel?.font = .oswaldTitle2
-        setTitleColor(.lightGray, for: .highlighted)
-        setTitle("Edit  Task", for: .normal)
-        
-        let configuration = UIImage.SymbolConfiguration(pointSize: 20, weight: .regular, scale: .default)
-        let iconImage = UIImage(systemName: "pencil", withConfiguration: configuration)
-        setImage(iconImage, for: .normal)
-        
-        imageEdgeInsets = UIEdgeInsets(top: 0, left: -7, bottom: 0, right: 0)
-        titleEdgeInsets = UIEdgeInsets(top: 0, left: 7, bottom: 0, right: 0)
-    
-        layer.cornerRadius = 30
-    }
-}
-
-#warning("TODO: Refactor this circle button so that it resubles")
-class DeleteButton: UIButton {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupButton()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func setupButton() {
-        translatesAutoresizingMaskIntoConstraints = false
-        
-        backgroundColor = .black
-        tintColor = .white
-        
-        let configuration = UIImage.SymbolConfiguration(pointSize: 18, weight: .semibold, scale: .default)
-        let iconImage = UIImage(systemName: "trash", withConfiguration: configuration)
-        setImage(iconImage, for: .normal)
-    
-        layer.cornerRadius = 22
-        clipsToBounds = true
-    }
-}
-
-class CloseButton: UIButton {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupButton()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func setupButton() {
-        translatesAutoresizingMaskIntoConstraints = false
-        
-        backgroundColor = .black
-        tintColor = .white
-        
-        let configuration = UIImage.SymbolConfiguration(pointSize: 18, weight: .semibold, scale: .default)
-        let iconImage = UIImage(systemName: "xmark", withConfiguration: configuration)
-        setImage(iconImage, for: .normal)
-    
-        layer.cornerRadius = 22
-        clipsToBounds = true
     }
 }

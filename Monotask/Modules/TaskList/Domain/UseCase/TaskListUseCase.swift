@@ -18,7 +18,6 @@ struct TaskListUseCaseImpl: TaskListUseCase {
     let repository: TaskListRepository
     let rewardListRepository: RewardListRepository
     
-    #warning("TODO: Create logic to sort the task based on those 3 parameters")
     func getTasks() -> [TaskModel] {
         let tasks = repository.fetchTasks()
         let sortedTasksByMatrixParamaters: [TaskModel] = tasks.sorted { task1, task2 in

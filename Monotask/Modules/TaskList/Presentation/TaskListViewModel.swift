@@ -37,10 +37,13 @@ final class TaskListViewModel: ObservableObject {
     }
     
     func onAppearAction() {
-        let rewards = useCase.getRewards()
         getTasks()
         currentTask = tasks.first
-        print("on appear in tasklist: \(rewards[0].rewardName) is \(rewards[0].isUnlockedTap)")
+    }
+    
+    func setAddedTask() {
+        getTasks()
+        currentTask = tasks.first
     }
     
     func getTasks() {
@@ -69,6 +72,5 @@ final class TaskListViewModel: ObservableObject {
         getTasks()
         
         resetUnlockedRewardsIfNeeded()
-
     }
 }

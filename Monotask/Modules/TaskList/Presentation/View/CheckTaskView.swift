@@ -48,8 +48,6 @@ struct CheckTaskView: View {
             }
         }
         .onChange(of: task) {
-            audioManager.playAudioPlayerOne(.switched, volume: 0.1)
-
             guard let task = task else { return }
             if task.isCompleted {
                 withAnimation(.interpolatingSpring) {
@@ -121,7 +119,9 @@ struct CheckTaskView: View {
 
         // Action to be executed if 2 seconds are met
         func actionAfterTwoSeconds() {
-            audioManager.playSoundEffectTwo(.buildComplete)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+                audioManager.playSoundEffectTwo(.buildComplete)
+            }
         }
     
     func successLongTapGestureAction () {
@@ -139,7 +139,7 @@ struct CheckTaskView: View {
     }
     
     func isPressedButtonAction() {
-                withAnimation(.bouncy) {
+        withAnimation(.bouncy) {
         isPressing = true
                 }
         withAnimation(.easeIn(duration: 0.1).speed(0.5)) {
@@ -235,18 +235,59 @@ struct CheckParticleAnimationView: View {
     let isPressing: Bool
     let isComplete: Bool
     
+    @State private var showSecondAnimation = false
+
     var body: some View {
-        if isPressing {
-            LottieView(animation: .named("clickAnimationTransparent.json"))
-                .playbackMode(.playing(.toProgress(1, loopMode: .playOnce)))
-                .animationSpeed(1)
+        if (isPressing){
+            LottieView(animation: .named("clickAnimationNew.json"))
+                .playbackMode(.playing(.fromFrame(10, toFrame: 100, loopMode: .playOnce)))
+                .animationSpeed(2)
+            
+            //                LottieView(animation: .named("clickAnimationNew.json"))
+            //                    .playbackMode(.playing(.toProgress(1, loopMode: .playOnce)))
+            //                    .animationSpeed(2.5)
+            
+            
         }
         
-        if isComplete{
-            LottieView(animation: .named("clickAnimationTransparent.json"))
-                .playbackMode(.playing(.fromFrame(19, toFrame: 36, loopMode: .playOnce)))
-                .animationSpeed(1)
+        
+        if (isComplete){
+            LottieView(animation: .named("clickAnimationNew.json"))
+                .playbackMode(.playing(.fromFrame(66, toFrame: 10, loopMode: .playOnce)))
+                .animationSpeed(2)
+                .animationDidFinish { completed in
+                    if completed {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                            showSecondAnimation = true
+                        }
+                    }
+                }
+            
+            if showSecondAnimation {
+                LottieView(animation: .named("clickAnimationNew.json"))
+                    .playbackMode(.playing(.fromFrame(72, toFrame: 102, loopMode: .playOnce)))
+                    .animationSpeed(1)
+                    .animationDidFinish { completed in
+                        if completed {
+                            showSecondAnimation = false
+                        }
+                    }
+                    .scaleEffect(1.1)
+                    .offset(y: -5)
+            }
         }
+        
+//        if isPressing {
+//            LottieView(animation: .named("clickAnimationTransparent.json"))
+//                .playbackMode(.playing(.toProgress(1, loopMode: .playOnce)))
+//                .animationSpeed(1)
+//        }
+//        
+//        if isComplete{
+//            LottieView(animation: .named("clickAnimationTransparent.json"))
+//                .playbackMode(.playing(.fromFrame(19, toFrame: 36, loopMode: .playOnce)))
+//                .animationSpeed(1)
+//        }
     }
 }
 

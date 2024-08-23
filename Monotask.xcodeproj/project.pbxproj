@@ -68,6 +68,10 @@
 		3A5D027E2C776E8200F4E9FF /* ArtStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D027B2C776E8200F4E9FF /* ArtStarView.swift */; };
 		3A5D02882C77A5FB00F4E9FF /* unchecked.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A5D02872C77A5FB00F4E9FF /* unchecked.mp3 */; };
 		3A5D028A2C77A60A00F4E9FF /* presented.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A5D02892C77A60A00F4E9FF /* presented.mp3 */; };
+		3A5D028D2C77AC5B00F4E9FF /* SubtaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D028C2C77AC5B00F4E9FF /* SubtaskCell.swift */; };
+		3A5D028F2C77AC7900F4E9FF /* CircularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D028E2C77AC7900F4E9FF /* CircularButton.swift */; };
+		3A5D02912C77AC9600F4E9FF /* EditButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D02902C77AC9600F4E9FF /* EditButton.swift */; };
+		3A5D02932C78229200F4E9FF /* clickAnimationNew.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A5D02922C78229100F4E9FF /* clickAnimationNew.json */; };
 		3A6759DD2C6D033A00983C66 /* MonotaskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6759DC2C6D033A00983C66 /* MonotaskApp.swift */; };
 		3A6759E12C6D033B00983C66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A6759E02C6D033B00983C66 /* Assets.xcassets */; };
 		3A6759E42C6D033B00983C66 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A6759E32C6D033B00983C66 /* Preview Assets.xcassets */; };
@@ -170,6 +174,10 @@
 		3A5D027B2C776E8200F4E9FF /* ArtStarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtStarView.swift; sourceTree = "<group>"; };
 		3A5D02872C77A5FB00F4E9FF /* unchecked.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = unchecked.mp3; path = ../../../../../../Downloads/unchecked.mp3; sourceTree = "<group>"; };
 		3A5D02892C77A60A00F4E9FF /* presented.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = presented.mp3; path = ../../../../../../Downloads/presented.mp3; sourceTree = "<group>"; };
+		3A5D028C2C77AC5B00F4E9FF /* SubtaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtaskCell.swift; sourceTree = "<group>"; };
+		3A5D028E2C77AC7900F4E9FF /* CircularButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularButton.swift; sourceTree = "<group>"; };
+		3A5D02902C77AC9600F4E9FF /* EditButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditButton.swift; sourceTree = "<group>"; };
+		3A5D02922C78229100F4E9FF /* clickAnimationNew.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = clickAnimationNew.json; sourceTree = "<group>"; };
 		3A6759D92C6D033A00983C66 /* Monotask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Monotask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A6759DC2C6D033A00983C66 /* MonotaskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonotaskApp.swift; sourceTree = "<group>"; };
 		3A6759E02C6D033B00983C66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -431,6 +439,7 @@
 		3A5D01FB2C75D21A00F4E9FF /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
+				3A5D02922C78229100F4E9FF /* clickAnimationNew.json */,
 				3A5D02732C776D5700F4E9FF /* clickAnimationFinal.json */,
 				3A5D01FD2C75D23100F4E9FF /* clickAnimation.json */,
 				3A5D01FC2C75D23100F4E9FF /* clickAnimationTransparent.json */,
@@ -534,6 +543,7 @@
 		3A5D022B2C76184A00F4E9FF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3A5D028B2C77AC4800F4E9FF /* Components */,
 				3A5D022F2C7618EF00F4E9FF /* DetailTaskViewController.swift */,
 				3A5D02312C761A4800F4E9FF /* DetailTaskViewControllerRepresentable.swift */,
 			);
@@ -638,6 +648,16 @@
 				3A5D02052C75D2ED00F4E9FF /* RewardListRepository.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		3A5D028B2C77AC4800F4E9FF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				3A5D028C2C77AC5B00F4E9FF /* SubtaskCell.swift */,
+				3A5D028E2C77AC7900F4E9FF /* CircularButton.swift */,
+				3A5D02902C77AC9600F4E9FF /* EditButton.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		3A6759D02C6D033A00983C66 = {
@@ -1007,6 +1027,7 @@
 				3A5D01FA2C75D18D00F4E9FF /* art.svg in Resources */,
 				3A5D01FF2C75D23100F4E9FF /* clickAnimation.json in Resources */,
 				3A4C26952C745D4E00E738F0 /* build-up.mp3 in Resources */,
+				3A5D02932C78229200F4E9FF /* clickAnimationNew.json in Resources */,
 				3A5D01F12C75BF1D00F4E9FF /* created.mp3 in Resources */,
 				3AB295032C71AC900026F5AA /* Inflate.ahap in Resources */,
 				3A4C26942C745D4E00E738F0 /* build-complete.mp3 in Resources */,
@@ -1088,11 +1109,13 @@
 				3A5D022E2C76186B00F4E9FF /* DetailTaskViewModel.swift in Sources */,
 				3A675A012C6D048F00983C66 /* RewardModel.swift in Sources */,
 				3A5D020A2C75D31E00F4E9FF /* RewardListRepositoryImpl.swift in Sources */,
+				3A5D028D2C77AC5B00F4E9FF /* SubtaskCell.swift in Sources */,
 				3A4C26B92C74D7A200E738F0 /* CustomTextFieldStyle.swift in Sources */,
 				3A5D02192C75D68400F4E9FF /* RewardViewModel.swift in Sources */,
 				3AB295102C7209250026F5AA /* TaskListCoordinator.swift in Sources */,
 				3A4C26C72C74F61E00E738F0 /* TaskDifficulty.swift in Sources */,
 				3A5D01DE2C7562D000F4E9FF /* AddTaskRepository.swift in Sources */,
+				3A5D02912C77AC9600F4E9FF /* EditButton.swift in Sources */,
 				3A5D023F2C76ED4300F4E9FF /* DetailTaskRepository.swift in Sources */,
 				3A5D021D2C75D77D00F4E9FF /* BackButtonStyle.swift in Sources */,
 				3A5D01E32C7564F800F4E9FF /* AppCoordinator.swift in Sources */,
@@ -1110,6 +1133,7 @@
 				3A5D02442C76EEA500F4E9FF /* DetailTaskRepositoryImpl.swift in Sources */,
 				E23AB5D22C736E36006CE04D /* TitleView.swift in Sources */,
 				3A5D02322C761A4800F4E9FF /* DetailTaskViewControllerRepresentable.swift in Sources */,
+				3A5D028F2C77AC7900F4E9FF /* CircularButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

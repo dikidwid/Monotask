@@ -7,7 +7,6 @@
 
 import Foundation
 
-#warning("TODO: Update this model to conform the view's needs")
 struct RewardModel: Identifiable, Hashable {
     let id: String
     let rewardNumber: Int
