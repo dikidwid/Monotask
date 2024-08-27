@@ -11,25 +11,25 @@ struct AddTaskCoordinatorView: View {
     
     @StateObject var coordinator: AddTaskCoordinator
     @Environment(\.dismiss) var dismiss
-    let onDismiss: (() -> Void)
+    let onDismiss: ((TaskModel) -> Void)
     
     var body: some View {
         NavigationStack {
-            coordinator.makeAddTaskDetailView(onDismiss: { prepareToDismiss() })
+            coordinator.makeAddTaskDetailView(onDismiss: { dismiss() })
                 .navigationDestination(isPresented: $coordinator.isShowAddTaskPrioritization) {
-                    coordinator.makeAddTaskPrioritizationView(onDismiss: { prepareToDismiss() })
+                    coordinator.makeAddTaskPrioritizationView(onDismiss: { prepareToDismiss($0) })
                     .navigationBarBackButtonHidden()
                 }
         }
         .environmentObject(coordinator)
     }
     
-    func prepareToDismiss() {
+    func prepareToDismiss(_ addedTask: TaskModel) {
         dismiss()
-        onDismiss()
+        onDismiss(addedTask)
     }
 }
 
 #Preview {
-    AddTaskCoordinatorView(coordinator: AddTaskCoordinator(), onDismiss: {})
+    AddTaskCoordinatorView(coordinator: AddTaskCoordinator(), onDismiss: {_ in })
 }

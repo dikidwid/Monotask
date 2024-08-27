@@ -15,17 +15,22 @@ struct TaskListView: View {
         NavigationStack {
             ZStack {
                 if taskListViewModel.tasks.isEmpty {
-                    emptyStateView
+                    createNewTaskText
                 } else {
-                    listTasksView
+                    horizontalListTasksName
                 }
                 
                 VStack {
                     todayTextView
                     
                     Spacer()
-                
+                    
                     checkTaskView
+                        .overlay {
+                            if taskListViewModel.tasks.isEmpty {
+                                emptyStateImage
+                            }
+                        }
                     
                     Spacer()
                     
@@ -57,46 +62,52 @@ struct TaskListView: View {
 // MARK: - Private
 // Extension for create each component in the view
 extension TaskListView {
-    private var emptyStateView: some View {
-        VStack(spacing: 17) {
-            Text("Create a New Task")
-                .font(.oswaldLargeEmphasized)
-                .padding(.top, 49 + 50)
-            
-            Spacer().frame(height: 130)
-            
-            Image(.emptyState)
-            
-            Text("Tip : Think Small \n, Try 1 Step, 1 Task, 1 Thought…")
-                .font(.oswaldBody)
-                .foregroundStyle(.gray)
-                .multilineTextAlignment(.center)
-            
-            Spacer()
-        }
+    private var createNewTaskText: some View {
+        Text("Create a New Task")
+            .font(.oswaldLargeEmphasized)
+            .foregroundStyle(.black)
+            .frame(maxHeight: .infinity, alignment: .top)
+            .padding(.top, 100)
     }
     
-    private var listTasksView: some View {
+    private var emptyStateImage: some View {
+        Rectangle()
+            .fill(.white)
+            .overlay {
+                VStack {
+                    Image(.emptyState)
+                    
+                    Text("Tip : Think Small \n, Try 1 Step, 1 Task, 1 Thought…")
+                        .font(.oswaldBody)
+                        .foregroundStyle(.gray)
+                        .multilineTextAlignment(.center)
+                }
+            }
+    }
+    
+    private var horizontalListTasksName: some View {
         ScrollView(.horizontal) {
             LazyHStack(spacing: 0) {
                 ForEach(taskListViewModel.tasks, id: \.self) { task in
                     Rectangle()
                         .fill(.clear)
                         .overlay(alignment: .top) {
-                            Button {
-                                appCoordinator.present(.detailTask(task: task, onDismiss: {taskListViewModel.getTasks()}))
+                                Button {
+                                    appCoordinator.present(.detailTask(task: task, onDismiss: {taskListViewModel.getTasks()}))
+                                    
+                                } label: {
+                                    Text(task.taskName)
+                                        .font(.oswaldLargeTitle)
+                                        .underline(taskListViewModel.currentTask == task)
+                                        .multilineTextAlignment(.center)
+                                        .scrollTransition(.animated, axis: .horizontal) { content, phase in
+                                            content
+                                                .scaleEffect(phase.isIdentity ? 1.0 : 0.8)
+                                                .brightness(phase.isIdentity ? 0 : 0.6)
+                                        }
+                                }
                                 
-                            } label: {
-                                Text(task.taskName)
-                                    .font(.oswaldLargeTitle)
-                                    .underline(taskListViewModel.currentTask == task)
-                                    .multilineTextAlignment(.center)
-                                    .scrollTransition(.animated, axis: .horizontal) { content, phase in
-                                        content
-                                            .scaleEffect(phase.isIdentity ? 1.0 : 0.8)
-                                            .brightness(phase.isIdentity ? 0 : 0.6)
-                                    }
-                            }
+                                
                         }
                         .frame(width: 250)
                         .padding(.top, 100)
@@ -134,7 +145,7 @@ extension TaskListView {
     
     private var addTaskButton: some View {
         Button {
-            appCoordinator.fullScreenCover(.addTaskDetail(onDismiss: { taskListViewModel.setAddedTask() }))
+            appCoordinator.fullScreenCover(.addTaskDetail(onDismiss: { taskListViewModel.setAddedTask($0) }))
         } label: {
             HStack {
                 Image(systemName: "plus")
@@ -157,7 +168,8 @@ extension TaskListView {
                         .contentShape(Circle())
                         .onTapGesture {
                             taskListViewModel.isShowRemoveCheckmarkAlert = true
-                        }}
+                        }
+                }
             }
     }
     
@@ -172,20 +184,15 @@ extension TaskListView {
                     Image(.showcaseIcon)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .padding(.vertical, 5)
-                        .padding(.horizontal, 10)
+                        .padding(.vertical, 6)
+                        .padding(.horizontal, 9)
                 }
                 .overlay(alignment: .topTrailing) {
-                    if taskListViewModel.hasNewJourneyPiece {
+                    if taskListViewModel.hasNewReward {
                         Circle()
                             .fill(Color.appAccentColor)
-                            .overlay {
-                                Image(systemName: "exclamationmark")
-                                    .imageScale(.small)
-                                    .foregroundStyle(.black)
-                            }
-                            .frame(width: 18, height: 18)
-                            .offset(x: 7, y: -5)
+                            .frame(width: 13, height: 13)
+                            .offset(x: 3, y: -3)
                     }
                 }
                 .padding(.trailing, 26)

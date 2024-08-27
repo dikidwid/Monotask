@@ -23,7 +23,7 @@ struct SelectionParameterTaskView: View {
                 .font(.oswaldCaption1)
                 .foregroundStyle(isSelected ? .black : Color(uiColor: .systemGray3))
         }
-        .frame(width: 46)
+        .frame(width: 54)
     }
 }
 

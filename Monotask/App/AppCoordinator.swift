@@ -70,7 +70,7 @@ final class AppCoordinator: ObservableObject {
         switch fullScreenCover {
         case .addTaskDetail(let onDismiss):
             AddTaskCoordinatorView(coordinator: self.addTaskCoordinator, onDismiss: onDismiss)
-        case .updateTaskDetail(onDismiss: let onDismiss):
+        case .updateTaskDetail:
             Text("Update Task")
         }
     }

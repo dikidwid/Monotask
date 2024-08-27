@@ -37,28 +37,11 @@ class DetailTaskViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupHorizontalStackView()
+        setupCloseButton()
+        setupDeleteButton()
         setupTaskNameLabel()
         setupEditButton()
         setupSubtasksCollectionView()
-    }
-    
-    private func setupHorizontalStackView() {
-        let spacer = createHorizontalSpacer()
-        setupCloseButton()
-        setupDeleteButton()
-        
-        horizontalStackView = UIStackView(arrangedSubviews: [deleteButton, spacer, closeButton])
-        horizontalStackView.axis = .horizontal
-        
-        view.addSubview(horizontalStackView)
-        horizontalStackView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            horizontalStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 31),
-            horizontalStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 31),
-            horizontalStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -31),
-            horizontalStackView.heightAnchor.constraint(equalToConstant: 44)
-        ])
     }
 
     private func setupTaskNameLabel() {
@@ -77,10 +60,10 @@ class DetailTaskViewController: UIViewController {
         view.addSubview(taskNameLabel)
         taskNameLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            taskNameLabel.topAnchor.constraint(equalTo: horizontalStackView.bottomAnchor, constant: 50),
+            taskNameLabel.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: 30),
             taskNameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            taskNameLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 31),
-            taskNameLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -31)
+            taskNameLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 30),
+            taskNameLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -30)
 
         ])
     }
@@ -100,7 +83,10 @@ class DetailTaskViewController: UIViewController {
     private  func setupDeleteButton() {
         deleteButton.addTarget(self, action: #selector(deleteButtonTapped), for: .touchUpInside)
         
+        view.addSubview(deleteButton)
         NSLayoutConstraint.activate([
+            deleteButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
+            deleteButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 30),
             deleteButton.widthAnchor.constraint(equalToConstant: 44),
             deleteButton.heightAnchor.constraint(equalToConstant: 44),
         ])
@@ -109,7 +95,10 @@ class DetailTaskViewController: UIViewController {
     private func setupCloseButton() {
         closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
         
+        view.addSubview(closeButton)
         NSLayoutConstraint.activate([
+            closeButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
+            closeButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -30),
             closeButton.widthAnchor.constraint(equalToConstant: 44),
             closeButton.heightAnchor.constraint(equalToConstant: 44)
         ])
@@ -118,6 +107,7 @@ class DetailTaskViewController: UIViewController {
     private func setupSubtasksCollectionView() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = 0
         
         subtaskCollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         subtaskCollectionView.register(SubtaskCell.self, forCellWithReuseIdentifier: "SubtaskCell")
@@ -133,15 +123,6 @@ class DetailTaskViewController: UIViewController {
             subtaskCollectionView.trailingAnchor.constraint(equalTo: closeButton.leadingAnchor),
             subtaskCollectionView.bottomAnchor.constraint(equalTo: editButton.topAnchor, constant: -10)
         ])
-    }
-    
-    private func createHorizontalSpacer() -> UIView {
-        let spacer = UIView()
-        // maximum width constraint
-        let spacerWidthConstraint = spacer.widthAnchor.constraint(equalToConstant: .greatestFiniteMagnitude) // or some very high constant
-        spacerWidthConstraint.priority = .defaultLow // ensures it will not "overgrow"
-        spacerWidthConstraint.isActive = true
-        return spacer
     }
 }
 
@@ -177,7 +158,23 @@ extension DetailTaskViewController: UICollectionViewDataSource {
 
 // MARK: - UICollectionViewDelegateFlowLayout
 extension DetailTaskViewController: UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width - 40, height: 30)
+        
+        // Get the subtask for the current index
+        let subtask = task.subtasks[indexPath.item]
+        
+        // Configure a temporary UILabel to calculate its height
+        let label = UILabel()
+        label.numberOfLines = 0 // Allow the label to have multiple lines
+        label.font = UIFont.systemFont(ofSize: 17)
+        label.text = subtask
+        
+        // Calculate the height of the label based on its content
+        let maxSize = CGSize(width: collectionView.frame.width / 1.5, height: CGFloat.greatestFiniteMagnitude)
+        let labelSize = label.sizeThatFits(maxSize)
+        
+        // Return the size of the cell, including some padding
+        return CGSize(width: collectionView.frame.width, height: labelSize.height + 16) // Adding padding for top and bottom
     }
 }

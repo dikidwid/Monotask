@@ -44,6 +44,7 @@ class AddTaskViewModel: ObservableObject {
     }
     
     func addSubtask() {
+        guard !subtaskName.isEmpty else { return }
         let newSubtask = SubtaskModel(title: subtaskName)
         subtasks.append(newSubtask)
         subtaskName = ""
@@ -59,7 +60,7 @@ class AddTaskViewModel: ObservableObject {
         subtasks.removeAll { $0.id == subtask.id }
     }
     
-    func addNewTask() {
+    func addNewTask(_ onAddedNewTask: @escaping ((TaskModel) -> Void?)) {
         localNotificationManager.scheduleNotification(notificationTitle: taskName,
                                                       notificationMessage: "Don’t forget that you still have this task.",
                                                       reminderTime: reminderTime)
@@ -77,10 +78,13 @@ class AddTaskViewModel: ObservableObject {
         useCase.addNewTask(newTask)
         
         resetAllField()
+        
+        onAddedNewTask(newTask)
     }
     
     func resetAllField() {
         taskName = ""
+        subtaskName = ""
         subtasks = []
         isReminderOn = false
         selectedUrgencyParameter = nil

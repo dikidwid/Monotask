@@ -11,7 +11,7 @@ import SwiftUI
 final class TaskListViewModel: ObservableObject {
     @Published var tasks: [TaskModel] = []
     @Published var currentTask: TaskModel?
-    @Published var hasNewJourneyPiece: Bool = false
+    @Published var hasNewReward: Bool = false
     @Published var isShowRemoveCheckmarkAlert: Bool =  false
     
     let useCase: TaskListUseCase
@@ -41,16 +41,42 @@ final class TaskListViewModel: ObservableObject {
         currentTask = tasks.first
     }
     
-    func setAddedTask() {
+    func setAddedTask(_ newTask: TaskModel) {
         getTasks()
-        currentTask = tasks.first
+        currentTask = newTask
     }
     
     func getTasks() {
-       tasks = useCase.getTasks()
+        tasks = useCase.getTasks()
+        
+        checkIsGetNewReward()
     }
     
-    func resetUnlockedRewardsIfNeeded() {
+    func updateTaskStatus(_ isCompleted: Bool) {
+        currentTask?.isCompleted = isCompleted
+        guard let updatedTask = currentTask else { return }
+        useCase.updateTaskStatus(updatedTask)
+        
+        getTasks()
+        
+        checkUnlockedRewardStatus()
+        
+        automaticSlideToNextTask()
+    }
+    
+    private func checkIsGetNewReward() {
+        let rewards = useCase.getRewards()
+        
+        if let unlockedReward = rewards.first(where: { $0.isUnlockedTap == false }) {
+            if totalCompletedTasks >= unlockedReward.minimumTask {
+                hasNewReward = true
+            } else {
+                hasNewReward = false
+            }
+        }
+    }
+    
+    private func checkUnlockedRewardStatus() {
         let rewards = useCase.getRewards()
         
         for index in rewards.indices {
@@ -58,19 +84,22 @@ final class TaskListViewModel: ObservableObject {
             if totalCompletedTasks < reward.minimumTask {
                 reward.isUnlockedTap = false
                 useCase.updateReward(reward)
-                print("isUnlockedTap status of in tasklist : \(reward.rewardName) is \(reward.isUnlockedTap)")
-                print("Reset reward in tasklist: \(reward.rewardName) to locked")
             }
         }
     }
     
-    func updateTaskStatus(_ isCompleted: Bool) {
-        currentTask?.isCompleted = isCompleted
-        guard let updatedTask = currentTask else { return }
-                
-        useCase.updateTaskStatus(updatedTask)
-        getTasks()
+    private func automaticSlideToNextTask() {
+        guard let updatedTask = currentTask,
+              updatedTask.isCompleted == true,
+              let nextTaskIndex = tasks.firstIndex(where: { $0.isCompleted == false }),
+              let currentTaskIndex = tasks.firstIndex(of: updatedTask),
+              currentTaskIndex < tasks.count - 1
+        else { return }
         
-        resetUnlockedRewardsIfNeeded()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.25) {
+            withAnimation {
+                self.currentTask = self.tasks[nextTaskIndex]
+            }
+        }
     }
 }

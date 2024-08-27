@@ -20,6 +20,7 @@ struct TitleParameterTaskView: View {
                 .font(.oswaldSubhead)
                 .foregroundStyle(.secondary)
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.bottom, 20)
     }
 }

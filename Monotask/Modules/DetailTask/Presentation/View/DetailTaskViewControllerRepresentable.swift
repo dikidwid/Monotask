@@ -55,7 +55,25 @@ struct DetailTaskViewControllerRepresentable: UIViewControllerRepresentable {
 #Preview {
     let repository = DetailTaskRepositoryImpl()
     let useCase = DetailTaskUseCaseImpl(repository: repository)
-    let task = TaskModel(id: "", taskName: "Implementing Clean Architecture", isCompleted: false, subtasks: [], reminderTime: .now, urgencyMetric: 0, difficultyMetric: 0, interestMetric: 0)
+    let task = TaskModel(id: "", taskName: "Implementing Clean Architecture",
+                         isCompleted: false,
+                         subtasks: ["Satu dua tiga empat lima enam tujuh delapan", 
+                                    "enam tujuh delapan enam tujuh delapan enam tujuh delapan",
+                                    "enam tujuh delapan enam tujuh delapan enam tujuh delapan",
+                                    "enam tujuh delapan enam tujuh delapan enam tujuh delapan",
+                                    "enam tujuh delapan enam tujuh delapan enam tujuh delapan",
+                                    "enam tujuh delapan enam tujuh delapan enam tujuh delapan",
+                                    "enam tujuh delapan enam tujuh delapan enam tujuh delapan",
+                                    "enam tujuh delapan enam tujuh delapan enam tujuh delapan",
+                                    "enam tujuh delapan enam tujuh delapan enam tujuh delapan",
+                                    "enam tujuh delapan enam tujuh delapan enam tujuh delapan",
+                                    "enam tujuh delapan enam tujuh delapan enam tujuh delapan",
+                                    "enam tujuh delapan enam tujuh delapan enam tujuh delapan",
+                            ],
+                         reminderTime: .now,
+                         urgencyMetric: 0,
+                         difficultyMetric: 0,
+                         interestMetric: 0)
     let viewModel = DetailTaskViewModel(task: task, useCase: useCase, appCoordinator: AppCoordinator())
         
     return DetailTaskViewControllerRepresentable(detailTaskViewModel: viewModel, onDismiss: { print("hehe") })

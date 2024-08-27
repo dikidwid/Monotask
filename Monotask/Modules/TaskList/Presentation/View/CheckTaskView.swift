@@ -93,6 +93,7 @@ struct CheckTaskView: View {
         }
         .sensoryFeedback(.impact(flexibility: .solid, intensity: 1), trigger: isPressing)
         .sensoryFeedback(.impact(flexibility: .soft, intensity: 0.75), trigger: task)
+        .sensoryFeedback(.impact(weight: .heavy, intensity: 1), trigger: isComplete)
     }
     
     // Start the countdown logic
@@ -242,12 +243,6 @@ struct CheckParticleAnimationView: View {
             LottieView(animation: .named("clickAnimationNew.json"))
                 .playbackMode(.playing(.fromFrame(10, toFrame: 100, loopMode: .playOnce)))
                 .animationSpeed(2)
-            
-            //                LottieView(animation: .named("clickAnimationNew.json"))
-            //                    .playbackMode(.playing(.toProgress(1, loopMode: .playOnce)))
-            //                    .animationSpeed(2.5)
-            
-            
         }
         
         
@@ -273,7 +268,6 @@ struct CheckParticleAnimationView: View {
                         }
                     }
                     .scaleEffect(1.1)
-                    .offset(y: -5)
             }
         }
         

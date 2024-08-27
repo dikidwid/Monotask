@@ -25,7 +25,8 @@ class SubtaskCell: UICollectionViewCell {
         
         // Subtask Label Constraints
         NSLayoutConstraint.activate([
-            subtaskLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+            subtaskLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            subtaskLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor),
         ])
     }
     

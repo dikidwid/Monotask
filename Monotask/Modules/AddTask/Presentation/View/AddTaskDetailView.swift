@@ -9,33 +9,47 @@ import SwiftUI
 
 struct AddTaskDetailView: View {
     @StateObject var addTaskViewModel: AddTaskViewModel
+    @FocusState private var isFieldFocused: FocusedField?
     @EnvironmentObject private var coordinator: AddTaskCoordinator
     let onDismiss: (() -> Void)
     
+    enum FocusedField {
+        case taskName, subtaskName
+    }
+    
     var body: some View {
-        NavigationStack {
-            ScrollView {
-                VStack(spacing: 25) {
-                    taskNameTextField
-                    
-                    subtaskTextField
-                    
-                    reminderTask
-                }
-                .padding(.top, 66)
-                .padding(.horizontal, 38)
+        ScrollView {
+            VStack(spacing: 25) {
+                taskNameTextField
+                
+                subtaskTextField
+                
+                reminderTask
             }
-            .animation(.interpolatingSpring, value: addTaskViewModel.subtasks)
-            .overlay {
-                VStack {
-                    customNavigationBar
-                    
-                    Spacer()
-                    
+            .padding(.top, 66)
+            .padding(.horizontal, 38)
+        }
+        .animation(.interpolatingSpring, value: addTaskViewModel.subtasks)
+        .overlay {
+            VStack {
+                customNavigationBar
+                
+                Spacer()
+                
+                if isFieldFocused == nil{
                     nextButton
                 }
             }
         }
+        .toolbar {
+            ToolbarItem(placement: .keyboard) {
+                Button("Done") {
+                    isFieldFocused = nil
+                }
+                .tint(.appAccentColor)
+            }
+        }
+        
     }
 }
 
@@ -63,10 +77,11 @@ extension AddTaskDetailView {
                 .font(.oswaldBody)
                 .textFieldStyle(CustomTextFieldStyle(isTextfieldEmpty: addTaskViewModel.isSubtaskNameFieldEmpty,
                                                      isShowSubmitButton: false))
+                .focused($isFieldFocused, equals: .taskName)
+                .submitLabel(.next)
+                .onSubmit { isFieldFocused = .subtaskName }
         }
-        .onChange(of: addTaskViewModel.taskName) { _, newValue in
-            addTaskViewModel.checkMaxTaskNameCharacters()
-        }
+        .onChange(of: addTaskViewModel.taskName, addTaskViewModel.checkMaxTaskNameCharacters)
     }
     
     var subtaskTextField: some View {
@@ -99,6 +114,9 @@ extension AddTaskDetailView {
                 .textFieldStyle(CustomTextFieldStyle(isTextfieldEmpty: addTaskViewModel.isSubtaskNameFieldEmpty,
                                                      isShowSubmitButton: true,
                                                      onSubmit: addTaskViewModel.addSubtask))
+                .focused($isFieldFocused, equals: .subtaskName)
+                .submitLabel(.go)
+                .onSubmit(addTaskViewModel.addSubtask)
         }
     }
     
@@ -165,5 +183,6 @@ extension AddTaskDetailView {
                 .frame(maxHeight: .infinity, alignment: .bottom)
                 .padding(.bottom, 10)
             }
+        
     }
 }

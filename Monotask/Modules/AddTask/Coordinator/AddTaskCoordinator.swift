@@ -24,7 +24,7 @@ public final class AddTaskCoordinator: ObservableObject {
         AddTaskDetailView(addTaskViewModel: self.addTaskViewModel, onDismiss: onDismiss)
     }
     
-    func makeAddTaskPrioritizationView(onDismiss: @escaping (() -> Void)) -> AddTaskPrioritizationView {
+    func makeAddTaskPrioritizationView(onDismiss: @escaping ((TaskModel) -> Void)) -> AddTaskPrioritizationView {
         AddTaskPrioritizationView(addTaskViewModel: self.addTaskViewModel, onDismiss: onDismiss)
     }
 }

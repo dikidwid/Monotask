@@ -21,7 +21,7 @@ enum AppSheet: Identifiable {
 }
 
 enum AppFullScreenCover: Identifiable {
-    case addTaskDetail(onDismiss: (() -> Void))
+    case addTaskDetail(onDismiss: ((TaskModel) -> Void))
     case updateTaskDetail(onDismiss: (() -> Void))
     
     var id: Self { return self }

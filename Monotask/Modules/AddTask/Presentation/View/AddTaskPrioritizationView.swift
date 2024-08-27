@@ -10,13 +10,13 @@ import SwiftUI
 struct AddTaskPrioritizationView: View {
     @ObservedObject var addTaskViewModel: AddTaskViewModel
     @EnvironmentObject var coordinator: AddTaskCoordinator
-    let onDismiss: (() -> Void?)
+    let onDismiss: ((TaskModel) -> Void?)
     
     var body: some View {
         VStack(alignment: .leading) {
             prioritizeTitle
             
-            VStack(spacing: 25) {
+            VStack(alignment: .center, spacing: 25) {
                 urgencyParameterSelection
                 
                 difficultyParameterSelection
@@ -46,7 +46,7 @@ struct AddTaskPrioritizationView: View {
     let useCase = AddTaskUseCaseImpl(repository: repository)
     let viewModel = AddTaskViewModel(useCase: useCase)
     
-    return AddTaskPrioritizationView(addTaskViewModel: viewModel, onDismiss: { })
+    return AddTaskPrioritizationView(addTaskViewModel: viewModel, onDismiss: { _ in })
 }
 
 
@@ -57,11 +57,11 @@ extension AddTaskPrioritizationView {
     }
     
     var urgencyParameterSelection: some View {
-        VStack(alignment: .leading) {
+        VStack {
             TitleParameterTaskView(title: "Urgency",
                                    information: "How quick this task needs to be completed?")
             
-            HStack(spacing: 90) {
+            HStack(alignment: .top ,spacing: 75) {
                 ForEach(TaskUrgency.allCases, id: \.self) { parameter in
                     Button {
                         addTaskViewModel.selectedUrgencyParameter = parameter
@@ -79,11 +79,11 @@ extension AddTaskPrioritizationView {
     }
     
     var difficultyParameterSelection: some View {
-        VStack(alignment: .leading) {
+        VStack {
             TitleParameterTaskView(title: "Difficulty",
                                    information: "How challenging is this task for you?")
             
-            HStack(spacing: 90) {
+            HStack(alignment: .top ,spacing: 75) {
                 ForEach(TaskDifficulty.allCases) { parameter in
                     Button {
                         addTaskViewModel.selectedDifficultyParameter = parameter
@@ -100,11 +100,11 @@ extension AddTaskPrioritizationView {
     }
     
     var funParameterSelection: some View {
-        VStack(alignment: .leading) {
+        VStack {
             TitleParameterTaskView(title: "Fun",
                                    information: "How fun is this task for you?")
 
-            HStack(spacing: 90) {
+            HStack(alignment: .top ,spacing: 75) {
                 ForEach(TaskFun.allCases) { parameter in
                     Button {
                         addTaskViewModel.selectedFunParameter = parameter
@@ -146,10 +146,9 @@ extension AddTaskPrioritizationView {
             .frame(height: 90)
             .overlay {
                 Button {
-                    addTaskViewModel.addNewTask()
+                    addTaskViewModel.addNewTask(onDismiss)
                     addTaskViewModel.audioManager.playAudioPlayerOne(.created)
                     coordinator.isShowAddTaskPrioritization.toggle()
-                    onDismiss()
                 } label: {
                     HStack(spacing: 10) {
                         Image(systemName: "checkmark")
