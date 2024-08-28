@@ -36,16 +36,13 @@ final class TaskListViewModel: ObservableObject {
         self.useCase = useCase
     }
     
-    func onAppearAction() {
+    func setCurrentTask(to task: TaskModel?) {
         getTasks()
-        currentTask = tasks.first
+        if let existingTask = tasks.first(where: { $0.id == task?.id }) {
+            currentTask = existingTask
+        }
     }
-    
-    func setAddedTask(_ newTask: TaskModel) {
-        getTasks()
-        currentTask = newTask
-    }
-    
+
     func getTasks() {
         tasks = useCase.getTasks()
         

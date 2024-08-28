@@ -29,8 +29,8 @@ class DetailTaskViewModel: ObservableObject {
         coordinator.dismissSheet()
     }
     
-    func showUpdateTask(onDismiss: @escaping (() -> Void)) {
-        // Coordinator for UpdateTask
-//        coordinator.fullScreenCover(.addTaskDetail(onDismiss: onDismiss))
+    func showUpdateTask(onDismiss: @escaping ((TaskModel) -> Void)) {
+        coordinator.dismissSheet()
+        coordinator.fullScreenCover(.editTaskDetail(taskID: task.id, onDismiss: onDismiss))
     }
 }

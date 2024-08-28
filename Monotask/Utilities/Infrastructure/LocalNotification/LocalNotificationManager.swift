@@ -26,7 +26,7 @@ class LocalNotificationManager {
         }
     }
     
-    func scheduleNotification(notificationTitle: String, notificationMessage: String, reminderTime: Date) {
+    func scheduleNotification(id: String, notificationTitle: String, notificationMessage: String, reminderTime: Date) {
         let content = UNMutableNotificationContent()
         content.title = notificationTitle
         content.body = notificationMessage
@@ -38,7 +38,7 @@ class LocalNotificationManager {
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
         
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: notificationTitle, content: content, trigger: trigger)
         
         UNUserNotificationCenter.current().add(request) { error in
             if let error = error {
@@ -47,5 +47,9 @@ class LocalNotificationManager {
                 print("Notification successfully scheduled for \(reminderTime).")
             }
         }
+    }
+    
+    func cancelScheduledNotificationBefore(id: String) {
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [id])
     }
 }

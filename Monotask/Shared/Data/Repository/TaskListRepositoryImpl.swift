@@ -26,8 +26,8 @@ struct TaskListRepositoryImpl: TaskListRepository {
                                                            "Design the report"],
                                                 reminderTime: Date(),
                                                 urgencyMetric: 1,
-                                                difficultyMetric: 2,
-                                                interestMetric: 3)
+                                                difficultyMetric: 1,
+                                                interestMetric: 1)
                 
                 let secondTask = TaskLocalEntity(id: UUID().uuidString,
                                                  taskName: "Find journal paper",
@@ -69,8 +69,8 @@ struct TaskListRepositoryImpl: TaskListRepository {
 //                                                interestMetric: 1)
 //                
                 container.mainContext.insert(firstTask)
-//                container.mainContext.insert(secondTask)
-//                container.mainContext.insert(thirdTask)
+                container.mainContext.insert(secondTask)
+                container.mainContext.insert(thirdTask)
 //                container.mainContext.insert(fourthTask)
 //                container.mainContext.insert(fifthTask)
             }

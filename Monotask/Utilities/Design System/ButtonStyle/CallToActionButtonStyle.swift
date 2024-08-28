@@ -23,5 +23,6 @@ struct CallToActionButtonStyle: ButtonStyle {
             .background(isDisable ? Color(uiColor: .systemGray5) : Color.appAccentColor )
             .cornerRadius(30)
             .opacity(configuration.isPressed ? 0.25 : 1)
+            .padding(.bottom, 47)
     }
 }

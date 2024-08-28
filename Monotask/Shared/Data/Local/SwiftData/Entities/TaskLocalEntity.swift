@@ -15,7 +15,7 @@ class TaskLocalEntity {
     var taskName: String
     var isCompleted: Bool
     var subtasks: [String]
-    var reminderTime: Date
+    var reminderTime: Date?
     var urgencyMetric: Int
     var difficultyMetric: Int
     var interestMetric: Int
@@ -25,7 +25,7 @@ class TaskLocalEntity {
         taskName: String,
         isCompleted: Bool,
         subtasks: [String],
-        reminderTime: Date,
+        reminderTime: Date?,
         urgencyMetric: Int,
         difficultyMetric: Int,
         interestMetric: Int
@@ -49,9 +49,48 @@ extension TaskLocalEntity {
             isCompleted: self.isCompleted,
             subtasks: self.subtasks,
             reminderTime: self.reminderTime,
-            urgencyMetric: self.urgencyMetric,
-            difficultyMetric: self.difficultyMetric,
-            interestMetric: self.interestMetric
+            urgencyMetric: getUrgencyLevel(self.urgencyMetric),
+            difficultyMetric: getDifficultyLevel(self.difficultyMetric),
+            interestMetric: getFunLevel(self.interestMetric)
         )
+    }
+    
+    func getUrgencyLevel(_ urgencyValue: Int) -> TaskUrgency {
+        switch urgencyValue {
+        case 1:
+            return .notUrgent
+        case 2:
+            return .lessUrgent
+        case 3:
+            return .urgent
+        default:
+            return .notUrgent
+        }
+    }
+    
+    func getDifficultyLevel(_ difficultyValue: Int) -> TaskDifficulty {
+        switch difficultyValue {
+        case 1:
+            return .easy
+        case 2:
+            return .medium
+        case 3:
+            return .hard
+        default:
+            return .easy
+        }
+    }
+    
+    func getFunLevel(_ funValue: Int) -> TaskFun {
+        switch funValue {
+        case 1:
+            return .notFun
+        case 2:
+            return .neutral
+        case 3:
+            return .fun
+        default:
+            return .notFun
+        }
     }
 }

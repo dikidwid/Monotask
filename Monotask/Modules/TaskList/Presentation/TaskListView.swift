@@ -41,7 +41,7 @@ struct TaskListView: View {
                 }
                 .padding(.top, 20)
             }
-            .onAppear(perform: taskListViewModel.onAppearAction)
+            .onAppear { taskListViewModel.getTasks() ; taskListViewModel.currentTask = taskListViewModel.tasks.first }
             .uncheckTaskAlert(isShowAlert: $taskListViewModel.isShowRemoveCheckmarkAlert) {
                 taskListViewModel.updateTaskStatus($0)
                 taskListViewModel.audioManager.playSoundEffectTwo(.unchecked, volume: 0.1)
@@ -93,7 +93,7 @@ extension TaskListView {
                         .fill(.clear)
                         .overlay(alignment: .top) {
                                 Button {
-                                    appCoordinator.present(.detailTask(task: task, onDismiss: {taskListViewModel.getTasks()}))
+                                    appCoordinator.present(.detailTask(task: task, onDismiss: { taskListViewModel.setCurrentTask(to: $0) }))
                                     
                                 } label: {
                                     Text(task.taskName)
@@ -145,7 +145,7 @@ extension TaskListView {
     
     private var addTaskButton: some View {
         Button {
-            appCoordinator.fullScreenCover(.addTaskDetail(onDismiss: { taskListViewModel.setAddedTask($0) }))
+            appCoordinator.fullScreenCover(.addTaskDetail(onDismiss: { taskListViewModel.setCurrentTask(to: $0) }))
         } label: {
             HStack {
                 Image(systemName: "plus")
@@ -155,7 +155,6 @@ extension TaskListView {
             }
         }
         .buttonStyle(CallToActionButtonStyle())
-        .padding(.bottom)
     }
     
     private var checkTaskView: some View {

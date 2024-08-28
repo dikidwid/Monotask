@@ -73,7 +73,7 @@ class DetailTaskViewController: UIViewController {
         
         view.addSubview(editButton)
         NSLayoutConstraint.activate([
-            editButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
+            editButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -47),
             editButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             editButton.heightAnchor.constraint(equalToConstant: 53),
             editButton.widthAnchor.constraint(equalToConstant: 137)
@@ -107,7 +107,7 @@ class DetailTaskViewController: UIViewController {
     private func setupSubtasksCollectionView() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 0
+        layout.minimumLineSpacing = 10
         
         subtaskCollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         subtaskCollectionView.register(SubtaskCell.self, forCellWithReuseIdentifier: "SubtaskCell")
@@ -119,8 +119,8 @@ class DetailTaskViewController: UIViewController {
         subtaskCollectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             subtaskCollectionView.topAnchor.constraint(equalTo: taskNameLabel.bottomAnchor, constant: 10),
-            subtaskCollectionView.leadingAnchor.constraint(equalTo: deleteButton.trailingAnchor),
-            subtaskCollectionView.trailingAnchor.constraint(equalTo: closeButton.leadingAnchor),
+            subtaskCollectionView.leadingAnchor.constraint(equalTo: deleteButton.trailingAnchor, constant: 10),
+            subtaskCollectionView.trailingAnchor.constraint(equalTo: closeButton.leadingAnchor, constant: -10),
             subtaskCollectionView.bottomAnchor.constraint(equalTo: editButton.topAnchor, constant: -10)
         ])
     }
@@ -171,7 +171,7 @@ extension DetailTaskViewController: UICollectionViewDelegateFlowLayout {
         label.text = subtask
         
         // Calculate the height of the label based on its content
-        let maxSize = CGSize(width: collectionView.frame.width / 1.5, height: CGFloat.greatestFiniteMagnitude)
+        let maxSize = CGSize(width: collectionView.frame.width, height: CGFloat.greatestFiniteMagnitude)
         let labelSize = label.sizeThatFits(maxSize)
         
         // Return the size of the cell, including some padding

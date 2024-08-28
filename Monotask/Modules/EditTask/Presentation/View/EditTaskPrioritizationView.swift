@@ -1,15 +1,15 @@
 //
-//  TaskPrioritizationView.swift
+//  EditTaskPrioritizationView.swift
 //  Monotask
 //
-//  Created by Diki Dwi Diro on 20/08/24.
+//  Created by Diki Dwi Diro on 28/08/24.
 //
 
 import SwiftUI
 
-struct AddTaskPrioritizationView: View {
-    @ObservedObject var addTaskViewModel: AddTaskViewModel
-    @EnvironmentObject var coordinator: AddTaskCoordinator
+struct EditTaskPrioritizationView: View {
+    @ObservedObject var editTaskViewModel: EditTaskViewModel
+    @EnvironmentObject private var coordinator: AppCoordinator
     let onDismiss: ((TaskModel) -> Void?)
     
     var body: some View {
@@ -38,6 +38,7 @@ struct AddTaskPrioritizationView: View {
                 confirmButton
             }
         }
+        .navigationBarBackButtonHidden()
     }
 }
 
@@ -50,7 +51,7 @@ struct AddTaskPrioritizationView: View {
 }
 
 
-extension AddTaskPrioritizationView {
+extension EditTaskPrioritizationView {
     var prioritizeTitle: some View {
         TitleView(text: "Let's prioritize your task")
             .padding(.bottom, 8)
@@ -64,10 +65,10 @@ extension AddTaskPrioritizationView {
             HStack(alignment: .top ,spacing: 75) {
                 ForEach(TaskUrgency.allCases, id: \.self) { parameter in
                     Button {
-                        addTaskViewModel.selectedUrgencyParameter = parameter
+                        editTaskViewModel.selectedUrgencyParameter = parameter
                         
                     } label: {
-                        SelectionParameterTaskView(isSelected: addTaskViewModel.selectedUrgencyParameter == parameter,
+                        SelectionParameterTaskView(isSelected: editTaskViewModel.selectedUrgencyParameter == parameter,
                                                    enabledImage: parameter.enabledImage,
                                                    disabledImage: parameter.disabledImage,
                                                    description: parameter.description)
@@ -75,7 +76,7 @@ extension AddTaskPrioritizationView {
                 }
             }
         }
-        .animation(.interpolatingSpring, value: addTaskViewModel.selectedUrgencyParameter)
+        .animation(.interpolatingSpring, value: editTaskViewModel.selectedUrgencyParameter)
     }
     
     var difficultyParameterSelection: some View {
@@ -86,9 +87,9 @@ extension AddTaskPrioritizationView {
             HStack(alignment: .top ,spacing: 75) {
                 ForEach(TaskDifficulty.allCases) { parameter in
                     Button {
-                        addTaskViewModel.selectedDifficultyParameter = parameter
+                        editTaskViewModel.selectedDifficultyParameter = parameter
                     } label: {
-                        SelectionParameterTaskView(isSelected: addTaskViewModel.selectedDifficultyParameter == parameter,
+                        SelectionParameterTaskView(isSelected: editTaskViewModel.selectedDifficultyParameter == parameter,
                                                    enabledImage: parameter.enabledImage,
                                                    disabledImage: parameter.disabledImage,
                                                    description: parameter.description)
@@ -96,7 +97,7 @@ extension AddTaskPrioritizationView {
                 }
             }
         }
-        .animation(.interpolatingSpring, value: addTaskViewModel.selectedDifficultyParameter)
+        .animation(.interpolatingSpring, value: editTaskViewModel.selectedDifficultyParameter)
     }
     
     var funParameterSelection: some View {
@@ -107,9 +108,9 @@ extension AddTaskPrioritizationView {
             HStack(alignment: .top ,spacing: 75) {
                 ForEach(TaskFun.allCases) { parameter in
                     Button {
-                        addTaskViewModel.selectedFunParameter = parameter
+                        editTaskViewModel.selectedFunParameter = parameter
                     } label: {
-                        SelectionParameterTaskView(isSelected: addTaskViewModel.selectedFunParameter == parameter,
+                        SelectionParameterTaskView(isSelected: editTaskViewModel.selectedFunParameter == parameter,
                                                    enabledImage: parameter.enabledImage,
                                                    disabledImage: parameter.disabledImage,
                                                    description: parameter.description)
@@ -117,20 +118,20 @@ extension AddTaskPrioritizationView {
                 }
             }
         }
-        .animation(.interpolatingSpring, value: addTaskViewModel.selectedFunParameter)
+        .animation(.interpolatingSpring, value: editTaskViewModel.selectedFunParameter)
     }
     
     var customNavigationBar: some View {
-        CustomAddTaskNavigationBar(navigationTitle: "New Task") {
-            coordinator.isShowAddTaskPrioritization.toggle()
+        CustomAddTaskNavigationBar(navigationTitle: "Edit Task") {
+            editTaskViewModel.isShowNextAddTaskScreen.toggle()
         }
     }
     
     var confirmButton: some View {
-        CustomAddTaskActionButton(name: "Done", icon: "checkmark", isTaskNameFieldEmpty: addTaskViewModel.isTaskNameFieldEmpty) {
-            addTaskViewModel.addNewTask(onDismiss)
-            addTaskViewModel.audioManager.playAudioPlayerOne(.created)
-            coordinator.isShowAddTaskPrioritization.toggle()
+        CustomAddTaskActionButton(name: "Save", icon: "checkmark", isTaskNameFieldEmpty: editTaskViewModel.isTaskNameFieldEmpty) {
+            editTaskViewModel.editTask(onDismiss)
+            editTaskViewModel.audioManager.playAudioPlayerOne(.created)
+            coordinator.dismissFullScreenOver()
         }
     }
 }

@@ -10,7 +10,7 @@ import SwiftUI
 struct DetailTaskViewControllerRepresentable: UIViewControllerRepresentable {
     
     @StateObject var detailTaskViewModel: DetailTaskViewModel
-    let onDismiss: (() -> Void)
+    let onDismiss: ((TaskModel?) -> Void)
 
     
     final class Coordinator: NSObject, DetailTaskViewControllerDelegate {
@@ -22,7 +22,7 @@ struct DetailTaskViewControllerRepresentable: UIViewControllerRepresentable {
         
         func didDeleteButtonTapped(task: TaskModel) {
             parent.detailTaskViewModel.deleteTask(task)
-            parent.onDismiss()
+            parent.onDismiss(nil)
         }
         
         func didCloseButtonTapped() {
@@ -32,7 +32,7 @@ struct DetailTaskViewControllerRepresentable: UIViewControllerRepresentable {
         
         func didEditTaskbuttonTapped() {
             // Show EditTaskView
-            parent.detailTaskViewModel.showUpdateTask(onDismiss: parent.onDismiss)
+            parent.detailTaskViewModel.showUpdateTask(onDismiss: { self.parent.onDismiss($0) } )
         }
     }
     
@@ -71,10 +71,10 @@ struct DetailTaskViewControllerRepresentable: UIViewControllerRepresentable {
                                     "enam tujuh delapan enam tujuh delapan enam tujuh delapan",
                             ],
                          reminderTime: .now,
-                         urgencyMetric: 0,
-                         difficultyMetric: 0,
-                         interestMetric: 0)
+                         urgencyMetric: .notUrgent,
+                         difficultyMetric: .easy,
+                         interestMetric: .notFun)
     let viewModel = DetailTaskViewModel(task: task, useCase: useCase, appCoordinator: AppCoordinator())
         
-    return DetailTaskViewControllerRepresentable(detailTaskViewModel: viewModel, onDismiss: { print("hehe") })
+    return DetailTaskViewControllerRepresentable(detailTaskViewModel: viewModel, onDismiss: { _ in  print("hehe") })
 }

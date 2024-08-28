@@ -15,14 +15,14 @@ enum AppScreen: Identifiable {
 }
 
 enum AppSheet: Identifiable {
-    case detailTask(task: TaskModel, onDismiss: (() -> Void))
+    case detailTask(task: TaskModel, onDismiss: ((TaskModel?) -> Void))
     
     var id: Self { return self }
 }
 
 enum AppFullScreenCover: Identifiable {
     case addTaskDetail(onDismiss: ((TaskModel) -> Void))
-    case updateTaskDetail(onDismiss: (() -> Void))
+    case editTaskDetail(taskID: String, onDismiss: ((TaskModel) -> Void))
     
     var id: Self { return self }
 }
@@ -49,7 +49,7 @@ extension AppFullScreenCover: Hashable {
         switch(lhs, rhs) {
         case (.addTaskDetail, .addTaskDetail):
             return true
-        case (.updateTaskDetail, .updateTaskDetail):
+        case (.editTaskDetail, .editTaskDetail):
             return true
         default:
             return false
@@ -58,9 +58,9 @@ extension AppFullScreenCover: Hashable {
     
     func hash(into hasher: inout Hasher) {
         switch self {
-        case .addTaskDetail(_):
+        case .addTaskDetail:
             hasher.combine("addTaskDetail")
-        case .updateTaskDetail:
+        case .editTaskDetail:
             hasher.combine("updateTaskDetail")
         }
     }

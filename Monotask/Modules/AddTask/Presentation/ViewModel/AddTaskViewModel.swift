@@ -15,15 +15,13 @@ class AddTaskViewModel: ObservableObject {
         didSet { localNotificationManager.requestNotificationAuthorization() }
     }
     @Published var reminderTime: Date = .now
-    @Published var selectedUrgencyParameter: TaskUrgency?
-    @Published var selectedDifficultyParameter: TaskDifficulty?
-    @Published var selectedFunParameter: TaskFun?
+    @Published var selectedUrgencyParameter: TaskUrgency = .notUrgent
+    @Published var selectedDifficultyParameter: TaskDifficulty = .easy
+    @Published var selectedFunParameter: TaskFun = .notFun
     
     @Published var isShowNextAddTaskScreen: Bool = false
     
-    let whiteGradient: [Color] = [.clear,
-                                 .white.opacity(1),
-                                 .white.opacity(1)]
+    
     
     let maximumCharacterTaskName: Int = 24
     
@@ -36,6 +34,7 @@ class AddTaskViewModel: ObservableObject {
     }
     
     let useCase: AddTaskUseCase
+    let taskID: String = UUID().uuidString
     let audioManager = AudioManager.shared
     let localNotificationManager = LocalNotificationManager.shared
     
@@ -61,19 +60,20 @@ class AddTaskViewModel: ObservableObject {
     }
     
     func addNewTask(_ onAddedNewTask: @escaping ((TaskModel) -> Void?)) {
-        localNotificationManager.scheduleNotification(notificationTitle: taskName,
+        localNotificationManager.scheduleNotification(id: taskID,
+                                                      notificationTitle: taskName,
                                                       notificationMessage: "Don’t forget that you still have this task.",
                                                       reminderTime: reminderTime)
         
         #warning("Ask mentors, should we create a DTO for creating this object into SwiftData?")
-        let newTask = TaskModel(id: UUID().uuidString,
+        let newTask = TaskModel(id: taskID,
                                 taskName: taskName,
                                 isCompleted: false,
                                 subtasks: subtasks.map({ $0.title }),
-                                reminderTime: reminderTime,
-                                urgencyMetric: selectedUrgencyParameter?.value ?? 1,
-                                difficultyMetric: selectedDifficultyParameter?.value ?? 1,
-                                interestMetric: selectedFunParameter?.value ?? 1)
+                                reminderTime: isReminderOn ? reminderTime : nil,
+                                urgencyMetric: selectedUrgencyParameter,
+                                difficultyMetric: selectedDifficultyParameter,
+                                interestMetric: selectedFunParameter)
         
         useCase.addNewTask(newTask)
         
@@ -87,8 +87,8 @@ class AddTaskViewModel: ObservableObject {
         subtaskName = ""
         subtasks = []
         isReminderOn = false
-        selectedUrgencyParameter = nil
-        selectedFunParameter = nil
-        selectedDifficultyParameter = nil
+        selectedUrgencyParameter = .notUrgent
+        selectedDifficultyParameter = .easy
+        selectedFunParameter = .notFun
     }
 }

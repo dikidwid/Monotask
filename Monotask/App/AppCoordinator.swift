@@ -11,6 +11,7 @@ final class AppCoordinator: ObservableObject {
     let taskListCoordinator: TaskListCoordinator = TaskListCoordinator()
     let detailTaskCoordinator: DetailTaskCoordinator = DetailTaskCoordinator()
     let rewardListCoordinator: RewardShowcaseCoordinator = RewardShowcaseCoordinator()
+    let editTaskCoordinator: EditTaskCoordinator = EditTaskCoordinator()
     @Published var addTaskCoordinator: AddTaskCoordinator = AddTaskCoordinator()
     
     @Published var path: NavigationPath = NavigationPath()
@@ -70,8 +71,8 @@ final class AppCoordinator: ObservableObject {
         switch fullScreenCover {
         case .addTaskDetail(let onDismiss):
             AddTaskCoordinatorView(coordinator: self.addTaskCoordinator, onDismiss: onDismiss)
-        case .updateTaskDetail:
-            Text("Update Task")
+        case .editTaskDetail(let taskID, let onDismiss):
+            editTaskCoordinator.makeEditTaskDetailView(taskID: taskID, onDismiss: onDismiss)
         }
     }
 }

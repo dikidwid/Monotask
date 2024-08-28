@@ -8,7 +8,7 @@
 import Foundation
 
 public final class DetailTaskCoordinator {
-    func makeDetailTaskView(task: TaskModel, appCoordinator: AppCoordinator, onDismiss: @escaping (() -> Void)) -> DetailTaskViewControllerRepresentable {
+    func makeDetailTaskView(task: TaskModel, appCoordinator: AppCoordinator, onDismiss: @escaping ((TaskModel?) -> Void)) -> DetailTaskViewControllerRepresentable {
         let repository = DetailTaskRepositoryImpl()
         let useCase = DetailTaskUseCaseImpl(repository: repository)
         let viewModel = DetailTaskViewModel(task: task, useCase: useCase, appCoordinator: appCoordinator)

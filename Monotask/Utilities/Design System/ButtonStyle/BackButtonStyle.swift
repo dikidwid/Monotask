@@ -17,5 +17,6 @@ struct BackButtonStyle: ButtonStyle {
             .background(.black)
             .cornerRadius(30)
             .opacity(configuration.isPressed ? 0.25 : 1)
+            .padding(.bottom, 47)
     }
 }

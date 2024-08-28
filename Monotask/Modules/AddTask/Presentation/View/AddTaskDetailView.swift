@@ -26,7 +26,7 @@ struct AddTaskDetailView: View {
                 
                 reminderTask
             }
-            .padding(.top, 66)
+            .padding(.top, 90)
             .padding(.horizontal, 38)
         }
         .animation(.interpolatingSpring, value: addTaskViewModel.subtasks)
@@ -144,45 +144,14 @@ extension AddTaskDetailView {
     }
     
     var customNavigationBar: some View {
-        LinearGradient(colors: addTaskViewModel.whiteGradient, startPoint: .bottom, endPoint: .top)
-            .ignoresSafeArea(edges: .top)
-            .frame(height: 90)
-            .overlay(alignment: .top) {
-                Text("New Task")
-                    .font(.oswaldTitle1)
-                    .frame(maxWidth: .infinity)
-                    .overlay(alignment: .leading) {
-                        Button {
-                            onDismiss()
-                        } label: {
-                            Circle()
-                        }
-                        .buttonStyle(CustomCircleButtonStyle(systemName: "chevron.left"))
-                    }
-                    .padding(.horizontal, 38)
-            }
+        CustomAddTaskNavigationBar(navigationTitle: "New Task") {
+            onDismiss()
+        }
     }
     
     var nextButton: some View {
-        LinearGradient(colors: addTaskViewModel.whiteGradient, startPoint: .top, endPoint: .bottom)
-            .ignoresSafeArea(edges: .bottom)
-            .frame(height: 90)
-            .overlay {
-                Button {
-                    coordinator.isShowAddTaskPrioritization.toggle()
-                } label: {
-                    HStack(spacing: 10) {
-                        Text("Next")
-                        
-                        Image(systemName: "chevron.right")
-                    }
-                    .padding(.horizontal, 5)
-                }
-                .buttonStyle(CallToActionButtonStyle(isDisable: addTaskViewModel.isTaskNameFieldEmpty))
-                .disabled(addTaskViewModel.isTaskNameFieldEmpty)
-                .frame(maxHeight: .infinity, alignment: .bottom)
-                .padding(.bottom, 10)
-            }
-        
+        CustomAddTaskActionButton(name: "Next", icon: "chevron.right", isTaskNameFieldEmpty: addTaskViewModel.isTaskNameFieldEmpty) {
+            coordinator.isShowAddTaskPrioritization.toggle()
+        }
     }
 }

@@ -12,8 +12,8 @@ struct TaskModel: Identifiable, Hashable {
     let taskName: String
     var isCompleted: Bool
     let subtasks: [String]
-    let reminderTime: Date
-    let urgencyMetric: Int
-    let difficultyMetric: Int
-    let interestMetric: Int
+    let reminderTime: Date?
+    let urgencyMetric: TaskUrgency
+    let difficultyMetric: TaskDifficulty
+    let interestMetric: TaskFun
 }

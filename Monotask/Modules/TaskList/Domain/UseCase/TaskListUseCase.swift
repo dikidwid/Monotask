@@ -22,11 +22,11 @@ struct TaskListUseCaseImpl: TaskListUseCase {
         let tasks = repository.fetchTasks()
         let sortedTasksByMatrixParamaters: [TaskModel] = tasks.sorted { task1, task2 in
             if task1.urgencyMetric != task2.urgencyMetric {
-                return task1.urgencyMetric > task2.urgencyMetric
-            } else if task1.difficultyMetric != task2.difficultyMetric {
-                return task1.difficultyMetric < task2.difficultyMetric
+                return task1.urgencyMetric.value > task2.urgencyMetric.value
+            } else if task1.difficultyMetric.value != task2.difficultyMetric.value {
+                return task1.difficultyMetric.value < task2.difficultyMetric.value
             } else {
-                return task1.interestMetric > task2.interestMetric
+                return task1.interestMetric.value > task2.interestMetric.value
             }
         }
         
