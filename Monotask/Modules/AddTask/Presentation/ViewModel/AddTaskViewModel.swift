@@ -34,7 +34,6 @@ class AddTaskViewModel: ObservableObject {
     }
     
     let useCase: AddTaskUseCase
-    let taskID: String = UUID().uuidString
     let audioManager = AudioManager.shared
     let localNotificationManager = LocalNotificationManager.shared
     
@@ -60,6 +59,8 @@ class AddTaskViewModel: ObservableObject {
     }
     
     func addNewTask(_ onAddedNewTask: @escaping ((TaskModel) -> Void?)) {
+        let taskID: String = UUID().uuidString
+
         localNotificationManager.scheduleNotification(id: taskID,
                                                       notificationTitle: taskName,
                                                       notificationMessage: "Don’t forget that you still have this task.",

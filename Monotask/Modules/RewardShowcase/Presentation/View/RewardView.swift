@@ -61,7 +61,8 @@ extension RewardView {
             LazyHStack(spacing: 0) {
                 ForEach(viewModel.rewards, id: \.self) { reward in
                     VStack {
-                        Text("Stage \(reward.rewardNumber)")
+                        let isComingSoon = reward.id == "Coming Soon"
+                        Text(isComingSoon ? "Coming Soon" : "Stage \(reward.rewardNumber)")
                             .font(.oswaldLargeTitle)
                             .scrollTransition(.animated, axis: .horizontal) { content, phase in
                                 content
@@ -70,7 +71,7 @@ extension RewardView {
                             }
                             .padding(.top)
                         
-                        Text("\(viewModel.displayRewardTotalTasks(reward))/\(reward.minimumTask) tasks")
+                        Text(isComingSoon ? "???" : "\(viewModel.displayRewardTotalTasks(reward))/\(reward.minimumTask) tasks")
                             .font(.oswaldTitle2)
                             .scrollTransition(.animated, axis: .horizontal) { content, phase in
                                 content

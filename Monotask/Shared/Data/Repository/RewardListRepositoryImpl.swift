@@ -54,10 +54,21 @@ struct RewardListRepositoryImpl: RewardListRepository {
                                                 minimumTask: 10,
                                                 isUnlockedTap: false)
             
+            let comingSoon = RewardLocalEntity(id: "Coming Soon",
+                                                rewardNumber: 10000,
+                                                rewardName: "",
+                                                rewardDescription: "",
+                                                rewardMessage: "",
+                                                rewardWallpaper: "",
+                                                rewardPresentImage: "",
+                                                minimumTask: 10000,
+                                                isUnlockedTap: false)
+            
             // Insert the predefined rewards into the local storage
             container.mainContext.insert(firstReward)
             container.mainContext.insert(secondReward)
             container.mainContext.insert(thirdReward)
+            container.mainContext.insert(comingSoon)
             
             // Save the context to persist the new rewards
             try self.container.mainContext.save()

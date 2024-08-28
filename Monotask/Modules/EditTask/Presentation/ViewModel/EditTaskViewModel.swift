@@ -100,13 +100,14 @@ class EditTaskViewModel: ObservableObject {
     }
     
     func setLocalNotification() {
-//        guard let reminderTime else { return }
-        
-        localNotificationManager.cancelScheduledNotificationBefore(id: taskID)
-        
-        localNotificationManager.scheduleNotification(id: taskID,
-                                                      notificationTitle: taskName,
-                                                      notificationMessage: "Don’t forget that you still have this task.",
-                                                      reminderTime: reminderTime)
+        if isReminderOn {
+            localNotificationManager.cancelScheduledNotificationBefore(id: taskID)
+            localNotificationManager.scheduleNotification(id: taskID,
+                                                          notificationTitle: taskName,
+                                                          notificationMessage: "Don’t forget that you still have this task.",
+                                                          reminderTime: reminderTime)
+        } else {
+            localNotificationManager.cancelScheduledNotificationBefore(id: taskID)
+        }
     }
 }

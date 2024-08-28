@@ -24,6 +24,6 @@ struct AddTaskRepositoryImpl: AddTaskRepository{
         
         container.mainContext.insert(task)
         
-        print("inserted")
+        try? container.mainContext.save()
     }
 }

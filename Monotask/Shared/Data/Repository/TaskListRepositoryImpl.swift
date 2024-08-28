@@ -68,9 +68,9 @@ struct TaskListRepositoryImpl: TaskListRepository {
 //                                                difficultyMetric: 2,
 //                                                interestMetric: 1)
 //                
-                container.mainContext.insert(firstTask)
-                container.mainContext.insert(secondTask)
-                container.mainContext.insert(thirdTask)
+//                container.mainContext.insert(firstTask)
+//                container.mainContext.insert(secondTask)
+//                container.mainContext.insert(thirdTask)
 //                container.mainContext.insert(fourthTask)
 //                container.mainContext.insert(fifthTask)
             }
