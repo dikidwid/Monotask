@@ -46,7 +46,7 @@ struct AddTaskDetailView: View {
                 Button("Done") {
                     isFieldFocused = nil
                 }
-                .tint(.appAccentColor)
+                .tint(.black)
             }
         }
         

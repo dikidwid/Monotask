@@ -22,7 +22,6 @@ struct RewardView: View {
                 
                 backButton
             }
-            .padding(.bottom)
         }
         .navigationBarBackButtonHidden(true)
         .onAppear {

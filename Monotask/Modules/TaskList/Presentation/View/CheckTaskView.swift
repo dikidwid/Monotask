@@ -49,6 +49,7 @@ struct CheckTaskView: View {
         }
         .onChange(of: task) {
             guard let task = task else { return }
+            audioManager.playSoundEffectTwo(.switched, volume: 0.3)
             if task.isCompleted {
                 withAnimation(.interpolatingSpring) {
                     firstInnerLayerOpacity = 0

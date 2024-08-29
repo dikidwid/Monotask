@@ -47,7 +47,7 @@ struct EditTaskDetailView: View {
                     Button("Done") {
                         isFieldFocused = nil
                     }
-                    .tint(.appAccentColor)
+                    .tint(.black)
                 }
             }
             .navigationDestination(isPresented: $editTaskViewModel.isShowNextAddTaskScreen) {
