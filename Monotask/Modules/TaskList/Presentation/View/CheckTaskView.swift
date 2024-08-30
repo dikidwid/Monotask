@@ -48,8 +48,8 @@ struct CheckTaskView: View {
             }
         }
         .onChange(of: task) {
+            audioManager.playAudioPlayerOne(.switched, volume: 0.2)
             guard let task = task else { return }
-            audioManager.playSoundEffectTwo(.switched, volume: 0.3)
             if task.isCompleted {
                 withAnimation(.interpolatingSpring) {
                     firstInnerLayerOpacity = 0
@@ -121,7 +121,7 @@ struct CheckTaskView: View {
 
         // Action to be executed if 2 seconds are met
         func actionAfterTwoSeconds() {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+            DispatchQueue.main.asyncAfter(deadline: .now()) {
                 audioManager.playSoundEffectTwo(.buildComplete)
             }
         }
