@@ -9,39 +9,51 @@ import SwiftUI
 
 struct TaskListView: View {
     @StateObject var taskListViewModel: TaskListViewModel
-
+    @EnvironmentObject private var appCoordinator: AppCoordinator
+    
     var body: some View {
-        ZStack {
-            if taskListViewModel.tasks.isEmpty {
-               emptyStateView
-            } else {
-                listTasksView
+        NavigationStack {
+            ZStack {
+                if taskListViewModel.tasks.isEmpty {
+                    createNewTaskText
+                } else {
+                    horizontalListTasksName
+                }
+                
+                VStack {
+                    todayTextView
+                    
+                    Spacer()
+                    
+                    checkTaskView
+                        .overlay {
+                            if taskListViewModel.tasks.isEmpty {
+                                emptyStateImage
+                            }
+                        }
+                    
+                    Spacer()
+                    
+                    addTaskButton
+                }
+                .overlay(alignment: .topTrailing) {
+                    showcaseJourneyButton
+                }
+                .padding(.top, 20)
             }
-            
-            VStack {
-                todayTextView
-                
-                Spacer()
-                
-                checkTaskView
-                
-                Spacer()
-                
-                addTaskButton
+            .onAppear { taskListViewModel.getTasks() ; taskListViewModel.currentTask = taskListViewModel.tasks.first }
+            .uncheckTaskAlert(isShowAlert: $taskListViewModel.isShowRemoveCheckmarkAlert) {
+                taskListViewModel.updateTaskStatus($0)
+                taskListViewModel.audioManager.playSoundEffectTwo(.unchecked, volume: 0.1)
             }
-            .overlay(alignment: .topTrailing) {
-                showcaseJourneyButton
-            }
-            .padding(.top, 20)
         }
-        .onAppear(perform: taskListViewModel.onAppearAction)
-        .uncheckTaskAlert(isShowAlert: $taskListViewModel.isShowRemoveCheckmarkAlert) { taskListViewModel.updateTaskStatus($0) } 
     }
 }
 
 #Preview {
-    let repository = TaskListRepositoryImpl()
-    let useCase = TaskListUseCaseImpl(repository: repository)
+    let taskListRepository = TaskListRepositoryImpl()
+    let rewardListRepository = RewardListRepositoryImpl()
+    let useCase = TaskListUseCaseImpl(repository: taskListRepository, rewardListRepository: rewardListRepository)
     let viewModel = TaskListViewModel(useCase: useCase)
     
     return TaskListView(taskListViewModel: viewModel)
@@ -50,44 +62,56 @@ struct TaskListView: View {
 // MARK: - Private
 // Extension for create each component in the view
 extension TaskListView {
-    private var emptyStateView: some View {
-        VStack(spacing: 17) {
-            Text("Create a New Task")
-                .font(.oswaldLargeEmphasized)
-                .padding(.top, 26 + 50)
-            
-            Spacer().frame(height: 160)
-            
-            Image(.emptyState)
-            
-            Text("Tip : Think Small \n, Try 1 Step, 1 Task, 1 Thought…")
-                .font(.oswaldBody)
-                .foregroundStyle(.gray)
-                .multilineTextAlignment(.center)
-            
-            Spacer()
-        }
+    private var createNewTaskText: some View {
+        Text("Create a New Task")
+            .font(.oswaldLargeEmphasized)
+            .foregroundStyle(.black)
+            .frame(maxHeight: .infinity, alignment: .top)
+            .padding(.top, 100)
     }
     
-    private var listTasksView: some View {
+    private var emptyStateImage: some View {
+        Rectangle()
+            .fill(.white)
+            .overlay {
+                VStack {
+                    Image(.emptyState)
+                    
+                    Text("Tip : Think Small \n, Try 1 Step, 1 Task, 1 Thought…")
+                        .font(.oswaldBody)
+                        .foregroundStyle(.gray)
+                        .multilineTextAlignment(.center)
+                }
+            }
+    }
+    
+    private var horizontalListTasksName: some View {
         ScrollView(.horizontal) {
             LazyHStack(spacing: 0) {
                 ForEach(taskListViewModel.tasks, id: \.self) { task in
                     Rectangle()
                         .fill(.clear)
                         .overlay(alignment: .top) {
-                            Text(task.taskName)
-                                .font(.oswaldLargeTitle)
-                                .underline(taskListViewModel.currentTask == task)
-                                .multilineTextAlignment(.center)
-                                .scrollTransition(.animated, axis: .horizontal) { content, phase in
-                                    content
-                                        .scaleEffect(phase.isIdentity ? 1.0 : 0.8)
-                                        .brightness(phase.isIdentity ? 0 : 0.6)
+                                Button {
+                                    appCoordinator.present(.detailTask(task: task, onDismiss: { taskListViewModel.setCurrentTask(to: $0) }))
+                                    
+                                } label: {
+                                    Text(task.taskName)
+                                        .font(.oswaldLargeTitle)
+                                        .underline(taskListViewModel.currentTask == task)
+                                        .multilineTextAlignment(.center)
+                                        .scrollTransition(.animated, axis: .horizontal) { content, phase in
+                                            content
+                                                .scaleEffect(phase.isIdentity ? 1.0 : 0.8)
+                                                .brightness(phase.isIdentity ? 0 : 0.6)
+                                        }
                                 }
+                                
+                                
                         }
                         .frame(width: 250)
                         .padding(.top, 100)
+                        .tint(.black)
                 }
             }
             .scrollTargetLayout()
@@ -121,7 +145,7 @@ extension TaskListView {
     
     private var addTaskButton: some View {
         Button {
-            taskListViewModel.addNewTask()
+            appCoordinator.fullScreenCover(.addTaskDetail(onDismiss: { taskListViewModel.setCurrentTask(to: $0) }))
         } label: {
             HStack {
                 Image(systemName: "plus")
@@ -131,7 +155,6 @@ extension TaskListView {
             }
         }
         .buttonStyle(CallToActionButtonStyle())
-        .padding(.bottom)
     }
     
     private var checkTaskView: some View {
@@ -139,41 +162,36 @@ extension TaskListView {
             .overlay {
                 if let task = taskListViewModel.currentTask,
                    task.isCompleted {
-                Rectangle()
-                    .fill(.clear)
-                    .contentShape(Circle())
-                    .onTapGesture {
-                        taskListViewModel.isShowRemoveCheckmarkAlert = true
-                        
-                    }}
+                    Rectangle()
+                        .fill(.clear)
+                        .contentShape(Circle())
+                        .onTapGesture {
+                            taskListViewModel.isShowRemoveCheckmarkAlert = true
+                        }
+                }
             }
     }
     
     private var showcaseJourneyButton: some View {
         Button {
-            
+            appCoordinator.push(.showcaseJourney)
         } label: {
             Circle()
                 .foregroundStyle(.black)
                 .frame(width: 36, height: 36)
                 .overlay {
-                    Image(.showcaseJourneyIcon)
+                    Image(.showcaseIcon)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .padding(.vertical, 5)
-                        .padding(.horizontal, 10)
+                        .padding(.vertical, 6)
+                        .padding(.horizontal, 9)
                 }
                 .overlay(alignment: .topTrailing) {
-                    if taskListViewModel.hasNewJourneyPiece {
+                    if taskListViewModel.hasNewReward {
                         Circle()
                             .fill(Color.appAccentColor)
-                            .overlay {
-                                Image(systemName: "exclamationmark")
-                                    .imageScale(.small)
-                                    .foregroundStyle(.black)
-                            }
-                            .frame(width: 18, height: 18)
-                            .offset(x: 7, y: -5)
+                            .frame(width: 13, height: 13)
+                            .offset(x: 3, y: -3)
                     }
                 }
                 .padding(.trailing, 26)
@@ -182,7 +200,7 @@ extension TaskListView {
 }
 
 extension View {
-   fileprivate func uncheckTaskAlert(isShowAlert: Binding<Bool>, onDismiss: @escaping ((Bool) -> Void?)) -> some View {
+    fileprivate func uncheckTaskAlert(isShowAlert: Binding<Bool>, onDismiss: @escaping ((Bool) -> Void?)) -> some View {
         modifier(TaskListAlertModifier(isShowAlert: isShowAlert, onDismiss: onDismiss))
     }
 }

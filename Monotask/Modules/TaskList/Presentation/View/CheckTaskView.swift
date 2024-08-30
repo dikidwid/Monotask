@@ -8,6 +8,7 @@
 import SwiftUI
 import CoreHaptics
 import AVFAudio
+import Lottie
 
 struct CheckTaskView: View {
     @State private var workItem: DispatchWorkItem?
@@ -19,6 +20,9 @@ struct CheckTaskView: View {
     @State private var thirdInnerLayerOpacity: Double = 0
     @State private var fourthInnerLayerOpacity: Double = 0
     
+    @State private var isButtonPressed: Bool = false
+    @State private var isComplete: Bool = false
+    
     let task: TaskModel?
     let onCheckedTask: ((Bool) -> Void?)
     let coreHapticsManager: CoreHapticsManager = CoreHapticsManager.shared
@@ -28,104 +32,47 @@ struct CheckTaskView: View {
         
     var body: some View {
         ZStack {
-            CheckTaskShape()
-                .frame(width: 235, height: 235)
-                .scaleEffect(outerLayerScale)
-                .shadow(radius: 10)
-            
-            CheckTaskShape()
-                .foregroundStyle(Color(hex: "454545"))
-                .frame(width: 195, height: 195)
-                .opacity(firstInnerLayerOpacity)
-                .scaleEffect(firstInnerLayerOpacity)
-                .shadow(color: .black.opacity(0.25), radius: 24, y: 4)
-
-            CheckTaskShape()
-                .foregroundStyle(Color(hex: "666666"))
-                .frame(width: 155, height: 155)
-                .opacity(secondInnerLayerOpacity)
-                .scaleEffect(secondInnerLayerOpacity)
-                .shadow(color: .black.opacity(0.25), radius: 24, y: 4)
-
-            CheckTaskShape()
-                .foregroundStyle(Color(hex: "7B7B7B"))
-                .frame(width: 115, height: 115)
-                .opacity(thirdInnerLayerOpacity)
-                .scaleEffect(thirdInnerLayerOpacity)
-                .shadow(color: .black.opacity(0.25), radius: 24, y: 4)
-
-            CheckTaskShape()
-                .foregroundStyle(Color(hex: "A0A0A0"))
-                .frame(width: 75, height: 75)
-                .opacity(fourthInnerLayerOpacity)
-                .scaleEffect(fourthInnerLayerOpacity)
-                .shadow(color: .black.opacity(0.25), radius: 24, y: 4)
-
+            lottieParticleAnimationView
+                .offset(y: -7.5)
+                    
+            checkTaskButton
         }
+        .scaleEffect(isPressing ? maxScale : 1, anchor: .center)
         .onLongPressGesture(minimumDuration: 2) {
-            withAnimation(.bouncy(duration: 1)) {
-                firstInnerLayerOpacity = maxScale
-                secondInnerLayerOpacity = maxScale
-                thirdInnerLayerOpacity = maxScale
-                fourthInnerLayerOpacity = maxScale
-                outerLayerScale = maxScale
-                coreHapticsManager.playHapticsPattern(type: .sparkle)
-                coreHapticsManager.playHapticsPattern(type: .gravel)
-                onCheckedTask(true)
-            }
+            successLongTapGestureAction()
         } onPressingChanged: { isPressing in
             if isPressing {
-                withAnimation(.bouncy) {
-                    self.isPressing = isPressing
-                }
-                withAnimation(.easeIn(duration: 0.1).speed(0.5)) {
-                    firstInnerLayerOpacity = 1
-                }
-                withAnimation(.easeIn(duration: 0.3).speed(0.5)) {
-                    secondInnerLayerOpacity = 1
-                }
-                withAnimation(.easeIn(duration: 0.5).speed(0.5)) {
-                    thirdInnerLayerOpacity = 1
-                }
-                withAnimation(.easeIn(duration: 0.7).speed(0.5)) {
-                    fourthInnerLayerOpacity = 1
-                }
-                startPreparingCompleteSFX()
-                coreHapticsManager.playHapticsPattern(type: .transition)
-                audioManager.playAudioPlayerOne(.buildUp)
+                isPressedButtonAction()
             } else {
-                withAnimation(.bouncy) {
-                    self.isPressing = isPressing
-                }
-                withAnimation(.interactiveSpring(duration: 1)) {
-                    outerLayerScale = 1
-                }
-                withAnimation(.easeOut(duration: 1)) {
-                    firstInnerLayerOpacity = 0
-                }
-                withAnimation(.easeOut(duration: 1)) {
-                    secondInnerLayerOpacity = 0
-                }
-                withAnimation(.easeOut(duration: 1)) {
-                    thirdInnerLayerOpacity = 0
-                }
-                withAnimation(.easeOut(duration: 1)) {
-                    fourthInnerLayerOpacity = 0
-                }
-                cancelPreparingCompleteSFX()
-                coreHapticsManager.cancelHaptics()
-                audioManager.stopSound()
+               releasedButtonAction()
             }
         }
         .onChange(of: task) {
+            audioManager.playAudioPlayerOne(.switched, volume: 0.2)
             guard let task = task else { return }
             if task.isCompleted {
                 withAnimation(.interpolatingSpring) {
-                    firstInnerLayerOpacity = maxScale
-                    secondInnerLayerOpacity = maxScale
-                    thirdInnerLayerOpacity = maxScale
-                    fourthInnerLayerOpacity = maxScale
-                    outerLayerScale = maxScale
+                    firstInnerLayerOpacity = 0
+                    secondInnerLayerOpacity = 0
+                    thirdInnerLayerOpacity = 0
+                    fourthInnerLayerOpacity = 0
+                    outerLayerScale = 0
+                }
+                
+                withAnimation(.interpolatingSpring) {
+                    firstInnerLayerOpacity = 1
+                    secondInnerLayerOpacity = 1
+                    thirdInnerLayerOpacity = 1
+                    fourthInnerLayerOpacity = 1
+                    outerLayerScale = 1
+                }
+                
+                withAnimation(.interpolatingSpring.delay(0.2)) {
+                    firstInnerLayerOpacity = 1.2
+                    secondInnerLayerOpacity = 1.2
+                    thirdInnerLayerOpacity = 1.2
+                    fourthInnerLayerOpacity = 1.2
+                    outerLayerScale = 1.2
                 }
             } else {
                 withAnimation(.interpolatingSpring) {
@@ -135,11 +82,19 @@ struct CheckTaskView: View {
                     fourthInnerLayerOpacity = 0
                     outerLayerScale = 1
                 }
+                
+                withAnimation(.bouncy.delay(0.2)) {
+                    firstInnerLayerOpacity = 0
+                    secondInnerLayerOpacity = 0
+                    thirdInnerLayerOpacity = 0
+                    fourthInnerLayerOpacity = 0
+                    outerLayerScale = 1.1
+                }
             }
         }
-        .scaleEffect(isPressing ? maxScale : 1)
         .sensoryFeedback(.impact(flexibility: .solid, intensity: 1), trigger: isPressing)
         .sensoryFeedback(.impact(flexibility: .soft, intensity: 0.75), trigger: task)
+        .sensoryFeedback(.impact(weight: .heavy, intensity: 1), trigger: isComplete)
     }
     
     // Start the countdown logic
@@ -166,9 +121,171 @@ struct CheckTaskView: View {
 
         // Action to be executed if 2 seconds are met
         func actionAfterTwoSeconds() {
-            audioManager.playSoundEffectTwo(.buildComplete)
+            DispatchQueue.main.asyncAfter(deadline: .now()) {
+                audioManager.playSoundEffectTwo(.buildComplete)
+            }
         }
+    
+    func successLongTapGestureAction () {
+        withAnimation(.bouncy(duration: 1)) {
+            firstInnerLayerOpacity = maxScale
+            secondInnerLayerOpacity = maxScale
+            thirdInnerLayerOpacity = maxScale
+            fourthInnerLayerOpacity = maxScale
+            outerLayerScale = maxScale
+            coreHapticsManager.playHapticsPattern(type: .sparkle)
+            coreHapticsManager.playHapticsPattern(type: .gravel)
+            onCheckedTask(true)
+        }
+        isComplete = true
+    }
+    
+    func isPressedButtonAction() {
+        withAnimation(.bouncy) {
+        isPressing = true
+                }
+        withAnimation(.easeIn(duration: 0.1).speed(0.5)) {
+            firstInnerLayerOpacity = 1
+        }
+        withAnimation(.easeIn(duration: 0.3).speed(0.5)) {
+            secondInnerLayerOpacity = 1
+        }
+        withAnimation(.easeIn(duration: 0.5).speed(0.5)) {
+            thirdInnerLayerOpacity = 1
+        }
+        withAnimation(.easeIn(duration: 0.7).speed(0.5)) {
+            fourthInnerLayerOpacity = 1
+        }
+        startPreparingCompleteSFX()
+        coreHapticsManager.playHapticsPattern(type: .transition)
+        audioManager.playAudioPlayerOne(.buildUp)
+        isComplete = false
+        isButtonPressed = true
+    }
+    
+    func releasedButtonAction() {
+        withAnimation(.bouncy) {
+            isPressing = false
+        }
+        withAnimation(.interactiveSpring(duration: 1)) {
+            outerLayerScale = 1
+        }
+        withAnimation(.easeOut(duration: 1)) {
+            firstInnerLayerOpacity = 0
+        }
+        withAnimation(.easeOut(duration: 1)) {
+            secondInnerLayerOpacity = 0
+        }
+        withAnimation(.easeOut(duration: 1)) {
+            thirdInnerLayerOpacity = 0
+        }
+        withAnimation(.easeOut(duration: 1)) {
+            fourthInnerLayerOpacity = 0
+        }
+        cancelPreparingCompleteSFX()
+        coreHapticsManager.cancelHaptics()
+        audioManager.stopSound()
+        isButtonPressed = false
+    }
 }
+
+extension CheckTaskView {
+    var lottieParticleAnimationView: some View {
+        CheckParticleAnimationView(isPressing: isButtonPressed, isComplete: isComplete)
+            .allowsHitTesting(false)
+    }
+    
+    var checkTaskButton: some View {
+        ZStack {
+            CheckTaskShape()
+                .frame(width: 235, height: 235)
+                .scaleEffect(outerLayerScale)
+                .shadow(radius: 10)
+            
+            CheckTaskShape()
+                .foregroundStyle(Color(hex: "454545"))
+                .frame(width: 195, height: 195)
+                .opacity(firstInnerLayerOpacity)
+                .scaleEffect(firstInnerLayerOpacity)
+                .shadow(color: .black.opacity(0.25), radius: 24)
+            
+            CheckTaskShape()
+                .foregroundStyle(Color(hex: "666666"))
+                .frame(width: 155, height: 155)
+                .opacity(secondInnerLayerOpacity)
+                .scaleEffect(secondInnerLayerOpacity)
+                .shadow(color: .black.opacity(0.25), radius: 24)
+            
+            CheckTaskShape()
+                .foregroundStyle(Color(hex: "7B7B7B"))
+                .frame(width: 115, height: 115)
+                .opacity(thirdInnerLayerOpacity)
+                .scaleEffect(thirdInnerLayerOpacity)
+                .shadow(color: .black.opacity(0.25), radius: 24)
+            
+            CheckTaskShape()
+                .foregroundStyle(Color(hex: "A0A0A0"))
+                .frame(width: 75, height: 75)
+                .opacity(fourthInnerLayerOpacity)
+                .scaleEffect(fourthInnerLayerOpacity)
+                .shadow(color: .black.opacity(0.25), radius: 24)
+        }
+    }
+}
+
+struct CheckParticleAnimationView: View {
+    let isPressing: Bool
+    let isComplete: Bool
+    
+    @State private var showSecondAnimation = false
+
+    var body: some View {
+        if (isPressing){
+            LottieView(animation: .named("clickAnimationNew.json"))
+                .playbackMode(.playing(.fromFrame(10, toFrame: 100, loopMode: .playOnce)))
+                .animationSpeed(2)
+        }
+        
+        
+        if (isComplete){
+            LottieView(animation: .named("clickAnimationNew.json"))
+                .playbackMode(.playing(.fromFrame(66, toFrame: 10, loopMode: .playOnce)))
+                .animationSpeed(2)
+                .animationDidFinish { completed in
+                    if completed {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                            showSecondAnimation = true
+                        }
+                    }
+                }
+            
+            if showSecondAnimation {
+                LottieView(animation: .named("clickAnimationNew.json"))
+                    .playbackMode(.playing(.fromFrame(72, toFrame: 102, loopMode: .playOnce)))
+                    .animationSpeed(1)
+                    .animationDidFinish { completed in
+                        if completed {
+                            showSecondAnimation = false
+                        }
+                    }
+                    .scaleEffect(1.1)
+            }
+        }
+        
+//        if isPressing {
+//            LottieView(animation: .named("clickAnimationTransparent.json"))
+//                .playbackMode(.playing(.toProgress(1, loopMode: .playOnce)))
+//                .animationSpeed(1)
+//        }
+//        
+//        if isComplete{
+//            LottieView(animation: .named("clickAnimationTransparent.json"))
+//                .playbackMode(.playing(.fromFrame(19, toFrame: 36, loopMode: .playOnce)))
+//                .animationSpeed(1)
+//        }
+    }
+}
+
 
 struct CheckTaskShape: Shape {
     func path(in rect: CGRect) -> Path {
