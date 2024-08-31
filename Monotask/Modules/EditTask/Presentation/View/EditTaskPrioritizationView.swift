@@ -53,14 +53,14 @@ struct EditTaskPrioritizationView: View {
 
 extension EditTaskPrioritizationView {
     var prioritizeTitle: some View {
-        TitleView(text: "Let's prioritize your task")
+        TitleView(text: String(localized: "Let's prioritize your task"))
             .padding(.bottom, 8)
     }
     
     var urgencyParameterSelection: some View {
         VStack {
-            TitleParameterTaskView(title: "Urgency",
-                                   information: "How quick this task needs to be completed?")
+            TitleParameterTaskView(title: String(localized: "Urgency"),
+                                   information: String(localized: "How quick this task needs to be completed?"))
             
             HStack(alignment: .top ,spacing: 75) {
                 ForEach(TaskUrgency.allCases, id: \.self) { parameter in
@@ -81,8 +81,8 @@ extension EditTaskPrioritizationView {
     
     var difficultyParameterSelection: some View {
         VStack {
-            TitleParameterTaskView(title: "Difficulty",
-                                   information: "How challenging is this task for you?")
+            TitleParameterTaskView(title: String(localized: "Difficulty"),
+                                   information: String(localized: "How challenging is this task for you?"))
             
             HStack(alignment: .top ,spacing: 75) {
                 ForEach(TaskDifficulty.allCases) { parameter in
@@ -102,8 +102,8 @@ extension EditTaskPrioritizationView {
     
     var funParameterSelection: some View {
         VStack {
-            TitleParameterTaskView(title: "Fun",
-                                   information: "How fun is this task for you?")
+            TitleParameterTaskView(title: String(localized: "Fun"),
+                                   information: String(localized: "How fun is this task for you?"))
 
             HStack(alignment: .top ,spacing: 75) {
                 ForEach(TaskFun.allCases) { parameter in
@@ -122,13 +122,13 @@ extension EditTaskPrioritizationView {
     }
     
     var customNavigationBar: some View {
-        CustomAddTaskNavigationBar(navigationTitle: "Edit Task") {
+        CustomAddTaskNavigationBar(navigationTitle: String(localized: "Edit Task")) {
             editTaskViewModel.isShowNextAddTaskScreen.toggle()
         }
     }
     
     var confirmButton: some View {
-        CustomAddTaskActionButton(name: "Save", icon: "checkmark", isTaskNameFieldEmpty: editTaskViewModel.isTaskNameFieldEmpty) {
+        CustomAddTaskActionButton(name: String(localized: "Save"), icon: "checkmark", isTaskNameFieldEmpty: editTaskViewModel.isTaskNameFieldEmpty) {
             editTaskViewModel.editTask(onDismiss)
             editTaskViewModel.audioManager.playAudioPlayerOne(.created)
             coordinator.dismissFullScreenOver()

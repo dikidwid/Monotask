@@ -67,7 +67,7 @@ extension AddTaskDetailView {
     var taskNameTextField: some View {
         VStack(spacing: 15) {
             HStack {
-                TitleView(text: "Task Name")
+                TitleView(text: String(localized: "Task Name"))
                 
                 Text("\(addTaskViewModel.taskName.count) / \(addTaskViewModel.maximumCharacterTaskName)")
                     .font(.oswaldFootnote)
@@ -86,7 +86,7 @@ extension AddTaskDetailView {
     
     var subtaskTextField: some View {
         VStack(spacing: 15) {
-            TitleView(text: "Subtasks")
+            TitleView(text: String(localized: "Subtasks"))
             
             ForEach(addTaskViewModel.subtasks) { subtask in
                 HStack {
@@ -125,7 +125,7 @@ extension AddTaskDetailView {
             HStack {
                 
                 Toggle(isOn: $addTaskViewModel.isReminderOn) {
-                    TitleView(text: "Reminder")
+                    TitleView(text: String(localized: "Reminder"))
                 }
                 .toggleStyle(SwitchToggleStyle(tint: .appAccentColor))
             }
@@ -144,13 +144,13 @@ extension AddTaskDetailView {
     }
     
     var customNavigationBar: some View {
-        CustomAddTaskNavigationBar(navigationTitle: "New Task") {
+        CustomAddTaskNavigationBar(navigationTitle: String(localized: "New Task")) {
             onDismiss()
         }
     }
     
     var nextButton: some View {
-        CustomAddTaskActionButton(name: "Next", icon: "chevron.right", isTaskNameFieldEmpty: addTaskViewModel.isTaskNameFieldEmpty) {
+        CustomAddTaskActionButton(name: String(localized: "Next"), icon: "chevron.right", isTaskNameFieldEmpty: addTaskViewModel.isTaskNameFieldEmpty) {
             coordinator.isShowAddTaskPrioritization.toggle()
         }
     }

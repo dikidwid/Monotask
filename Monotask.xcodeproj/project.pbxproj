@@ -110,6 +110,7 @@
 		3ABEE1942C6EDC1A0098B08E /* Oswald.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEE1932C6EDC1A0098B08E /* Oswald.swift */; };
 		3ABEE1962C6EDC8E0098B08E /* CallToActionButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEE1952C6EDC8E0098B08E /* CallToActionButtonStyle.swift */; };
 		3ABEE1982C6EDD7F0098B08E /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEE1972C6EDD7F0098B08E /* AppColors.swift */; };
+		3D1236FB2C81C530000075A4 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 3D1236FA2C81C530000075A4 /* Localizable.xcstrings */; };
 		E23AB5D22C736E36006CE04D /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23AB5D12C736E36006CE04D /* TitleView.swift */; };
 /* End PBXBuildFile section */
 
@@ -228,6 +229,7 @@
 		3ABEE1932C6EDC1A0098B08E /* Oswald.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oswald.swift; sourceTree = "<group>"; };
 		3ABEE1952C6EDC8E0098B08E /* CallToActionButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallToActionButtonStyle.swift; sourceTree = "<group>"; };
 		3ABEE1972C6EDD7F0098B08E /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		3D1236FA2C81C530000075A4 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		E23AB5D12C736E36006CE04D /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -777,6 +779,7 @@
 		3A6759D02C6D033A00983C66 = {
 			isa = PBXGroup;
 			children = (
+				3D1236FA2C81C530000075A4 /* Localizable.xcstrings */,
 				3A6759DB2C6D033A00983C66 /* Monotask */,
 				3A6759DA2C6D033A00983C66 /* Products */,
 			);
@@ -1118,6 +1121,7 @@
 			knownRegions = (
 				en,
 				Base,
+				id,
 			);
 			mainGroup = 3A6759D02C6D033A00983C66;
 			packageReferences = (
@@ -1165,6 +1169,7 @@
 				3A5D01FE2C75D23100F4E9FF /* clickAnimationTransparent.json in Resources */,
 				3A5D02362C76A09D00F4E9FF /* switched.mp3 in Resources */,
 				3A5D02212C75D87100F4E9FF /* shineLockVector.svg in Resources */,
+				3D1236FB2C81C530000075A4 /* Localizable.xcstrings in Resources */,
 				3A6759E12C6D033B00983C66 /* Assets.xcassets in Resources */,
 				3A5D021F2C75D86C00F4E9FF /* unlockVector.svg in Resources */,
 				3AB295072C71B1EF0026F5AA /* Transition.ahap in Resources */,
@@ -1406,7 +1411,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Monotask/Preview Content\"";
-				DEVELOPMENT_TEAM = QJ4D5LRK3T;
+				DEVELOPMENT_TEAM = 3L9D9QLCDG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Monotask/Info.plist;
@@ -1436,7 +1441,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Monotask/Preview Content\"";
-				DEVELOPMENT_TEAM = QJ4D5LRK3T;
+				DEVELOPMENT_TEAM = 3L9D9QLCDG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Monotask/Info.plist;
