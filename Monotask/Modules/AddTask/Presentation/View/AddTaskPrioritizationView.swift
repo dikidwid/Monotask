@@ -52,14 +52,14 @@ struct AddTaskPrioritizationView: View {
 
 extension AddTaskPrioritizationView {
     var prioritizeTitle: some View {
-        TitleView(text: "Let's prioritize your task")
+        TitleView(text: String(localized: "Let's prioritize your task"))
             .padding(.bottom, 8)
     }
     
     var urgencyParameterSelection: some View {
         VStack {
-            TitleParameterTaskView(title: "Urgency",
-                                   information: "How quick this task needs to be completed?")
+            TitleParameterTaskView(title: String(localized: "Urgency"),
+                                   information: String(localized: "How quick this task needs to be completed?"))
             
             HStack(alignment: .top ,spacing: 75) {
                 ForEach(TaskUrgency.allCases, id: \.self) { parameter in
@@ -80,8 +80,8 @@ extension AddTaskPrioritizationView {
     
     var difficultyParameterSelection: some View {
         VStack {
-            TitleParameterTaskView(title: "Difficulty",
-                                   information: "How challenging is this task for you?")
+            TitleParameterTaskView(title: String(localized: "Difficulty"),
+                                   information: String(localized: "How challenging is this task for you?"))
             
             HStack(alignment: .top ,spacing: 75) {
                 ForEach(TaskDifficulty.allCases) { parameter in
@@ -101,8 +101,8 @@ extension AddTaskPrioritizationView {
     
     var funParameterSelection: some View {
         VStack {
-            TitleParameterTaskView(title: "Fun",
-                                   information: "How fun is this task for you?")
+            TitleParameterTaskView(title: String(localized: "Fun"),
+                                   information: String(localized: "How fun is this task for you?"))
 
             HStack(alignment: .top ,spacing: 75) {
                 ForEach(TaskFun.allCases) { parameter in
@@ -121,13 +121,13 @@ extension AddTaskPrioritizationView {
     }
     
     var customNavigationBar: some View {
-        CustomAddTaskNavigationBar(navigationTitle: "New Task") {
+        CustomAddTaskNavigationBar(navigationTitle: String(localized: "New Task")) {
             coordinator.isShowAddTaskPrioritization.toggle()
         }
     }
     
     var confirmButton: some View {
-        CustomAddTaskActionButton(name: "Done", icon: "checkmark", isTaskNameFieldEmpty: addTaskViewModel.isTaskNameFieldEmpty) {
+        CustomAddTaskActionButton(name: String(localized: "Done"), icon: "checkmark", isTaskNameFieldEmpty: addTaskViewModel.isTaskNameFieldEmpty) {
             addTaskViewModel.addNewTask(onDismiss)
             addTaskViewModel.audioManager.playAudioPlayerOne(.created)
             coordinator.isShowAddTaskPrioritization.toggle()

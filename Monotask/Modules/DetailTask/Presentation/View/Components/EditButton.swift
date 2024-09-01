@@ -26,10 +26,10 @@ class EditButton: UIButton {
         
         var config = UIButton.Configuration.plain()
         
-        config.title = "Edit Task"
+        config.title = NSLocalizedString("Edit_Task", comment: "Edit task di uikit")
         config.image = UIImage(systemName: "pencil")
         
-        config.attributedTitle = AttributedString("Edit Task",
+        config.attributedTitle = AttributedString(NSLocalizedString("Edit_Task", comment: "Edit task di uikit"),
                                                   attributes: AttributeContainer([.font: UIFont.oswaldTitle3]))
         
         config.imagePadding = 10

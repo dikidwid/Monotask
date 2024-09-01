@@ -71,7 +71,7 @@ extension EditTaskDetailView {
     var taskNameTextField: some View {
         VStack(spacing: 15) {
             HStack {
-                TitleView(text: "Task Name")
+                TitleView(text: String(localized: "Task Name"))
                 
                 Text("\(editTaskViewModel.taskName.count) / \(editTaskViewModel.maximumCharacterTaskName)")
                     .font(.oswaldFootnote)
@@ -90,7 +90,7 @@ extension EditTaskDetailView {
     
     var subtaskTextField: some View {
         VStack(spacing: 15) {
-            TitleView(text: "Subtasks")
+            TitleView(text: String(localized: "Subtasks"))
             
             ForEach(editTaskViewModel.subtasks, id: \.self) { subtask in
                 HStack {
@@ -129,7 +129,7 @@ extension EditTaskDetailView {
             HStack {
                 
                 Toggle(isOn: $editTaskViewModel.isReminderOn) {
-                    TitleView(text: "Reminder")
+                    TitleView(text: String(localized: "Reminder"))
                 }
                 .toggleStyle(SwitchToggleStyle(tint: .appAccentColor))
             }
@@ -148,14 +148,14 @@ extension EditTaskDetailView {
     }
     
     var customNavigationBar: some View {
-        CustomAddTaskNavigationBar(navigationTitle: "Edit Task") {
+        CustomAddTaskNavigationBar(navigationTitle: String(localized: "Edit Task")) {
             coordinator.dismissFullScreenOver()
 
         }
     }
     
     var nextButton: some View {
-        CustomAddTaskActionButton(name: "Next", icon: "chevron.right", isTaskNameFieldEmpty: editTaskViewModel.isTaskNameFieldEmpty) {
+        CustomAddTaskActionButton(name: String(localized: "Next"), icon: "chevron.right", isTaskNameFieldEmpty: editTaskViewModel.isTaskNameFieldEmpty) {
             editTaskViewModel.isShowNextAddTaskScreen.toggle()
         }
     }

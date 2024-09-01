@@ -17,11 +17,11 @@ enum TaskFun: Identifiable, CaseIterable {
     var description: String {
         switch self {
         case .notFun:
-            "Not Fun"
+            String(localized: "Not Fun")
         case .neutral:
-            "Neutral"
+            String(localized: "Neutral")
         case .fun:
-            "Fun"
+            String(localized: "Fun_Parameter")
         }
     }
     

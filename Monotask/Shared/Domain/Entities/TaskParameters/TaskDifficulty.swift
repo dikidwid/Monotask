@@ -17,11 +17,11 @@ enum TaskDifficulty: Identifiable, CaseIterable {
     var description: String {
         switch self {
         case .easy:
-            "Easy"
+            String(localized: "Easy")
         case .medium:
-            "Medium"
+            String(localized: "Medium")
         case .hard:
-            "Hard"
+            String(localized: "Hard")
         }
     }
     
