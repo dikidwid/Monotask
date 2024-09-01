@@ -17,11 +17,11 @@ enum TaskUrgency: Identifiable, CaseIterable {
     var description: String {
         switch self {
         case .notUrgent:
-            "Not Urgent"
+            String(localized: "Not Urgent")
         case .lessUrgent:
-            "Less Urgent"
+            String(localized: "Less Urgent")
         case .urgent:
-            "Urgent"
+            String(localized: "Urgent")
         }
     }
     

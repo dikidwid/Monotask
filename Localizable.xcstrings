@@ -173,6 +173,16 @@
         }
       }
     },
+    "Easy" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mudah"
+          }
+        }
+      }
+    },
     "Edit Task" : {
       "comment" : "Edit task di uikit",
       "localizations" : {
@@ -211,12 +221,38 @@
         }
       }
     },
+    "Fun_Parameter" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fun"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suka"
+          }
+        }
+      }
+    },
     "Golden flowers, now in full bloom, illuminated the path ahead." : {
       "localizations" : {
         "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bunga emas yang kini mekar sempurna, menerangi jalan di depan"
+          }
+        }
+      }
+    },
+    "Hard" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Susah"
           }
         }
       }
@@ -281,12 +317,42 @@
         }
       }
     },
+    "Less Urgent" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Segera"
+          }
+        }
+      }
+    },
     "Let's prioritize your task" : {
       "localizations" : {
         "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Yuk, prioritaskan tugas anda"
+          }
+        }
+      }
+    },
+    "Medium" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sedang"
+          }
+        }
+      }
+    },
+    "Neutral" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Netral"
           }
         }
       }
@@ -307,6 +373,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lanjut"
+          }
+        }
+      }
+    },
+    "Not Fun" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak suka"
+          }
+        }
+      }
+    },
+    "Not Urgent" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Santai"
           }
         }
       }
@@ -463,6 +549,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Urgensi"
+          }
+        }
+      }
+    },
+    "Urgent" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gawat"
           }
         }
       }

@@ -86,10 +86,10 @@ extension TaskListView {
                 .foregroundColor(.black)
                 .font(.oswaldTitle2)
                 .multilineTextAlignment(.center)
-                .padding(.horizontal, 20) // Add horizontal padding to create space around the text
-                .padding(.vertical, 22)
+                .padding(.horizontal, 20)
+                .padding(.vertical, 26)
                 //.frame(width: 206, height: 78)
-                .padding(.top, -15)
+                .padding(.top, -16)
                 .background(TutorialBubble()
                     .fill(Color.white)
                     //.padding(2)
