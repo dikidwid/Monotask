@@ -14,7 +14,7 @@ public class SwiftDataContextManager {
 
     init() {
         do {
-            let configurations = ModelConfiguration(isStoredInMemoryOnly: true)
+            let configurations = ModelConfiguration(isStoredInMemoryOnly: false)
             container = try ModelContainer(for: TaskLocalEntity.self,
                                            RewardLocalEntity.self
                                            , configurations: configurations)
