@@ -779,7 +779,6 @@
 		3A6759D02C6D033A00983C66 = {
 			isa = PBXGroup;
 			children = (
-				3D1236FA2C81C530000075A4 /* Localizable.xcstrings */,
 				3A6759DB2C6D033A00983C66 /* Monotask */,
 				3A6759DA2C6D033A00983C66 /* Products */,
 			);
@@ -918,6 +917,7 @@
 		3A675A0B2C6D07F500983C66 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				3A7DAAD52C849CCF00F2C26B /* Localization */,
 				3A5D024B2C77322500F4E9FF /* Notification */,
 				3A5D01FB2C75D21A00F4E9FF /* Lottie */,
 				3A5D01F82C75D17300F4E9FF /* SVG */,
@@ -979,6 +979,14 @@
 				3A675A252C6D08CF00983C66 /* Oswald-SemiBold.ttf */,
 			);
 			path = Oswald;
+			sourceTree = "<group>";
+		};
+		3A7DAAD52C849CCF00F2C26B /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				3D1236FA2C81C530000075A4 /* Localizable.xcstrings */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		3AB294F32C7186160026F5AA /* Haptics */ = {
@@ -1411,7 +1419,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Monotask/Preview Content\"";
-				DEVELOPMENT_TEAM = 3L9D9QLCDG;
+				DEVELOPMENT_TEAM = QJ4D5LRK3T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Monotask/Info.plist;
@@ -1441,7 +1449,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Monotask/Preview Content\"";
-				DEVELOPMENT_TEAM = 3L9D9QLCDG;
+				DEVELOPMENT_TEAM = QJ4D5LRK3T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Monotask/Info.plist;

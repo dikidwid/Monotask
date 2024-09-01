@@ -48,15 +48,12 @@ final class TaskListViewModel: ObservableObject {
         }
         
         showInstructionsOverlayIfNeeded()
-        
     }
     
     func getTasks() {
         tasks = useCase.getTasks()
         
         checkIsGetNewReward()
-        
-        
     }
     
     func updateTaskStatus(_ isCompleted: Bool) {
@@ -124,7 +121,7 @@ final class TaskListViewModel: ObservableObject {
         }
     }
     
-    func showInstructionsOverlayIfNeeded() {
+    private func showInstructionsOverlayIfNeeded() {
         // Show overlay if tasks count is 1 and it hasn't been shown before
         if tasks.count == 1 && !UserDefaults.standard.bool(forKey: "hasShownInstructions") {
             showInstructionsOverlay = true
@@ -133,11 +130,11 @@ final class TaskListViewModel: ObservableObject {
         }
     }
     
-    func dismissInstructionsOverlay() {
+    private func dismissInstructionsOverlay() {
         showInstructionsOverlay = false
     }
     
-    func handleInstructionTextUpdate(for task: TaskModel) {
+    private func handleInstructionTextUpdate(for task: TaskModel) {
         // Check if the task is the first and only task created by the user
         if tasks.count == 1 && task.id == tasks.first?.id {
             if task.isCompleted {
@@ -150,9 +147,9 @@ final class TaskListViewModel: ObservableObject {
             } else {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { // Adjust the delay as needed
                   
-                    //withAnimation(){
+                    withAnimation(){
                         self.dismissInstructionsOverlay()
-                    //}
+                    }
                 }
             }
         }

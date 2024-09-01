@@ -120,7 +120,7 @@ extension TaskListView {
                 VStack {
                     Image(.emptyState)
                     
-                    Text("Tip : Think Small \n, Try 1 Step, 1 Task, 1 Thought…")
+                    Text("Tip : Think Small,\nTry 1 Step, 1 Task, 1 Thought…")
                         .font(.oswaldBody)
                         .foregroundStyle(.gray)
                         .multilineTextAlignment(.center)
@@ -164,10 +164,12 @@ extension TaskListView {
         .safeAreaPadding(.horizontal, 70)
         .scrollPosition(id: $taskListViewModel.currentTask, anchor: .center)
         .overlay {
-            LinearGradient(colors: taskListViewModel.whiteOverlay,
-                           startPoint: .leading,
-                           endPoint: .trailing)
-            .allowsHitTesting(false)
+            if taskListViewModel.totalTasks > 1 {
+                LinearGradient(colors: taskListViewModel.whiteOverlay,
+                               startPoint: .leading,
+                               endPoint: .trailing)
+                .allowsHitTesting(false)
+            }
         }
     }
     
