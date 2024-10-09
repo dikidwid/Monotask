@@ -1,0 +1,14 @@
+<svg width="285" height="277" viewBox="0 0 285 277" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="shineLockVector">
+<g id="Vector" filter="url(#filter0_f_775_6695)">
+<path d="M142.466 34.1377L146.714 56.9369C152.676 88.9791 188.033 105.959 216.745 90.6222L237.233 79.7361L222.021 97.2635C200.642 121.843 209.413 160.115 239.289 172.987L260.599 182.161L237.439 181.203C204.89 179.834 180.427 210.506 188.993 241.932L195.091 264.321L181.387 245.63C162.132 219.339 122.868 219.339 103.613 245.63L89.9086 264.321L96.0072 241.932C104.573 210.506 80.1099 179.834 47.5615 181.203L24.4007 182.161L45.7113 172.987C75.6559 160.115 84.3583 121.843 62.9791 97.2635L47.767 79.7361L68.2554 90.6222C97.035 105.959 132.393 88.9106 138.286 56.9369L142.534 34.1377L142.466 34.1377Z" fill="#FFC530" fill-opacity="0.8"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_f_775_6695" x="12.4007" y="22.1377" width="260.199" height="254.183" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="6" result="effect1_foregroundBlur_775_6695"/>
+</filter>
+</defs>
+</svg>

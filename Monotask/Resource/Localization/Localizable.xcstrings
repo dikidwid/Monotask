@@ -1,0 +1,578 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    " \"%@\"" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
+    "???" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
+    "%lld / %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld / %2$lld"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
+    "%lld/%lld tasks" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld/%2$lld tasks"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld/%2$lld tugas"
+          }
+        }
+      }
+    },
+    "Add Task" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tambah Tugas"
+          }
+        }
+      }
+    },
+    "Amidst the challenges, a star is preserved as something pure." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Di tengah tantangan, bintang tetap terjaga sebagai sesuatu yang murni."
+          }
+        }
+      }
+    },
+    "Back" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kembali"
+          }
+        }
+      }
+    },
+    "Break down your task here..." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tulis detail tugas anda..."
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Batal"
+          }
+        }
+      }
+    },
+    "Coming Soon" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Segera Datang"
+          }
+        }
+      }
+    },
+    "Completing tasks can be a real challenge, but you powered through and made it happen." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menyelesaikan tugas bisa menjadi tantangan, tetapi Anda terus berusaha dan mewujudkannya."
+          }
+        }
+      }
+    },
+    "Completing tasks isn't always easy and now it's time to celebrate your success" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menyelesaikan tugas tidak selalu mudah dan sekarang saatnya merayakan keberhasilan Anda"
+          }
+        }
+      }
+    },
+    "Create a New Task" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tambahkan Tugas Anda"
+          }
+        }
+      }
+    },
+    "Difficulty" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kesulitan Tugas"
+          }
+        }
+      }
+    },
+    "Do you want to uncheck this task?" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apakah anda ingin hapus centang tugas ini?"
+          }
+        }
+      }
+    },
+    "Done" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selesai"
+          }
+        }
+      }
+    },
+    "Easy" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mudah"
+          }
+        }
+      }
+    },
+    "Edit Task" : {
+      "comment" : "Edit task di uikit",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit Tugas"
+          }
+        }
+      }
+    },
+    "Edit_Task" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit Task"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit Tugas"
+          }
+        }
+      }
+    },
+    "Fun" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kesukaan"
+          }
+        }
+      }
+    },
+    "Fun_Parameter" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fun"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suka"
+          }
+        }
+      }
+    },
+    "Golden flowers, now in full bloom, illuminated the path ahead." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bunga emas yang kini mekar sempurna, menerangi jalan di depan"
+          }
+        }
+      }
+    },
+    "Hard" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Susah"
+          }
+        }
+      }
+    },
+    "Hold to mark as done" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tahan untuk centang"
+          }
+        }
+      }
+    },
+    "Hooray!, you got" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hore, anda mendapatkan"
+          }
+        }
+      }
+    },
+    "How challenging is this task for you?" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seberapa menantang tugas ini untuk anda?"
+          }
+        }
+      }
+    },
+    "How fun is this task for you?" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seberapa menyenangkan tugas ini unutk anda?"
+          }
+        }
+      }
+    },
+    "How quick this task needs to be completed?" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seberapa cepat tugas ini harus diselesaikan?"
+          }
+        }
+      }
+    },
+    "Keep this momentum going! Remember, every step forward is a win, no matter how small." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pertahankan momentum ini! Ingat, setiap langkah maju adalah sebuah kemenangan, sekecil apa pun."
+          }
+        }
+      }
+    },
+    "Less Urgent" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Segera"
+          }
+        }
+      }
+    },
+    "Let's prioritize your task" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yuk, prioritaskan tugas anda"
+          }
+        }
+      }
+    },
+    "Medium" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sedang"
+          }
+        }
+      }
+    },
+    "Neutral" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Netral"
+          }
+        }
+      }
+    },
+    "New Task" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tugas Baru"
+          }
+        }
+      }
+    },
+    "Next" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lanjut"
+          }
+        }
+      }
+    },
+    "Not Fun" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak suka"
+          }
+        }
+      }
+    },
+    "Not Urgent" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Santai"
+          }
+        }
+      }
+    },
+    "Patience and care in fostering new beginnings." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kesabaran dan kepedulian dalam membina awal yang baru"
+          }
+        }
+      }
+    },
+    "Reminder" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tambahkan Pengingat"
+          }
+        }
+      }
+    },
+    "Save" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simpan"
+          }
+        }
+      }
+    },
+    "Share Wallpaper" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagikan Wallpaper"
+          }
+        }
+      }
+    },
+    "Stage %lld" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stage %lld"
+          }
+        }
+      }
+    },
+    "Subtasks" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tambahkan Detail Tugas"
+          }
+        }
+      }
+    },
+    "Tap to uncheck" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tekan untuk hapus centang"
+          }
+        }
+      }
+    },
+    "Task Name" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nama Tugas"
+          }
+        }
+      }
+    },
+    "Task Reminder" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tambahkan pengingat"
+          }
+        }
+      }
+    },
+    "Tasks Done (%lld/%lld)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Tasks Done (%1$lld/%2$lld)"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tugas Selesai (%1$lld/%2$lld)"
+          }
+        }
+      }
+    },
+    "Tip : Think Small,\nTry 1 Step, 1 Task, 1 Thought…" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pikirkan dari hal yang sederhana, coba dimulai dari langkah pertama, tugas pertama, pikiran pertama yang muncul..."
+          }
+        }
+      }
+    },
+    "Today" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hari ini"
+          }
+        }
+      }
+    },
+    "Uncheck" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hapus"
+          }
+        }
+      }
+    },
+    "Uncheck Task" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hapus centang tugas"
+          }
+        }
+      }
+    },
+    "Urgency" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Urgensi"
+          }
+        }
+      }
+    },
+    "Urgent" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gawat"
+          }
+        }
+      }
+    },
+    "Write down your task..." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tulis nama tugas anda..."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

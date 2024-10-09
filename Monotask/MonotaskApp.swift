@@ -11,7 +11,7 @@ import SwiftUI
 struct MonotaskApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AppCoordinatorView()
         }
     }
 }
